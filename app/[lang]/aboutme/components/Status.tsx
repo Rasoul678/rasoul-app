@@ -1,13 +1,9 @@
 import { iconsList } from "@components/icons";
-import { ProfileWithUserType } from "@types";
-import { getCounter } from "@utils/helpers";
 import React from "react";
 
-type IProps = {
-  profile: ProfileWithUserType;
-};
+type IProps = {};
 
-const Status: React.FC<IProps> = ({ profile }) => {
+const Status: React.FC<IProps> = () => {
   return (
     <div className="w-full lg:w-4/12 px-4 lg:order-1">
       <div className="flex justify-center py-4 lg:pt-4 pt-8">
@@ -15,7 +11,7 @@ const Status: React.FC<IProps> = ({ profile }) => {
           <div className="relative flex justify-center">
             {iconsList.uncheckAll({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
-              {getCounter(profile?.user._count.followedBy)}
+              {67}
             </span>
           </div>
           <span className="text-sm text-blueGray-400 block">Followers</span>
@@ -24,7 +20,7 @@ const Status: React.FC<IProps> = ({ profile }) => {
           <div className="relative flex justify-center">
             {iconsList.uncheckAll({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
-              {getCounter(profile?.user._count.following)}
+              {20}
             </span>
           </div>
           <span className="text-sm text-blueGray-400 block">Following</span>
@@ -33,7 +29,7 @@ const Status: React.FC<IProps> = ({ profile }) => {
           <div className="relative flex justify-center">
             {iconsList.uncheckAll({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
-              {getCounter(profile?.user._count.prompts)}
+              {10}
             </span>
           </div>
           <span className="text-sm text-blueGray-400 block">Prompts</span>
