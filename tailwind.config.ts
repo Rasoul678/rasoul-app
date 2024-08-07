@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +7,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backdropBlur: {
+        sm: "2px",
+      },
+      backgroundOpacity: {
+        7: "0.07",
+      },
+      fontFamily: {
+        iransans: ["var(--font-iransans)"],
+        satoshi: ["Satoshi", "sans-serif"],
+      },
+      colors: {
+        "primary-orange": "#FF5722",
+        "primary-yellow": "#ffe082",
       },
     },
   },
   plugins: [],
 };
-export default config;
