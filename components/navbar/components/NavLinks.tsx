@@ -17,7 +17,7 @@ export const NavLinks = () => {
           className: "self-baseline",
         })}
       </Link>
-      <Link href={`/${intl?.lang}/projects`}>
+      <Link href={`/${intl?.lang}/notion`}>
         {iconsList.ideas({
           alt: intl?.dict.nav.projects!,
           className: "self-baseline",

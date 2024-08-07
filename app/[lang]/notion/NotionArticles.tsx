@@ -44,7 +44,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
                       width={300}
                       height={300}
                       src={
-                        article?.properties?.Data.files[0].file?.url ||
+                        article?.properties?.Data.files[0]?.file?.url ||
                         ProfilePic
                       }
                       alt={article.id}
