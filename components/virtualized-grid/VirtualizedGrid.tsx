@@ -41,10 +41,9 @@ export const VirtualizedGrid = <T,>(props: IProps<T>) => {
         itemCount={itemCount}
       >
         {({ ref }) => (
-          <AutoSizer>
+          <AutoSizer ref={ref} >
             {({ height, width }) => (
               <Grid
-                ref={ref}
                 useIsScrolling
                 height={height}
                 columnCount={columnCount}

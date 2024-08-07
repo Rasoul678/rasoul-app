@@ -1,4 +1,3 @@
-
 export type SelectEvent = React.ChangeEvent<HTMLSelectElement>;
 
 export type InfiniteResponseDataType<T> = {
@@ -8,9 +7,6 @@ export type InfiniteResponseDataType<T> = {
     hasNextPage: boolean;
   };
 };
-
-
-
 
 export type IconType = {
   alt?: string;
@@ -150,9 +146,11 @@ export type NotionRespondType<RT> = {
   user: {};
 };
 
-export type NotionDBResultsType = {
+type NotionFileType = { url: string; expiry_time: string } | null;
+
+export type NotionDBResultsType<T> = {
   archived: boolean;
-  cover: { type: string; file: { url: string; expiry_time: string } } | null;
+  cover: { type: string; file: NotionFileType };
   created_by: { object: string; id: string };
   created_time: string;
   icon: { type: ""; emoji: "" } | null;
@@ -162,11 +160,60 @@ export type NotionDBResultsType = {
   last_edited_time: string;
   object: string;
   parent: { type: string; database_id: string };
-  properties: {};
+  properties: T | MainDBPropertiesType;
   public_url: null | " ";
   url: string;
 };
 
-export type DBPropertiesType = {
+type DBTitleType = {
+  annotations: {
+    bold: boolean;
+    code: boolean;
+    color: string;
+    italic: boolean;
+    strikethrough: boolean;
+    underline: boolean;
+  };
+  href: null;
+  plain_text: "New";
+  text: { content: "New"; link: null };
+  type: "text";
+};
 
-}
+export type MainDBPropertiesType = {
+  ArticlePage: { id: string; type: string; rich_text: [] };
+  Author: { id: string; type: string; people: Array<NotionUserType> };
+  Button: { id: string; type: string; button: {} };
+  CreatedAt: { id: string; type: string; created_time: string };
+  CreatedBy: { id: string; type: string; created_by: NotionUserType };
+  Data: {
+    id: string;
+    type: string;
+    files: Array<{ name: string; type: string; file: NotionFileType }>;
+  };
+  Date: { id: string; type: string; date: null | string };
+  ID: { id: string; type: string; unique_id: {} };
+  LastChangeAt: { id: string; type: string; last_edited_time: string };
+  LastChangeBy: { id: string; type: string; last_edited_by: NotionUserType };
+  Likes: { id: string; type: string; number: null | number };
+  Rating: {
+    id: string;
+    type: string;
+    select: { color: string; id: string; name: string };
+  };
+  Status: {
+    id: string;
+    type: string;
+    status: { color: string; id: string; name: string };
+  };
+  Tags: { id: string; type: string; multi_select: [] };
+  Text: { id: string; type: string; rich_text: [] };
+  Title: { id: string; type: string; title: Array<DBTitleType> };
+  URL: { id: string; type: string; url: null | string };
+  Users: {
+    id: string;
+    type: string;
+    relation: Array<{ id: string }>;
+    has_more: false;
+  };
+};

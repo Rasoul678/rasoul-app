@@ -8,15 +8,9 @@ import { clientService } from "@utils/api-service";
 
 const MyProfile = () => {
   //! Fetch user on the client
-  const {
-    data: user,
-    isLoading,
-    isFetching,
-    error,
-  } = useQuery({
+  const { data: user } = useQuery({
     queryKey: ["hydrate-notion-user"],
     queryFn: () => clientService.getNotionUser(),
-    keepPreviousData: true,
   });
 
   useEffect(() => {
