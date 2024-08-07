@@ -20,15 +20,9 @@ export const Menu: React.FC<IProps> = () => {
 
   useClickOutside({ ref: clickRef, callback: () => setShowMenu(false) });
 
-  const {
-    data: user,
-    isLoading,
-    isFetching,
-    error,
-  } = useQuery({
+  const { data: user } = useQuery({
     queryKey: ["hydrate-notion-user"],
     queryFn: () => clientService.getNotionUser(),
-    keepPreviousData: true,
   });
 
   return (

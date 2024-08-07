@@ -10,16 +10,10 @@ type IProps = {
 };
 
 const Repo: React.FC<IProps> = ({ repo }) => {
-  const {
-    data: res,
-    isLoading,
-    isFetching,
-    error,
-  } = useQuery({
+  const { data: res } = useQuery({
     queryKey: [`repo-${repo.name}`],
     queryFn: () =>
       octokit.request(`GET /repos/Rasoul678/${repo.name}/languages`),
-    keepPreviousData: true,
   });
 
   const languages = Object.keys(res?.data || {});
@@ -39,7 +33,10 @@ const Repo: React.FC<IProps> = ({ repo }) => {
       </code>
       <div className="flex-grow text-end hidden sm:block">
         {languages.slice(0, 3).map((lang, i) => (
-          <code key={i} className="text-sm mx-[0.2rem] underline text-green-400 font-bold">
+          <code
+            key={i}
+            className="text-sm mx-[0.2rem] underline text-green-400 font-bold"
+          >
             {lang}
           </code>
         ))}
