@@ -13,10 +13,11 @@ interface IProps<T> {
   columnCount: number;
   hasNextPage?: boolean;
   isFetchingNextPage?: boolean;
+  rowHeight?: number;
 }
 
 export const VirtualizedGrid = <T,>(props: IProps<T>) => {
-  const { data, children, columnCount, hasNextPage } = props;
+  const { data, children, columnCount, hasNextPage, rowHeight } = props;
 
   const gridData: any[] = useMemo(
     () => [...chunks(data, columnCount)],
@@ -41,7 +42,7 @@ export const VirtualizedGrid = <T,>(props: IProps<T>) => {
         itemCount={itemCount}
       >
         {({ ref }) => (
-          <AutoSizer ref={ref} >
+          <AutoSizer ref={ref}>
             {({ height, width }) => (
               <Grid
                 useIsScrolling
@@ -49,7 +50,7 @@ export const VirtualizedGrid = <T,>(props: IProps<T>) => {
                 columnCount={columnCount}
                 rowCount={gridData.length}
                 columnWidth={() => width / columnCount - 10}
-                rowHeight={() => 225}
+                rowHeight={() => rowHeight || 500}
                 width={width}
                 itemData={itemData}
               >

@@ -243,11 +243,6 @@ main {
   @apply px-5 py-1.5 text-sm bg-sky-600 rounded-full text-white;
 } */
 
-.virtualized-grid-wrapper {
-  width: 100%;
-  height: calc(100vh - 13rem);
-}
-
 .tag-list {
   @apply w-full flex shrink-0 flex-col gap-y-2 gap-x-0 relative py-2 px-0 overflow-hidden rounded-md;
 }

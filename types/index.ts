@@ -174,10 +174,10 @@ type DBTitleType = {
     strikethrough: boolean;
     underline: boolean;
   };
-  href: null;
-  plain_text: "New";
-  text: { content: "New"; link: null };
-  type: "text";
+  href: null | string;
+  plain_text: string;
+  text: { content: string | null; link: null | string };
+  type: string;
 };
 
 export type MainDBPropertiesType = {
@@ -207,7 +207,7 @@ export type MainDBPropertiesType = {
     status: { color: string; id: string; name: string };
   };
   Tags: { id: string; type: string; multi_select: [] };
-  Text: { id: string; type: string; rich_text: [] };
+  Text: { id: string; type: string; rich_text: Array<DBTitleType> };
   Title: { id: string; type: string; title: Array<DBTitleType> };
   URL: { id: string; type: string; url: null | string };
   Users: {
