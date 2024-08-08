@@ -2,6 +2,7 @@
 
 import { useContext } from "react";
 import ProfilePic from "@assets/profile-pic-2.jpg";
+import ProfileFrame from "@assets/frame.png";
 import Image from "next/image";
 import { CustomTypewriter } from "@components/CustomTypewriter/CustomTypewriter";
 import { IntlContext } from "@components/intl-provider";
@@ -17,7 +18,7 @@ const HomeHero: React.FC = () => {
   return (
     <div className="h-screen flex flex-col justify-between gap-12 items-center px-16">
       <div className="flex flex-col justify-center items-center gap-[2.5rem] sm:gap-4 mt-3">
-        <div tabIndex={0} className="mt-6 sm:mt-0">
+        <div tabIndex={0} className="mt-6 sm:mt-0 relative">
           <Image
             src={ProfilePic}
             alt="My-Picture"
@@ -26,6 +27,13 @@ const HomeHero: React.FC = () => {
             height={150}
             className="rounded-full"
           />
+          <Image
+            src={ProfileFrame}
+            alt="my-frame"
+            className="avatar-frame anim-spin"
+            width={150}
+            height={150}
+          ></Image>
         </div>
         <div className="flex gap-2">
           {iconsList.socials.github()}
@@ -36,9 +44,12 @@ const HomeHero: React.FC = () => {
       <div className="flex justify-evenly flex-col mb-16 flex-grow items-center">
         <div className="flex flex-col gap-4">
           <div className="text-2xl md:text-5xl text-center" tabIndex={0}>
-          👋
+            👋
             {reactStringReplace(welcome, me, (match, i) => (
-              <span key={i} className="text-xl md:text-5xl font-bold red_gradient block sm:inline">
+              <span
+                key={i}
+                className="text-xl md:text-5xl font-bold red_gradient block sm:inline"
+              >
                 {match}
               </span>
             ))}

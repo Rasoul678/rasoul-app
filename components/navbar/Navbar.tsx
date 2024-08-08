@@ -7,7 +7,7 @@ type IProps = {};
 export const Navbar: React.FC<IProps> = () => {
   return (
     <div className="navbar z-[1000]">
-      <div className="flex flex-row-reverse gap-3 justify-center align-middle">
+      <div className="flex flex-row-reverse gap-3 justify-center align-middle cursor-context-menu">
         <Menu />
       </div>
       <NavLinks />

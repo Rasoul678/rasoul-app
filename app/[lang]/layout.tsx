@@ -31,7 +31,7 @@ const RootLayout: React.FC<IProps> = async (props) => {
 
   return (
     <html lang={lang} className={htmlClasses} dir={htmlDir}>
-      <body>
+      <body className="select-none">
         <RQProvider>
           <ServerIntlProvider dict={dict} lang={lang}>
             <TopLoader />

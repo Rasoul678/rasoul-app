@@ -147,7 +147,6 @@ main {
   background-color: #0d1117;
 }
 
-
 .menu-wrapper {
   @apply rounded-lg bg-gray-900 shadow-xl px-4 absolute mt-7 w-[13rem] break-all rtl:right-3 ltr:left-3;
 }
@@ -187,7 +186,6 @@ main {
 .desc {
   @apply mt-5 text-lg text-gray-300 sm:text-xl max-w-2xl;
 }
-
 
 /* Feed Component */
 .feed {
@@ -361,5 +359,33 @@ main {
   100% {
     opacity: 0;
     transform: translateY(0) scaleY(0.25);
+  }
+}
+
+/*? Avatar Frame */
+.avatar-frame {
+  position: absolute;
+  pointer-events: none;
+  top: -8%;
+  left: -10%;
+  min-width: 120%;
+}
+.anim-spin {
+  animation: spin 20s linear infinite;
+}
+
+.anim-hue {
+  animation: hue 20s linear infinite;
+}
+
+@keyframes hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }
