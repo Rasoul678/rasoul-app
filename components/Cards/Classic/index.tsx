@@ -8,11 +8,18 @@ type IProps = {
   title?: string | null;
   description?: string | null;
   src?: string | StaticImport;
+  icon?: string | null;
 };
 
-const ClassicCard: React.FC<IProps> = ({ author, title, description, src }) => {
+const ClassicCard: React.FC<IProps> = ({
+  author,
+  title,
+  description,
+  src,
+  icon,
+}) => {
   return (
-    <div className="shadow-[0px_4px_16px_px_#367E08] h-[23rem] w-[15.5rem] group gap-[0.5em] rounded-[1.5em] relative flex justify-end flex-col p-[1.5em] z-[1] overflow-hidden">
+    <div className="shadow-[0px_4px_16px_px_#367E08] h-[20rem] w-[18rem] group gap-[0.5em] rounded-[0.5em] relative flex justify-end flex-col p-[1em] z-[1] overflow-hidden">
       <div className="absolute top-0 left-0 h-full w-full bg-[#111111]"></div>
       <Image
         className="absolute top-0 left-0 object-cover h-[10rem] max-h-[10.5rem]"
@@ -21,13 +28,22 @@ const ClassicCard: React.FC<IProps> = ({ author, title, description, src }) => {
         height={150}
         src={src || ArticleCover}
       />
+      {icon && (
+        <Image
+          className="absolute top-[9rem] right-0 object-cover h-[2rem] max-h-[3.5rem]"
+          alt="article-cover"
+          width={40}
+          height={50}
+          src={icon}
+        />
+      )}
       <div className="container text-white z-[2] relative font-mono flex flex-col gap-[0.5em]">
         <div className="h-fit w-full text-white">
           <h1
             className="card_heading text-[1.5em] tracking-[.0.5em]"
             style={textStyle}
           >
-            {title || "Title Title Title"}
+            {title || "Title"}
           </h1>
           <p
             className="text-[1em] text-green-500 tracking-[.05em]"
@@ -98,7 +114,7 @@ const ClassicCard: React.FC<IProps> = ({ author, title, description, src }) => {
           </div>
         </div>
       </div>
-      <p className="font-mono block text-white font-light relative h-[0em] group-hover:h-[7em] leading-[1.2em] duration-500 overflow-hidden">
+      <p className="font-mono block text-white font-light relative h-[0em] group-hover:h-[4.5em] leading-[1.2em] duration-500 overflow-hidden">
         {description || "Description"}
       </p>
     </div>

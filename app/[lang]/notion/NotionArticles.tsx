@@ -7,11 +7,11 @@ import {
   NotionRespondType,
 } from "@types";
 import { clientService } from "@utils/api-service";
-import Image from "next/image";
 import React from "react";
 import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
 import VirtualizedGrid from "@components/virtualized-grid";
 import ClassicCard from "@components/Cards/Classic";
+import { useElementSize } from "@hooks/useElementSize";
 
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
@@ -24,16 +24,45 @@ const NotionArticles: React.FC<IProps> = (props) => {
     queryFn: () => clientService.getDBRecords(),
   });
 
-  console.log(records);
+  const [windowState] = useElementSize();
 
+  if (windowState.status === "unsupported") {
+    return <div>It is probably server side rendering...</div>;
+  }
+
+  if (windowState.status === "undetected") {
+    return (
+      <div className="font-nunito text-2xl h-screen flex justify-center align-middle">
+        Preparing...
+      </div>
+    );
+  }
+
+  const columnCount = (): number => {
+    if (windowState.width < 460) {
+      return 1;
+    }
+
+    if (windowState.width < 860 && windowState.width > 460) {
+      return 2;
+    }
+
+    if (windowState.width > 860 && windowState.width < 1100) {
+      return 3;
+    }
+
+    return 4;
+  };
+
+  console.log(records);
   return (
     <div className="h-screen w-full">
       {records && (
         <div className="h-full">
           <VirtualizedGrid<MainDBResultsType>
             data={records?.results}
-            columnCount={4}
-            rowHeight={400}
+            columnCount={columnCount()}
+            rowHeight={350}
           >
             {({ columnIndex, data, rowIndex, style }) => {
               const article = data.allData?.[rowIndex]?.[
@@ -43,16 +72,6 @@ const NotionArticles: React.FC<IProps> = (props) => {
               if (article) {
                 return (
                   <div style={style} className="flex justify-center">
-                    {/* <Image
-                      key={article.id}
-                      width={300}
-                      height={300}
-                      src={
-                        article?.properties?.Data.files[0]?.file?.url ||
-                        ProfilePic
-                      }
-                      alt={article.id}
-                    /> */}
                     <ClassicCard
                       src={
                         article?.properties?.Data.files[0]?.file?.url ||
@@ -63,6 +82,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
                       description={
                         article.properties.Text.rich_text[0]?.text.content
                       }
+                      icon={article.icon?.external?.url}
                     />
                   </div>
                 );

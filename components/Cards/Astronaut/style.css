@@ -1,21 +1,17 @@
-.card {
+.cardWrapper {
   --dark: #212121;
   --darker: #111111;
   --semidark: #2c2c2c;
   --lightgray: #e8e8e8;
   --unit: 1rem;
 
-  background-color: var(--darker);
-  box-shadow: 0 0 var(--unit) var(--darker);
-  border: calc(var(--unit) / 2) solid var(--darker);
-  border-radius: var(--unit);
   position: relative;
   padding: var(--unit);
   overflow: hidden;
   width: 15.5rem;
 }
 
-.card::before {
+/* .cardWrapper::before {
   content: "";
   position: absolute;
   width: 120%;
@@ -25,7 +21,7 @@
   background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   animation: keyframes-floating-light 2.5s infinite ease-in-out;
   filter: blur(20px);
-}
+} */
 
 @keyframes keyframes-floating-light {
   0% {
@@ -44,7 +40,7 @@
   }
 }
 
-.card::after {
+.cardWrapper::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -64,7 +60,7 @@
   }
 }
 
-.card .image {
+.cardWrapper .image {
   width: 200px;
   animation: keyframes-floating-img 10s ease-in-out infinite;
 }
@@ -83,7 +79,7 @@
   }
 }
 
-.card .heading {
+.cardWrapper .heading {
   font-weight: 600;
   font-size: small;
   text-align: center;
@@ -99,12 +95,12 @@
   }
 }
 
-.card .icons {
+.cardWrapper .icons {
   display: flex;
   gap: var(--unit);
 }
 
-.card .icons a {
+.cardWrapper .icons a {
   width: 7rem;
   display: flex;
   flex-grow: 1;
@@ -117,25 +113,25 @@
   border-radius: 50%;
 }
 
-/* .card .icons a:hover {
+/* .cardWrapper .icons a:hover {
   transition: 0.2s;
   background-color: var(--semidark);
 } */
 
 /* instagram*/
-.card .icons .instagram:hover {
+.cardWrapper .icons .instagram:hover {
   background-color: #d62976;
   transition: 0.5s;
 }
 
 /* X*/
-.card .icons .x:hover {
+.cardWrapper .icons .x:hover {
   background-color: #000;
   transition: 0.5s;
 }
 
 /* Discord*/
-.card .icons .discord:hover {
+.cardWrapper .icons .discord:hover {
   background-color: purple;
   transition-duration: 0.5s;
 }

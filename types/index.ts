@@ -153,7 +153,11 @@ export type NotionDBResultsType<T> = {
   cover: { type: string; file: NotionFileType };
   created_by: { object: string; id: string };
   created_time: string;
-  icon: { type: ""; emoji: "" } | null;
+  icon: {
+    type: string;
+    emoji?: string;
+    external?: { url: string };
+  } | null;
   id: string;
   in_trash: boolean;
   last_edited_by: { object: string; id: string };
@@ -161,7 +165,7 @@ export type NotionDBResultsType<T> = {
   object: string;
   parent: { type: string; database_id: string };
   properties: T | MainDBPropertiesType;
-  public_url: null | " ";
+  public_url: null | string;
   url: string;
 };
 
@@ -206,7 +210,11 @@ export type MainDBPropertiesType = {
     type: string;
     status: { color: string; id: string; name: string };
   };
-  Tags: { id: string; type: string; multi_select: [] };
+  Tags: {
+    id: string;
+    type: string;
+    multi_select: Array<{ color: string; id: string; name: string }>;
+  };
   Text: { id: string; type: string; rich_text: Array<DBTitleType> };
   Title: { id: string; type: string; title: Array<DBTitleType> };
   URL: { id: string; type: string; url: null | string };
@@ -214,6 +222,6 @@ export type MainDBPropertiesType = {
     id: string;
     type: string;
     relation: Array<{ id: string }>;
-    has_more: false;
+    has_more: boolean;
   };
 };

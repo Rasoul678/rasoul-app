@@ -23,14 +23,12 @@ const Notion: React.FC<IProps> = async (props) => {
 
   return (
     <div>
+      <h1 className="font-nunito text-4xl text-center my-[2.5rem] text-green-600 uppercase">
+        My Articles
+      </h1>
       <Hydrate state={dehydratedState}>
         <NotionArticles />
       </Hydrate>
-      {/* <iframe
-        width="100%"
-        className="h-screen"
-        src="https://e.notionhero.io/e1/p/06df35f-c0e64afdb9798c335405928d37dd21b"
-      ></iframe> */}
     </div>
   );
 };

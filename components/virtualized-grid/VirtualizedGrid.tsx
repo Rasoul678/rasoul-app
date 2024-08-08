@@ -49,10 +49,11 @@ export const VirtualizedGrid = <T,>(props: IProps<T>) => {
                 height={height}
                 columnCount={columnCount}
                 rowCount={gridData.length}
-                columnWidth={() => width / columnCount - 10}
+                columnWidth={() => width / columnCount - 5}
                 rowHeight={() => rowHeight || 500}
                 width={width}
                 itemData={itemData}
+                className="flex justify-center"
               >
                 {(props) => children(props)}
               </Grid>
