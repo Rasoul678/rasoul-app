@@ -1,7 +1,11 @@
 import React from "react";
 import InfiniteLoopSlider from "@components/infinite-loop-slider/InfiniteLoopSlider";
 import { useInView } from "react-intersection-observer";
-import TimeCrawler from "./TimeCrawler";
+import dynamic from "next/dynamic";
+
+const TimeCrawler = dynamic(() =>
+  import("./TimeCrawler").then((mod) => mod.default)
+);
 
 type IProps = {
   tagList?: string[];

@@ -16,7 +16,7 @@ const HomeHero: React.FC = () => {
   const me = intl?.dict.me!;
 
   return (
-    <div className="h-screen flex flex-col justify-between gap-12 items-center px-16">
+    <div className="h-screen flex flex-col justify-between gap-8 items-center px-16">
       <div className="flex flex-col justify-center items-center gap-[2.5rem] sm:gap-4 mt-3">
         <div tabIndex={0} className="mt-6 sm:mt-0 relative">
           <Image
@@ -87,7 +87,7 @@ const HomeHero: React.FC = () => {
         <div>
           <CustomTypewriter
             strings={[intl?.dict.typewriter[1]!, intl?.dict.typewriter[2]!]}
-            wrapperClassName="text-md md:text-2xl bg-gray-900/50 p-2 rounded-md"
+            wrapperClassName="text-md md:text-2xl p-2"
             cursorClassName="text-yellow-400 text-2xl"
             cursor=" "
           />

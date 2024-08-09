@@ -5,11 +5,19 @@ import TopLoader from "@components/top-loader";
 import type { Locale } from "@i18n-config";
 import ServerIntlProvider from "@components/intl-provider";
 import { getDictionary } from "./dictionaries";
-import { iranSans } from "@utils";
+import {
+  iranSans,
+  quicksand,
+  exo2,
+  caveat,
+  concert,
+  edu,
+  lilita,
+} from "@utils";
 import RQProvider from "@utils/react-query/provider";
 
 export const metadata = {
-  title: "Rasoul Media | Next.js",
+  title: "Rasoul Portfolio",
   description: "My portfolio website",
 };
 
@@ -26,7 +34,7 @@ const RootLayout: React.FC<IProps> = async (props) => {
 
   const dict = await getDictionary(lang);
 
-  const htmlClasses = `${iranSans.variable} font-iransans`;
+  const htmlClasses = `${iranSans.variable} ${quicksand.variable} ${exo2.variable} ${caveat.variable} ${concert.variable} ${edu.variable} ${lilita.variable} font-iransans font-my_quicksand`;
   const htmlDir = lang === "fa" ? "rtl" : "ltr";
 
   return (

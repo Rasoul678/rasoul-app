@@ -1,4 +1,4 @@
-import Astronaut from "@components/Cards/Astronaut";
+import Astronaut from "./Astronaut";
 import React from "react";
 
 interface IProps {}

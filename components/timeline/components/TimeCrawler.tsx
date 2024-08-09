@@ -16,9 +16,8 @@ const TimeCrawler: React.FC<IProps> = ({ color = "8ce7f2" }) => {
   let { height } = useElementScroll(ref);
   const [state] = useElementSize({ ref: crawlerRef });
 
-  const userPrefersReduced = window.matchMedia(
-    "(prefers-reduced-motion)"
-  ).matches;
+  const userPrefersReduced =
+    global?.window && window.matchMedia("(prefers-reduced-motion)").matches;
 
   if (userPrefersReduced) {
     height = 0;

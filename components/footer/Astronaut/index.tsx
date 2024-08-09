@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.css";
 import Image from "next/image";
+import "./style.css";
 import AstronautPNG from "@assets/astronaut.png";
 
 interface IProps {}
@@ -15,7 +15,7 @@ const Astronaut: React.FC<IProps> = (props) => {
         height={200}
         src={AstronautPNG}
       />
-      <div className="heading">Find me on Social Media!</div>
+      <div className="heading">Get in Touch</div>
       <div className="icons">
         <a
           className="instagram socialContainer"

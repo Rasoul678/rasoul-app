@@ -15,6 +15,12 @@ module.exports = {
       },
       fontFamily: {
         iransans: ["var(--font-iransans)"],
+        my_quicksand: ["var(--font-quicksand)"],
+        my_exo2: ["var(--font-exo2)"],
+        my_caveat: ["var(--font-caveat)"],
+        my_edu: ["var(--font-edu)"],
+        my_lilita: ["var(--font-lilita)"],
+        my_concert: ["var(--font-concert)"],
         satoshi: ["Satoshi", "sans-serif"],
       },
       colors: {
