@@ -14,7 +14,7 @@ type IProps = {
 
 const TimeLine: React.FC<IProps> = ({ repos }) => {
   return (
-    <div>
+    <div id="tools">
       <TimeSection loop title="Tools" tagList={TAGS}>
         {({ inView }) => <TechListIcons inView={inView} />}
       </TimeSection>

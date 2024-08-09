@@ -34,8 +34,12 @@ const RootLayout: React.FC<IProps> = async (props) => {
 
   const dict = await getDictionary(lang);
 
-  const htmlClasses = `${iranSans.variable} ${quicksand.variable} ${exo2.variable} ${caveat.variable} ${concert.variable} ${edu.variable} ${lilita.variable} font-iransans font-my_quicksand`;
   const htmlDir = lang === "fa" ? "rtl" : "ltr";
+  const htmlClasses = `${iranSans.variable} ${quicksand.variable} ${
+    exo2.variable
+  } ${caveat.variable} ${concert.variable} ${edu.variable} ${lilita.variable} ${
+    lang == "fa" ? "font-iransans" : "font-my_quicksand"
+  }`;
 
   return (
     <html lang={lang} className={htmlClasses} dir={htmlDir}>

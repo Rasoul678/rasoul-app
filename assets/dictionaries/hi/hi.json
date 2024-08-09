@@ -50,7 +50,7 @@
   "light": "रोशनी",
   "live-description": "और मेरा गृहनगर रोस्तमकोला है।",
   "master-description": "मैंने शाहिद बेहेश्टी यूनिवर्सिटी से एयरोस्पेस इंजीनियरिंग में मास्टर डिग्री हासिल की है।",
-  "me": "रसूल हेसामी",
+  "me": "Rasoul Hesami Rostami",
   "message": "संदेश",
   "mind": {
     "description": {
@@ -115,7 +115,7 @@
   "yellow": "पीला",
   "account": { "signin": "दाखिल करना", "signout": "साइन आउट" },
   "hero": {
-    "intro-welcome": "नमस्ते, मैं रसूल हेसामी हूं।"
+    "intro-welcome": "हाय मेरा नाम है:"
   },
   "language": "भाषा",
   "my-prof": "मेरी प्रोफाइल"

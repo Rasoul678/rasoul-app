@@ -50,7 +50,7 @@
   "light": "Léger",
   "live-description": "Et ma ville natale est Rostamkola.",
   "master-description": "J'ai obtenu ma maîtrise de l'Université Shahid Beheshti en génie aérospatial.",
-  "me": "Rasoul Hesami",
+  "me": "Rasoul Hesami Rostami",
   "message": "Message",
   "mind": {
     "description": {
@@ -108,15 +108,15 @@
   "subject": "Sujet",
   "tech-stack": "La technologie",
   "typewriter": {
-    "1": "J'aime concevoir.",
-    "2": "J'aime rencontrer de nouvelles personnes."
+    "1": "J'aime concevoir",
+    "2": "J'aime rencontrer de nouvelles personnes"
   },
   "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
   "work-experience": "L'expérience professionnelle",
   "yellow": "Jaune",
   "account": { "signin": "s'identifier", "signout": "se déconnecter" },
   "hero": {
-    "intro-welcome": "Bonjour, je suis Rasoul Hesami."
+    "intro-welcome": "Salut, je m'appelle:"
   },
   "language": "langue",
   "my-prof": "mon profil"

@@ -10,10 +10,11 @@ interface TypewriterProps {
   delay?: number;
   wrapperClassName?: string;
   cursorClassName?: string;
+  prefix?: string;
 }
 
 export const CustomTypewriter: React.FC<TypewriterProps> = (props) => {
-  const {
+  let {
     strings,
     autoStart = true,
     cursor = "<",
@@ -23,7 +24,12 @@ export const CustomTypewriter: React.FC<TypewriterProps> = (props) => {
     wrapperClassName,
     cursorClassName,
     text,
+    prefix,
   } = props;
+
+  if (prefix) {
+    strings = strings?.map((str) => `${prefix} ${str}`);
+  }
 
   return (
     <Typewriter
