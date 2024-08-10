@@ -32,12 +32,14 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]" }) => {
         src={AstronautPNG}
       />
       <div className="heading">Get in Touch</div>
-      <div className="flex justify-center gap-2">
-        <Link href={"#"} className="instagram socialContainer">
-          {iconsList.socials.github()}
-        </Link>
-        {iconsList.socials.linkedin()}
-        {iconsList.socials.twitter()}
+      <div className="relative rounded-[2rem]">
+        <div className="socialLinks flex justify-center gap-2 rounded-[2rem]">
+          <Link href={"#"} className="instagram socialContainer">
+            {iconsList.socials.github()}
+          </Link>
+          {iconsList.socials.linkedin()}
+          {iconsList.socials.twitter()}
+        </div>
       </div>
     </div>
   );

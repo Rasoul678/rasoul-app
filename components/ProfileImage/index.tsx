@@ -5,9 +5,13 @@ import ProfileFrame from "@assets/frame.png";
 
 interface IProps {
   wrapperClassName?: string;
+  animationType?: "hue" | "spin";
 }
 
-const ProfileImage: React.FC<IProps> = ({ wrapperClassName }) => {
+const ProfileImage: React.FC<IProps> = ({
+  wrapperClassName,
+  animationType = "spin",
+}) => {
   return (
     <div className={`relative ${wrapperClassName}`}>
       <Image
@@ -21,9 +25,11 @@ const ProfileImage: React.FC<IProps> = ({ wrapperClassName }) => {
       <Image
         src={ProfileFrame}
         alt="my-frame"
-        className="avatar-frame anim-spin"
-        width={150}
-        height={150}
+        className={`avatar-frame ${
+          animationType == "spin" ? "anim-spin" : "anim-hue"
+        }`}
+        width={300}
+        height={300}
       ></Image>
     </div>
   );

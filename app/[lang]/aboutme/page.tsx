@@ -20,7 +20,7 @@ const ProfilePage = async () => {
 
   return (
     <div>
-      <main className="md:p-14 mt-[7rem] md:mt-[3rem] mx-4">
+      <main className="md:p-14 mt-[5rem] md:mt-[1.5rem] mx-4">
         <section className="px-3 bg-gray-900 rounded-xl">
           <Hydrate state={dehydratedState}>
             <MyProfile />

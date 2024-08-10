@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { NotionUserType } from "@types";
+import ProfileImage from "@components/ProfileImage";
 
 interface IProps {
   user: NotionUserType;
@@ -12,19 +13,14 @@ const ProfileMain: React.FC<IProps> = ({ user }) => {
   return (
     <>
       <div className="flex flex-wrap justify-center items-start">
-        <div className="w-full lg:w-3/12 px-4 h-14 lg:order-2 flex justify-center">
-          <div>
-            <Image
-              width={100}
-              height={100}
-              alt="profile-image"
-              src={user.avatar_url}
-              className="shadow-xl bg-gray-900 rounded-full align-middle border-none relative -top-[3.5rem] max-w-150-px"
-            />
-          </div>
+        <div className="flex justify-center">
+          <ProfileImage
+            wrapperClassName="w-[8rem] -top-[3.5rem]"
+            animationType="hue"
+          />
         </div>
       </div>
-      <div className="text-center md:mt-6">
+      <div className="text-center -mt-6">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
           {user.name}
         </h3>

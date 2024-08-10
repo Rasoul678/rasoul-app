@@ -1,3 +1,5 @@
+import { LinkProps } from "next/link";
+
 export type SelectEvent = React.ChangeEvent<HTMLSelectElement>;
 
 export type InfiniteResponseDataType<T> = {
@@ -225,3 +227,5 @@ export type MainDBPropertiesType = {
     has_more: boolean;
   };
 };
+
+export type CustomLinkType = LinkProps & React.HTMLProps<HTMLAnchorElement>;
