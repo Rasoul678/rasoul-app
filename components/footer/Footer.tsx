@@ -5,11 +5,11 @@ interface IProps {}
 
 export const Footer: React.FC<IProps> = (props) => {
   return (
-    <div className="grid sm:grid-cols-1 grid-cols-2 mt-[6rem]">
-      <Astronaut />
-      <div>
-        <div></div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center">
+      <div className="sm:order-last">
+        <div>Footer items</div>
       </div>
+      <Astronaut />
     </div>
   );
 };
