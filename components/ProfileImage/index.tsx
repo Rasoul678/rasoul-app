@@ -3,11 +3,13 @@ import React from "react";
 import ProfilePic from "@assets/profile-pic-2.jpg";
 import ProfileFrame from "@assets/frame.png";
 
-interface IProps {}
+interface IProps {
+  wrapperClassName?: string;
+}
 
-const ProfileImage: React.FC<IProps> = (props) => {
+const ProfileImage: React.FC<IProps> = ({ wrapperClassName }) => {
   return (
-    <div className="relative w-[7rem] hidden sm:block">
+    <div className={`relative ${wrapperClassName}`}>
       <Image
         src={ProfilePic}
         alt="My-Picture"

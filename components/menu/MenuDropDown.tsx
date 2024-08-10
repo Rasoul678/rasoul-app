@@ -1,12 +1,11 @@
 import React from "react";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import defaultAvatar from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import { Locale, i18n } from "@i18n-config";
 import { MenuItem, Triangle } from "./components";
 import { NotionUserType } from "@types";
+import ProfileImage from "@components/ProfileImage";
 
 interface IProps {
   user?: NotionUserType;
@@ -38,15 +37,7 @@ const MenuDropDown: React.FC<IProps> = ({ user }) => {
         noBorder
         name={String(intl?.dict["my-prof"])}
         href={`/${intl?.lang}/aboutme`}
-        icon={
-          <Image
-            src={user?.avatar_url || defaultAvatar}
-            alt={String(intl?.dict["my-prof"])}
-            className="rounded-full"
-            width={30}
-            height={30}
-          />
-        }
+        icon={<ProfileImage wrapperClassName="w-[2rem]" />}
       />
 
       <MenuItem

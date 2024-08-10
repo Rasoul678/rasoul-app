@@ -9,32 +9,32 @@ const Shortcuts: React.FC<IProps> = (props) => {
           <span
             className="text-teal-400 text-[1.5rem] p-1 border-b-2 border-cyan-200 block"
             tabIndex={0}
-            aria-label="Typescript"
+            aria-label="Tools"
           >
             <Link href="#tools">Tools</Link>
           </span>
           <span
             className="text-teal-400 text-[1.5rem] p-1 border-b-2 border-cyan-200 block"
             tabIndex={0}
-            aria-label="Javascript"
+            aria-label="Github"
           >
-            <Link href="#tools">Github</Link>
+            <Link href="#github">Github</Link>
           </span>
 
           <span
             className="text-teal-400 text-[1.5rem] p-1 border-b-2 border-cyan-200 block"
             tabIndex={0}
-            aria-label="ReactJS"
+            aria-label="Education"
           >
-            <Link href="#tools">Education</Link>
+            <Link href="#education">Education</Link>
           </span>
 
           <span
             className="text-teal-400 text-[1.5rem] p-1 border-b-2 border-cyan-200 block"
             tabIndex={0}
-            aria-label="HTML"
+            aria-label="Experience"
           >
-            <Link href="#tools">Experience</Link>
+            <Link href="#experience">Experience</Link>
           </span>
         </div>
   )

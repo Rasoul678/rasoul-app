@@ -14,8 +14,8 @@ type IProps = {
 
 const TimeLine: React.FC<IProps> = ({ repos }) => {
   return (
-    <div id="tools">
-      <TimeSection loop title="Tools" tagList={TAGS}>
+    <div>
+      <TimeSection loop title="Tools" wrapperId="tools" tagList={TAGS}>
         {({ inView }) => <TechListIcons inView={inView} />}
       </TimeSection>
       <TimeSection
@@ -23,6 +23,7 @@ const TimeLine: React.FC<IProps> = ({ repos }) => {
         title="Github Repositories"
         tagList={repos.map((r: any) => r.name)}
         color="ffe082"
+        wrapperId="github"
       >
         {({ inView }) => <Repos repos={repos} inView={inView} />}
       </TimeSection>
@@ -30,6 +31,7 @@ const TimeLine: React.FC<IProps> = ({ repos }) => {
         title="Academic Educations"
         tagList={["Master & Bachelor"]}
         color="f48fb1"
+        wrapperId="education"
       >
         {({ inView }) => <Education inView={inView} />}
       </TimeSection>

@@ -5,7 +5,7 @@ import { CustomTypewriter } from "@components/CustomTypewriter/CustomTypewriter"
 import { IntlContext } from "@components/intl-provider";
 import Astronaut from "@components/Astronaut";
 import Shortcuts from "./Shortcuts";
-import ProfileImage from "./ProfileImage";
+import ProfileImage from "@components/ProfileImage";
 
 const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
@@ -19,8 +19,8 @@ const HomeHero: React.FC = () => {
         <Astronaut className="w-[8rem] md:w-[15rem]" />
       </div>
       <div className="flex flex-col justify-start gap-[2rem] sm:gap-[3.5rem] flex-grow h-full w-full items-center md:items-start">
-        <div className="flex flex-col justify-center items-center md:block  md:text-5xl mt-[2rem]">
-          <ProfileImage />
+        <div className="flex flex-col justify-center items-center md:block  md:text-5xl mt-[0.5rem] sm:mt-[2rem]">
+          <ProfileImage wrapperClassName="w-[7rem] hidden sm:block" />
           <span className="text-xl md:text-[1.5rem] font-bold">{welcome}</span>
           <span className="text-[1.5rem] md:text-[3.5rem] font-bold block leading-[4rem]">
             {me}
@@ -31,7 +31,7 @@ const HomeHero: React.FC = () => {
             strings={[
               "And... what?",
               "Let me introduce myself!",
-              ...intl?.dict.typewriter!
+              ...intl?.dict.typewriter!,
             ]}
             wrapperClassName="text-[1.7rem] md:text-4xl p-2 font-my_edu"
             cursorClassName="text-teal-400 text-[2rem]"

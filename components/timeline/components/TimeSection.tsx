@@ -13,14 +13,22 @@ type IProps = {
   title?: string;
   loop?: boolean;
   children?: ({ inView }: { inView: boolean }) => React.ReactNode;
+  wrapperId?: string;
 };
 
 export const TimeSection: React.FC<IProps> = (props) => {
-  const { color, loop, tagList, title = "Time Title", children } = props;
+  const {
+    color,
+    loop,
+    tagList,
+    title = "Time Title",
+    children,
+    wrapperId,
+  } = props;
   const { ref, inView } = useInView();
 
   return (
-    <div className="mt-8">
+    <div className="mt-8" id={wrapperId}>
       <p className="text-center text-xl sm:text-2xl p-2">{title}</p>
       <section
         ref={ref}
