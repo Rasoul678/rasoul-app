@@ -15,8 +15,9 @@ const Repos: React.FC<IProps> = ({ inView, repos }) => {
           <div
             key={repo.id}
             className={`flex items-center h-6 gap-3 ${
-              inView ? `in-view delay-[${i + 3}50ms]` : "out-view"
+              inView ? "in-view" : "out-view"
             }`}
+            style={{ transitionDelay: `${i + 3}50ms` }}
           >
             <Repo repo={repo} />
           </div>
