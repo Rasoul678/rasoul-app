@@ -75,7 +75,6 @@
     "contact": "Contact",
     "home": "Accueil",
     "articles": "articles"
-
   },
   "next": "Suivant",
   "red": "rouge",
@@ -107,10 +106,10 @@
   },
   "subject": "Sujet",
   "tech-stack": "La technologie",
-  "typewriter": {
-    "1": "J'aime concevoir",
-    "2": "J'aime rencontrer de nouvelles personnes"
-  },
+  "typewriter": [
+    "J'aime concevoir",
+    "J'aime rencontrer de nouvelles personnes"
+  ],
   "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
   "work-experience": "L'expérience professionnelle",
   "yellow": "Jaune",

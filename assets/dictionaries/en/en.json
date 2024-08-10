@@ -106,7 +106,7 @@
   },
   "subject": "Subject",
   "tech-stack": "Technology",
-  "typewriter": { "1": "I like to design", "2": "I like meeting new people" },
+  "typewriter": ["I like to design", "I like meeting new people"],
   "university": { "mut": "Malek Ashtar", "sbu": "Shahid Beheshti" },
   "work-experience": "Work & Experience",
   "yellow": "Yellow",
