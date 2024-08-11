@@ -10,7 +10,7 @@ const MyProfile = () => {
   //! Fetch user on the client
   const { data: user } = useQuery({
     queryKey: ["hydrate-notion-user"],
-    queryFn: () => clientService.getNotionUser(),
+    queryFn: () => clientService.getNotionAuthUser(),
   });
 
   useEffect(() => {

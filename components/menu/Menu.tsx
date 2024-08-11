@@ -4,7 +4,6 @@ import React from "react";
 import { iconsList } from "@components/icons";
 import { useClickOutside } from "@hooks/useClickOutside";
 import dynamic from "next/dynamic";
-import Spinner from "@components/spinner";
 import { clientService } from "@utils/api-service";
 import { useQuery } from "@tanstack/react-query";
 
@@ -22,7 +21,7 @@ export const Menu: React.FC<IProps> = () => {
 
   const { data: user } = useQuery({
     queryKey: ["hydrate-notion-user"],
-    queryFn: () => clientService.getNotionUser(),
+    queryFn: () => clientService.getNotionAuthUser(),
   });
 
   return (

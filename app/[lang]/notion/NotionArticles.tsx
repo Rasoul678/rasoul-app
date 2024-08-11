@@ -1,11 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import {
-  MainDBPropertiesType,
-  NotionDBResultsType,
-  NotionRespondType,
-} from "@types";
+import { MainDBPropertiesType, NotionDBResultsType } from "@types";
 import { clientService } from "@utils/api-service";
 import React from "react";
 import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
@@ -15,11 +11,10 @@ import { useElementSize } from "@hooks/useElementSize";
 
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
-type QueryResultType = NotionRespondType<MainDBResultsType>;
 
 const NotionArticles: React.FC<IProps> = (props) => {
   //! Fetch DB records on the client
-  const { data: records } = useQuery<QueryResultType>({
+  const { data: records } = useQuery({
     queryKey: ["hydrate-notion-db"],
     queryFn: () => clientService.getDBRecords(),
   });
@@ -33,7 +28,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
   if (windowState.status === "undetected") {
     return (
       <div className="font-nunito text-2xl h-screen flex justify-center align-middle">
-        Preparing...
+        Preparing articles...
       </div>
     );
   }
@@ -59,7 +54,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
     <div className="h-screen w-full">
       {records && (
         <div className="h-full">
-          <VirtualizedGrid<MainDBResultsType>
+          <VirtualizedGrid
             data={records?.results}
             columnCount={columnCount()}
             rowHeight={350}

@@ -4,11 +4,11 @@ import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import { Locale, i18n } from "@i18n-config";
 import { MenuItem, Triangle } from "./components";
-import { NotionUserType } from "@types";
 import ProfileImage from "@components/ProfileImage";
+import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 interface IProps {
-  user?: NotionUserType;
+  user?: PersonUserObjectResponse;
 }
 
 const MenuDropDown: React.FC<IProps> = ({ user }) => {
