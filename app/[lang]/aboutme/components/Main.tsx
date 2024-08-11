@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { NotionUserType } from "@types";
 import ProfileImage from "@components/ProfileImage";
+import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 interface IProps {
-  user: NotionUserType;
+  user: PersonUserObjectResponse;
 }
 
 const ProfileMain: React.FC<IProps> = ({ user }) => {
@@ -14,10 +13,7 @@ const ProfileMain: React.FC<IProps> = ({ user }) => {
     <>
       <div className="flex flex-wrap justify-center items-start">
         <div className="flex justify-center">
-          <ProfileImage
-            wrapperClassName="w-[8rem] -top-[3.5rem]"
-            animationType="hue"
-          />
+          <ProfileImage wrapperClassName="w-[8rem] -top-[3.5rem]" />
         </div>
       </div>
       <div className="text-center -mt-6">

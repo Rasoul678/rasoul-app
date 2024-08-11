@@ -28,18 +28,18 @@ const HomeHero: React.FC = () => {
             <ProfileImage wrapperClassName="w-[7rem]" />
           </CustomLink>
           <span className="text-xl md:text-[1.5rem] font-bold">{welcome}</span>
-          <span className="text-[1.5rem] md:text-[3.5rem] font-bold block leading-[4rem]">
+          <span className="text-[1.5rem] md:text-[3.3rem] font-bold block leading-[4rem]">
             {me}
           </span>
         </div>
-        <div className="sm:min-h-[3rem]">
+        <div className="h-[5rem] sm:h-[3rem] text-center">
           <CustomTypewriter
             strings={[
               "And... what?",
               "Let me introduce myself!",
               ...intl?.dict.typewriter!,
             ]}
-            wrapperClassName="text-[1.7rem] md:text-4xl p-2 font-my_edu"
+            wrapperClassName={`text-[1.7rem] md:text-4xl p-2 ${intl?.lang !== 'fa' && "font-my_edu"}`}
             cursorClassName="text-teal-400 text-[2rem]"
             cursor=" "
           />

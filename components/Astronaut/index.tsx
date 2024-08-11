@@ -6,6 +6,7 @@ import Link from "next/link";
 
 interface IProps {
   className?: string;
+  heading?: string;
 }
 
 /**
@@ -21,7 +22,7 @@ interface IProps {
  * <Button text="Click Me" onClick={() => console.log('Button clicked!')} />
  */
 
-const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]" }) => {
+const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
   return (
     <div className="astronautWrapper">
       <Image
@@ -31,7 +32,7 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]" }) => {
         height={500}
         src={AstronautPNG}
       />
-      <div className="heading">Get in Touch</div>
+      <div className="heading">{heading || "Please follow me!"}</div>
       <div className="relative rounded-[2rem]">
         <div className="socialLinks flex justify-center gap-2 rounded-[2rem]">
           <Link href={"#"} className="instagram socialContainer">

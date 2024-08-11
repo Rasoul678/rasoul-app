@@ -115,7 +115,7 @@ main {
 /* Tailwind Styles */
 
 .navbar {
-  @apply w-full px-5 py-2 flex justify-between align-middle gap-5 sticky top-0 backdrop-blur-sm uppercase bg-white bg-opacity-7;
+  @apply w-full px-[1.1rem] py-1 sm:py-2 flex justify-between align-middle gap-5 sticky top-0 backdrop-blur-sm uppercase bg-white bg-opacity-7;
 }
 
 .glassmorphism {
