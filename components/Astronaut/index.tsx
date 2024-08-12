@@ -36,7 +36,7 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
       />
       <div className="relative rounded-[2rem]">
         <div className="heading socialLinks">
-          {heading || "Please follow me!"}
+          {heading || "Follow me!"}
         </div>
       </div>
       <div className="flex justify-center gap-2">

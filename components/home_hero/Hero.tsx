@@ -10,7 +10,6 @@ import ProfileImage from "@components/ProfileImage";
 
 import Shortcuts from "./Shortcuts";
 
-
 const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
 
@@ -18,20 +17,20 @@ const HomeHero: React.FC = () => {
   const me = intl?.dict.me!;
 
   return (
-    <div className="min-h-[calc(100lvh-3.3rem)] flex flex-col-reverse md:flex-row-reverse justify-between gap-2 items-center px-[2rem] sm:px-[6rem]">
-      <div className="hidden sm:block">
-        <Astronaut className="w-[8rem] md:w-[15rem]" />
+    <div className="min-h-[calc(100lvh-3.3rem)] flex flex-col-reverse md:flex-row-reverse justify-end gap-8 items-center md:items-stretch px-[2rem] sm:px-[6rem]">
+      <div className="hidden md:block">
+        <Astronaut className="md:w-[15rem]" />
       </div>
-      <div className="mb-3 sm:hidden">
+      <div className="mb-3 md:hidden">
         <Shortcuts />
       </div>
-      <div className="flex flex-col justify-start gap-[1.7rem] sm:gap-[2.5rem] lg:gap-[3.5rem] flex-grow h-full w-full items-center md:items-start">
+      <div className="flex flex-col justify-start gap-[0.7rem] sm:gap-[2.5rem] lg:gap-[3.5rem] h-full w-full items-center md:items-start">
         <div className="flex flex-col justify-center items-center md:block  md:text-5xl mt-[0.5rem] sm:mt-[2rem]">
           <CustomLink href="/aboutme" className="w-[7rem] hidden sm:block">
             <ProfileImage wrapperClassName="w-[7rem]" />
           </CustomLink>
           <span className="text-xl md:text-[1.5rem] font-bold">{welcome}</span>
-          <span className="text-[1.5rem] md:text-[3.3rem] font-bold block leading-[4rem]">
+          <span className="text-[1.5rem] md:text-[3.3rem] font-bold block leading-[4rem] md:leading-[5rem]">
             {me}
           </span>
         </div>
@@ -49,10 +48,10 @@ const HomeHero: React.FC = () => {
             cursor=" "
           />
         </div>
-        <div className="sm:hidden">
-          <Astronaut className="w-[8rem] md:w-[15rem]" />
+        <div className="md:hidden">
+          <Astronaut className="w-[7.5rem] md:w-[15rem]" />
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <Shortcuts />
         </div>
       </div>

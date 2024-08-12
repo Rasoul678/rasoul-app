@@ -6,7 +6,7 @@ interface IProps {}
 
 const Shortcuts: React.FC<IProps> = (props) => {
   return (
-    <div className="flex flex-wrap justify-center gap-2 mt-3  md:text-lg font-my_concert text-center w-full">
+    <div className="flex flex-wrap justify-center gap-2 md:gap-4  md:text-lg font-my_concert text-center w-full">
       <span
         className="text-teal-400 text-[1rem] sm:text-[1.5rem] p-1 border-b-2 border-cyan-200"
         tabIndex={0}
