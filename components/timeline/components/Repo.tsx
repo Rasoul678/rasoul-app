@@ -1,9 +1,11 @@
 import React from "react";
+
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+
 import { iconsList } from "@components/icons";
 import { RepoType } from "@types";
 import { octokit } from "@utils/octokit";
-import { useQuery } from "@tanstack/react-query";
 
 type IProps = {
   repo: RepoType;

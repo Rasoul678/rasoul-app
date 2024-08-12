@@ -1,4 +1,5 @@
 import React from "react";
+
 import Hero from "@components/home_hero/Hero";
 import TimeLine from "@components/timeline/TimeLine";
 import { RepoType } from "@types";

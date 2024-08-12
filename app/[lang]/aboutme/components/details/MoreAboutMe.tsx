@@ -1,6 +1,7 @@
 import React from "react";
-import UserExcerptColumn from "./ExcerptColumn";
+
 import DescriptionColumn from "./DescriptionColumn";
+import UserExcerptColumn from "./ExcerptColumn";
 
 interface IProps {}
 

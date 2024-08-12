@@ -1,8 +1,10 @@
-import { notionService } from "@utils/api-service";
-import MyProfile from "./MyProfile";
-import getQueryClient from "@utils/react-query/getQueryClient";
 import { dehydrate } from "@tanstack/react-query";
+
+import { notionService } from "@utils/api-service";
+import getQueryClient from "@utils/react-query/getQueryClient";
 import Hydrate from "@utils/react-query/hydrate.client";
+
+import MyProfile from "./MyProfile";
 
 const getUser = async () => {
   const users = await notionService.getNotionUser();

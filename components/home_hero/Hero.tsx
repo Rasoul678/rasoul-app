@@ -1,12 +1,15 @@
 "use client";
 
 import { useContext } from "react";
+
+import Astronaut from "@components/Astronaut";
+import CustomLink from "@components/CustomLink";
 import { CustomTypewriter } from "@components/CustomTypewriter/CustomTypewriter";
 import { IntlContext } from "@components/intl-provider";
-import Astronaut from "@components/Astronaut";
-import Shortcuts from "./Shortcuts";
 import ProfileImage from "@components/ProfileImage";
-import CustomLink from "@components/CustomLink";
+
+import Shortcuts from "./Shortcuts";
+
 
 const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
@@ -15,11 +18,11 @@ const HomeHero: React.FC = () => {
   const me = intl?.dict.me!;
 
   return (
-    <div className="min-h-full flex flex-col-reverse md:flex-row-reverse justify-between gap-2 items-center px-[2rem] sm:px-[6rem]">
+    <div className="min-h-[calc(100lvh-3.3rem)] flex flex-col-reverse md:flex-row-reverse justify-between gap-2 items-center px-[2rem] sm:px-[6rem]">
       <div className="hidden sm:block">
         <Astronaut className="w-[8rem] md:w-[15rem]" />
       </div>
-      <div className="sm:hidden">
+      <div className="mb-3 sm:hidden">
         <Shortcuts />
       </div>
       <div className="flex flex-col justify-start gap-[1.7rem] sm:gap-[2.5rem] lg:gap-[3.5rem] flex-grow h-full w-full items-center md:items-start">
@@ -39,7 +42,9 @@ const HomeHero: React.FC = () => {
               "Let me introduce myself!",
               ...intl?.dict.typewriter!,
             ]}
-            wrapperClassName={`text-[1.7rem] md:text-4xl p-2 ${intl?.lang !== 'fa' && "font-my_edu"}`}
+            wrapperClassName={`text-[1.7rem] md:text-4xl p-2 ${
+              intl?.lang !== "fa" && "font-my_edu"
+            }`}
             cursorClassName="text-teal-400 text-[2rem]"
             cursor=" "
           />

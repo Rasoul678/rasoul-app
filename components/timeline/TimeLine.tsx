@@ -1,12 +1,15 @@
 "use client";
 
 import React from "react";
-import { TimeSection } from "./components";
+
 import { TAGS } from "@components/infinite-loop-slider/constants";
-import TechListIcons from "./components/TechListIcons";
+import { RepoType } from "@types";
+
+import { TimeSection } from "./components";
 import Education from "./components/Education";
 import Repos from "./components/Repos";
-import { RepoType } from "@types";
+import TechListIcons from "./components/TechListIcons";
+
 
 type IProps = {
   repos: RepoType[];
@@ -35,7 +38,6 @@ const TimeLine: React.FC<IProps> = ({ repos }) => {
       >
         {({ inView }) => <Education inView={inView} />}
       </TimeSection>
-      {/* <TimeSection tagList={TAGS} color="a5d6a7" /> */}
     </div>
   );
 };

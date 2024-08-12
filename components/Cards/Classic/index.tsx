@@ -1,7 +1,10 @@
-import Image from "next/image";
 import React from "react";
-import ArticleCover from "@assets/wallpaper.jpg";
+
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
+
+import ArticleCover from "@assets/wallpaper.jpg";
+
 
 type IProps = {
   author?: string;

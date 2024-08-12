@@ -1,10 +1,12 @@
 import React, { useMemo } from "react";
+
+import AutoSizer from "react-virtualized-auto-sizer";
 import {
   VariableSizeGrid as Grid,
   GridChildComponentProps,
 } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
-import AutoSizer from "react-virtualized-auto-sizer";
+
 import { chunks } from "@utils";
 
 interface IProps<T> {

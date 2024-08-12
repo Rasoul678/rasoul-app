@@ -1,5 +1,7 @@
 import React from "react";
+
 import { RepoType } from "@types";
+
 import Repo from "./Repo";
 
 type IProps = {
@@ -9,7 +11,7 @@ type IProps = {
 
 const Repos: React.FC<IProps> = ({ inView, repos }) => {
   return (
-    <div className="w-[70%] mt-14 flex flex-col gap-4">
+    <div className="w-[77%] mt-14 flex flex-col gap-4 overflow-hidden">
       {repos.slice(0, 10).map((repo, i) => {
         return (
           <div

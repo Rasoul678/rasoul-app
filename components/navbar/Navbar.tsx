@@ -1,5 +1,7 @@
 import React from "react";
+
 import Menu from "@components/menu";
+
 import { NavLinks } from "./components";
 
 type IProps = {};

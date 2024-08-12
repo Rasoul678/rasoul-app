@@ -1,9 +1,10 @@
 "use client";
 
-import { Dictionaries } from "@app/[lang]/dictionaries";
-import type { Locale } from "@i18n-config";
 import React from "react";
 import { createContext } from "react";
+
+import { Dictionaries } from "@app/[lang]/dictionaries";
+import type { Locale } from "@i18n-config";
 
 export const IntlContext = createContext<{
   dict: Dictionaries;

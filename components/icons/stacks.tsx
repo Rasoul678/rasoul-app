@@ -11,8 +11,9 @@ import ts from "@assets/icon-pack/icons8-typescript.svg";
 import webpack from "@assets/icon-pack/icons8-webpack.svg";
 import yarn from "@assets/icon-pack/icons8-yarn-logo.svg";
 import nextjs from "@assets/svg/nextjs.svg";
-import GeneralIcon from "./GeneralIcon";
 import { IconType } from "@types";
+
+import GeneralIcon from "./GeneralIcon";
 
 export type StackIconsType = {
   [key in (typeof stackLists)[number]]: (props?: IconType) => JSX.Element;

@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
+
+import { useQuery } from "@tanstack/react-query";
+import dynamic from "next/dynamic";
+
 import { iconsList } from "@components/icons";
 import { useClickOutside } from "@hooks/useClickOutside";
-import dynamic from "next/dynamic";
 import { clientService } from "@utils/api-service";
-import { useQuery } from "@tanstack/react-query";
+
 
 const MenuDropDown = dynamic(() =>
   import("./MenuDropDown").then((mod) => mod.default)

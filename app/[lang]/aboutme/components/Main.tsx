@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import ProfileImage from "@components/ProfileImage";
+
 import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
+import ProfileImage from "@components/ProfileImage";
 
 interface IProps {
   user: PersonUserObjectResponse;

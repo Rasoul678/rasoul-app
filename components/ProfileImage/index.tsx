@@ -1,7 +1,9 @@
-import Image from "next/image";
 import React from "react";
-import ProfilePic from "@assets/profile-pic-2.jpg";
+
+import Image from "next/image";
+
 import ProfileFrame from "@assets/frame.png";
+import ProfilePic from "@assets/profile-pic-2.jpg";
 
 interface IProps {
   wrapperClassName?: string;

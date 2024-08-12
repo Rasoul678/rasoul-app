@@ -1,7 +1,9 @@
 import React from "react";
+
 import Image from "next/image";
-import userPic from "@assets/profile-pic-2.jpg";
+
 import verified from "@assets/icon-pack/icons8-instagram-verification-badge-420.svg";
+import userPic from "@assets/profile-pic-2.jpg";
 
 type IProps = {};
 

@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+
+import { useQuery } from "@tanstack/react-query";
+
+import { clientService } from "@utils/api-service";
+
 import ProfileDetails from "./components/Details";
 import ProfileMain from "./components/Main";
-import { useQuery } from "@tanstack/react-query";
-import { clientService } from "@utils/api-service";
 
 const MyProfile = () => {
   //! Fetch user on the client

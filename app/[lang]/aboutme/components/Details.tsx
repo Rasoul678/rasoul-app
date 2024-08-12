@@ -1,5 +1,7 @@
 import React from "react";
+
 import dynamic from "next/dynamic";
+
 import Spinner from "@components/spinner";
 
 const MoreAboutMe = dynamic(

@@ -1,11 +1,14 @@
 import React from "react";
+
+import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { usePathname, useRouter } from "next/navigation";
+
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
-import { Locale, i18n } from "@i18n-config";
-import { MenuItem, Triangle } from "./components";
 import ProfileImage from "@components/ProfileImage";
-import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { Locale, i18n } from "@i18n-config";
+
+import { MenuItem, Triangle } from "./components";
 
 interface IProps {
   user?: PersonUserObjectResponse;

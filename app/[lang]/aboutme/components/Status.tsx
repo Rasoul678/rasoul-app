@@ -1,5 +1,6 @@
-import { iconsList } from "@components/icons";
 import React from "react";
+
+import { iconsList } from "@components/icons";
 
 type IProps = {};
 

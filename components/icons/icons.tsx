@@ -1,6 +1,6 @@
+import { otherIcons } from "./others";
 import { socialIcons } from "./socials";
 import { stackIcons } from "./stacks";
-import { otherIcons } from "./others";
 
 export const iconsList = {
   stacks: {

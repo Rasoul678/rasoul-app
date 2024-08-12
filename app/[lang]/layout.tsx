@@ -1,10 +1,9 @@
 import "@styles/globals.css";
-import Navbar from "@components/navbar";
 import Footer from "@components/footer";
+import ServerIntlProvider from "@components/intl-provider";
+import Navbar from "@components/navbar";
 import TopLoader from "@components/top-loader";
 import type { Locale } from "@i18n-config";
-import ServerIntlProvider from "@components/intl-provider";
-import { getDictionary } from "./dictionaries";
 import {
   iranSans,
   quicksand,
@@ -15,6 +14,8 @@ import {
   lilita,
 } from "@utils";
 import RQProvider from "@utils/react-query/provider";
+
+import { getDictionary } from "./dictionaries";
 
 export const metadata = {
   title: "Rasoul Portfolio",

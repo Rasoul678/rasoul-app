@@ -1,8 +1,10 @@
 import React from "react";
+
 import Image from "next/image";
+import Link from "next/link";
+
 import AstronautPNG from "@assets/astronaut.png";
 import { iconsList } from "@components/icons";
-import Link from "next/link";
 
 interface IProps {
   className?: string;
@@ -32,15 +34,17 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
         height={500}
         src={AstronautPNG}
       />
-      <div className="heading">{heading || "Please follow me!"}</div>
       <div className="relative rounded-[2rem]">
-        <div className="socialLinks flex justify-center gap-2 rounded-[2rem]">
-          <Link href={"#"} className="instagram socialContainer">
-            {iconsList.socials.github()}
-          </Link>
-          {iconsList.socials.linkedin()}
-          {iconsList.socials.twitter()}
+        <div className="heading socialLinks">
+          {heading || "Please follow me!"}
         </div>
+      </div>
+      <div className="flex justify-center gap-2">
+        <Link href={"#"} className="instagram socialContainer">
+          {iconsList.socials.github()}
+        </Link>
+        {iconsList.socials.linkedin()}
+        {iconsList.socials.twitter()}
       </div>
     </div>
   );

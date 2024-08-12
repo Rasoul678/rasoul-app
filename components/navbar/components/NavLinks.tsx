@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+
+import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons/icons";
 import { IntlContext } from "@components/intl-provider";
-import CustomLink from "@components/CustomLink";
 
 export const NavLinks = () => {
   const intl = React.useContext(IntlContext);

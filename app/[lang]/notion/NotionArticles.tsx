@@ -1,13 +1,15 @@
 "use client";
 
+import React from "react";
+
 import { useQuery } from "@tanstack/react-query";
+
+import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
+import ClassicCard from "@components/Cards/Classic";
+import VirtualizedGrid from "@components/virtualized-grid";
+import { useElementSize } from "@hooks/useElementSize";
 import { MainDBPropertiesType, NotionDBResultsType } from "@types";
 import { clientService } from "@utils/api-service";
-import React from "react";
-import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
-import VirtualizedGrid from "@components/virtualized-grid";
-import ClassicCard from "@components/Cards/Classic";
-import { useElementSize } from "@hooks/useElementSize";
 
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;

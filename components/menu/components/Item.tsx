@@ -1,7 +1,9 @@
 import React from "react";
+
+import Link from "next/link";
+
 import { ArrowIcon } from "@components/icons";
 import { useClickOutside } from "@hooks/useClickOutside";
-import Link from "next/link";
 
 type IProps = {
   name: string | null | undefined;

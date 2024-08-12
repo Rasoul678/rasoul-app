@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { PropsWithChildren, useContext } from "react";
+
+import Link from "next/link";
+
 import { IntlContext } from "@components/intl-provider";
 import { CustomLinkType } from "@types";
 

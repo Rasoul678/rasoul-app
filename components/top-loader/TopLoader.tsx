@@ -1,4 +1,5 @@
 import React from "react";
+
 import NextTopLoader, { NextTopLoaderProps } from "nextjs-toploader";
 
 interface IProps extends NextTopLoaderProps {}

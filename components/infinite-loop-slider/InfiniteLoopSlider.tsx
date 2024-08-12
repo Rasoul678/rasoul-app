@@ -1,7 +1,9 @@
 "use client";
 
 import React, { memo } from "react";
+
 import { random } from "@utils/helpers";
+
 import TagsRow from "./components/TagsRow";
 
 type IProps = {
