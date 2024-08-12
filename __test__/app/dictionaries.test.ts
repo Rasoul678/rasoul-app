@@ -1,5 +1,5 @@
 import { expect, it, vi, describe, Mock, afterEach } from "vitest";
-import { getDictionary } from "./dictionaries";
+import { getDictionary } from "@app/[lang]/dictionaries";
 import enJson from "@assets/dictionaries/en/en.json";
 import faJson from "@assets/dictionaries/fa/fa.json";
 
@@ -7,7 +7,7 @@ import faJson from "@assets/dictionaries/fa/fa.json";
  * Disables a package that checks that module is importable only (server-only) on the server side.
  * Also, this mock can be defined in the Vitest setup file.
  */
-vi.mock("./dictionaries", () => {
+vi.mock("@app/[lang]/dictionaries", () => {
   return { getDictionary: vi.fn() };
 });
 
