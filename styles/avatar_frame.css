@@ -1,0 +1,27 @@
+/*? Avatar Frame */
+.avatar-frame {
+  position: absolute;
+  pointer-events: none;
+  top: -8%;
+  left: -10%;
+  min-width: 120%;
+}
+.anim-spin {
+  animation: spin 20s linear infinite;
+}
+
+.anim-hue {
+  animation: hue 20s linear infinite;
+}
+
+@keyframes hue {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

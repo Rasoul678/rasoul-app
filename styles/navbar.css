@@ -1,0 +1,29 @@
+/*? navbar */
+.navbar {
+  @apply w-full px-[.5rem] h-[3.3rem] flex justify-between items-center gap-5 sticky top-0 backdrop-blur-sm uppercase bg-white bg-opacity-7;
+}
+
+.nav-links {
+  @apply flex gap-1 sm:gap-3;
+  direction: ltr;
+}
+
+.nav-links a {
+  @apply leading-8 flex justify-center;
+}
+
+.menu-wrapper {
+  @apply rounded-lg bg-gray-900 shadow-xl px-4 absolute mt-7 w-[13rem] break-all rtl:right-3 ltr:left-3;
+}
+
+.menu-link {
+  @apply text-white flex-1 text-base hover:text-teal-400;
+}
+
+.menu-regular {
+  @apply text-white text-base hover:text-teal-400 cursor-pointer;
+}
+
+.sub-menu-wrapper {
+  @apply py-2 bg-gray-900 rounded-lg shadow-xl px-4 absolute -top-0 break-normal;
+}

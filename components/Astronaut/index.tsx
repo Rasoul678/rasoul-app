@@ -15,13 +15,13 @@ interface IProps {
  * An Astronaut component.
  *
  * @component
- * @param {Object} props - The component accepts width as props
- * @param {string} props.className - The width for image
+ * @param {string} props.className - The class for image
+ * @param {string} props.heading - The heading text
  * @returns {JSX.Element} The rendered Astronaut component.
  *
  * @example
- *  Render a button with the text "Click Me"
- * <Button text="Click Me" onClick={() => console.log('Button clicked!')} />
+ *  Render a Astronaut component and a text
+ * <Astronaut heading="..." className="..." />
  */
 
 const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
@@ -35,14 +35,10 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
         src={AstronautPNG}
       />
       <div className="relative rounded-[2rem]">
-        <div className="heading socialLinks">
-          {heading || "Follow me!"}
-        </div>
+        <div className="heading">{heading || "Follow me!"}</div>
       </div>
       <div className="flex justify-center gap-2">
-        <Link href={"#"} className="instagram socialContainer">
-          {iconsList.socials.github()}
-        </Link>
+        <Link href={"#"}>{iconsList.socials.github()}</Link>
         {iconsList.socials.linkedin()}
         {iconsList.socials.twitter()}
       </div>
