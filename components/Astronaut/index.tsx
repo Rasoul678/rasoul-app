@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import AstronautPNG from "@assets/astronaut.png";
 import { iconsList } from "@components/icons";
+import { IntlContext } from "@components/intl-provider";
 
 interface IProps {
   className?: string;
@@ -25,6 +26,9 @@ interface IProps {
  */
 
 const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
+  const intl = useContext(IntlContext);
+  const followMe = intl?.dict["follow-me"]!;
+
   return (
     <div className="astronautWrapper">
       <Image
@@ -35,7 +39,7 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
         src={AstronautPNG}
       />
       <div className="relative rounded-[2rem]">
-        <div className="heading">{heading || "Follow me!"}</div>
+        <div data-vi='astronaut-vi' className="heading">{heading || followMe}</div>
       </div>
       <div className="flex justify-center gap-2">
         <Link href={"#"}>{iconsList.socials.github()}</Link>
