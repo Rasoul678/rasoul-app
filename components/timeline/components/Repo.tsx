@@ -1,25 +1,15 @@
 import React from "react";
 
-import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 import { iconsList } from "@components/icons";
 import { RepoType } from "@types";
-import { octokit } from "@utils/octokit";
 
 type IProps = {
   repo: RepoType;
 };
 
 const Repo: React.FC<IProps> = ({ repo }) => {
-  const { data: res } = useQuery({
-    queryKey: [`repo-${repo.name}`],
-    queryFn: () =>
-      octokit.request(`GET /repos/Rasoul678/${repo.name}/languages`),
-  });
-
-  const languages = Object.keys(res?.data || {});
-
   return (
     <>
       {iconsList.stacks.git({ width: 30, alt: repo.name })}
@@ -34,12 +24,12 @@ const Repo: React.FC<IProps> = ({ repo }) => {
         </Link>
       </code>
       <div className="flex-grow text-end hidden sm:block">
-        {languages.slice(0, 3).map((lang, i) => (
+        {repo.all_languages.map((lang) => (
           <code
-            key={i}
+            key={lang[1]}
             className="text-sm mx-[0.2rem] underline text-green-400 font-bold"
           >
-            {lang}
+            {lang[0]}
           </code>
         ))}
       </div>

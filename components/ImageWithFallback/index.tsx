@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { StaticImport, ImageProps } from "next/dist/shared/lib/get-img-props";
+import { ImageProps, StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
 type IProps = ImageProps & {
-  fallbackSrc: string | StaticImport;
+  fallbackSrc?: string | StaticImport;
   src: string | StaticImport;
   alt: string;
 };

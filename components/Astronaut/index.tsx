@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 
 import Image from "next/image";
@@ -39,7 +41,9 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
         src={AstronautPNG}
       />
       <div className="relative rounded-[2rem]">
-        <div data-vi='vit-astr-head' className="heading">{heading || followMe}</div>
+        <div data-vi="vit-astr-head" className="heading">
+          {heading || followMe}
+        </div>
       </div>
       <div className="flex justify-center gap-2">
         <Link href={"#"}>{iconsList.socials.github()}</Link>

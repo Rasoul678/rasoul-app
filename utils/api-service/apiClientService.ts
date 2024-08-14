@@ -3,6 +3,7 @@ import {
   PersonUserObjectResponse,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+
 import { NotionRespondType, NotionUserType } from "@types";
 
 class APIClientSide {

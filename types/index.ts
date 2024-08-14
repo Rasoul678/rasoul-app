@@ -19,6 +19,7 @@ export type IconType = {
 };
 
 export type RepoType = {
+  all_languages: [string, number][];
   id: number;
   node_id: string;
   name: string;

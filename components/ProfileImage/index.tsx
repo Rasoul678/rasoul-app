@@ -1,9 +1,8 @@
 import React from "react";
 
-import Image from "next/image";
-
 import ProfileFrame from "@assets/frame.png";
 import ProfilePic from "@assets/profile-pic-2.jpg";
+import ImageWithFallback from "@components/ImageWithFallback";
 
 interface IProps {
   wrapperClassName?: string;
@@ -16,7 +15,7 @@ const ProfileImage: React.FC<IProps> = ({
 }) => {
   return (
     <div className={`relative ${wrapperClassName}`}>
-      <Image
+      <ImageWithFallback
         src={ProfilePic}
         alt="My-Picture"
         aria-label="my profile picture"
@@ -24,7 +23,7 @@ const ProfileImage: React.FC<IProps> = ({
         height={150}
         className="rounded-full"
       />
-      <Image
+      <ImageWithFallback
         src={ProfileFrame}
         alt="my-frame"
         className={`avatar-frame ${
@@ -32,7 +31,7 @@ const ProfileImage: React.FC<IProps> = ({
         }`}
         width={300}
         height={300}
-      ></Image>
+      />
     </div>
   );
 };
