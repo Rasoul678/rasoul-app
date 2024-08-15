@@ -1,7 +1,9 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
-import { clientService } from "../../utils/api-service/apiClientService";
 import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { afterEach, describe, expect, it, vi } from "vitest";
+
 import { executeBash } from "@__test__/helper";
+
+import { clientService } from "../../utils/api-service/apiClientService";
 
 //* check if Next server is running for real api call
 let { stdout } = await executeBash(

@@ -30,6 +30,7 @@ const GeneralIcon: React.FC<IProps> = (props) => {
       width={width}
       height={height}
       tabIndex={0}
+      data-vi={`vi-${alt}`}
     />
   );
 };

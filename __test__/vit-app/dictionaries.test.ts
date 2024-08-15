@@ -1,4 +1,5 @@
-import { expect, it, vi, describe, Mock, afterEach } from "vitest";
+import { afterEach, describe, expect, it, Mock, vi } from "vitest";
+
 import { getDictionary } from "@app/[lang]/dictionaries";
 import enJson from "@assets/dictionaries/en/en.json";
 import faJson from "@assets/dictionaries/fa/fa.json";

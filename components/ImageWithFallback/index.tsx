@@ -17,6 +17,7 @@ const ImageWithFallback = (props: IProps) => {
     <Image
       {...rest}
       alt={alt}
+      data-vi={`vi-${alt}`}
       src={imgSrc}
       onError={() => {
         setImgSrc(fallbackSrc);

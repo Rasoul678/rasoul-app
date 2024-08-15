@@ -1,65 +1,67 @@
 /*? Astronaut */
 .astronautWrapper {
-    position: relative;
-    padding: 1rem;
-    overflow: hidden;
-    width: 15.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  width: 15.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+@keyframes keyframes-intro {
+  100% {
+    transform: translate(-100%);
+    opacity: 0;
   }
-  
-  @keyframes keyframes-intro {
-    100% {
-      transform: translate(-100%);
-      opacity: 0;
-    }
+}
+
+.astronautWrapper .image {
+  animation: keyframes-floating-img 10s ease-in-out infinite;
+}
+
+@keyframes keyframes-floating-img {
+  0% {
+    transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
   }
-  
-  .astronautWrapper .image {
-    animation: keyframes-floating-img 10s ease-in-out infinite;
+
+  50% {
+    transform: translate(2%, -2%) scaleY(1) rotate(5deg);
   }
-  
-  @keyframes keyframes-floating-img {
-    0% {
-      transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
-    }
-  
-    50% {
-      transform: translate(2%, -2%) scaleY(1) rotate(5deg);
-    }
-  
-    100% {
-      transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
-    }
+
+  100% {
+    transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
   }
-  
-  .astronautWrapper .heading {
-    font-weight: 600;
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: calc(1em * -2);
-    padding-block-start: 2em;
-    color: #fff;
-    animation: keyframes-flash-text 0.5s infinite;
+}
+
+.astronautWrapper .heading {
+  font-weight: 600;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: calc(1em * -2);
+  padding-block-start: 2em;
+  color: #fff;
+  animation: keyframes-flash-text 0.5s infinite;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  top: 0%;
+  left: 50%;
+  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  filter: blur(20px);
+  pointer-events: none;
+  animation: keyframes-intro 1s ease-in forwards;
+}
+
+@keyframes keyframes-flash-text {
+  50% {
+    opacity: 0.5;
   }
-  
-  .heading::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-    top: 0%;
-    left: 50%;
-    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-    filter: blur(20px);
-    pointer-events: none;
-    animation: keyframes-intro 1s ease-in forwards;
-  }
-  
-  @keyframes keyframes-flash-text {
-    50% {
-      opacity: 0.5;
-    }
-  }
+}

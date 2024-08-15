@@ -2,11 +2,11 @@
 
 import React, { useContext } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import AstronautPNG from "@assets/astronaut.png";
 import { iconsList } from "@components/icons";
+import ImageWithFallback from "@components/ImageWithFallback";
 import { IntlContext } from "@components/intl-provider";
 
 interface IProps {
@@ -33,9 +33,9 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
 
   return (
     <div className="astronautWrapper">
-      <Image
+      <ImageWithFallback
         className={`image ${className}`}
-        alt="my astronaut avatar"
+        alt="my-astronaut-avatar"
         width={500}
         height={500}
         src={AstronautPNG}
