@@ -50,6 +50,7 @@ export const TimeSection: React.FC<IProps> = (props) => {
           </div>
         </div>
         <TimeCrawler withCrawler={withCrawler} color={color} />
+        <TimeCrawler withCrawler={withCrawler} color={color} dir="right" />
         {children?.({ inView })}
       </section>
     </div>

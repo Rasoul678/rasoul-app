@@ -27,7 +27,7 @@ const Repo: React.FC<IProps> = ({ repo }) => {
         {repo.all_languages.map((lang) => (
           <code
             key={lang[1]}
-            className="text-sm mx-[0.2rem] underline text-green-400 font-bold"
+            className="text-sm mx-[0.2rem] underline green_gradient font-bold"
           >
             {lang[0]}
           </code>

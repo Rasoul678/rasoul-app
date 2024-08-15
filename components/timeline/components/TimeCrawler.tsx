@@ -10,9 +10,16 @@ import Sparkler from "./Sparkler";
 type IProps = {
   color?: string;
   withCrawler?: boolean;
+  isSparkling?: boolean;
+  dir?: "left" | "right";
 };
 
-const TimeCrawler: React.FC<IProps> = ({ color = "8ce7f2", withCrawler }) => {
+const TimeCrawler: React.FC<IProps> = ({
+  color = "8ce7f2",
+  withCrawler,
+  isSparkling,
+  dir = "left",
+}) => {
   const ref = React.useRef(null);
   const crawlerRef = React.useRef(null);
 
@@ -32,7 +39,9 @@ const TimeCrawler: React.FC<IProps> = ({ color = "8ce7f2", withCrawler }) => {
   return (
     <div
       ref={ref}
-      className="absolute left-[7%] w-[0.3rem] rounded-sm h-full bg-gray-800/70"
+      className={`absolute ${
+        dir == "left" ? "left-[7%]" : "right-[7%]"
+      } w-[0.3rem] rounded-sm h-full bg-gray-800/70`}
     >
       {withCrawler && (
         <div
@@ -45,7 +54,9 @@ const TimeCrawler: React.FC<IProps> = ({ color = "8ce7f2", withCrawler }) => {
             } as CSSProperties
           }
         >
-          <Sparkler hasAnimation={hasAnimation} color={color} />
+          {isSparkling && (
+            <Sparkler hasAnimation={hasAnimation} color={color} />
+          )}
         </div>
       )}
     </div>
