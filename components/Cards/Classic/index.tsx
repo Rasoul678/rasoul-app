@@ -4,13 +4,14 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
 import ArticleCover from "@assets/wallpaper.jpg";
+import ImageWithFallback from "@components/ImageWithFallback";
 
 
 type IProps = {
   author?: string;
   title?: string | null;
   description?: string | null;
-  src?: string | StaticImport;
+  src: string | StaticImport;
   icon?: string | null;
 };
 
@@ -24,17 +25,18 @@ const ClassicCard: React.FC<IProps> = ({
   return (
     <div className="shadow-[0px_4px_16px_px_#367E08] h-[20rem] w-[18rem] group gap-[0.5em] rounded-[0.5em] relative flex justify-end flex-col p-[1em] z-[1] overflow-hidden">
       <div className="absolute top-0 left-0 h-full w-full bg-[#111111]"></div>
-      <Image
+      <ImageWithFallback
         className="absolute top-0 left-0 object-cover h-[10rem] max-h-[10.5rem]"
-        alt="article-cover"
+        alt={title || 'card'}
         width={350}
         height={150}
-        src={src || ArticleCover}
+        src={src}
+        fallbackSrc={ArticleCover}
       />
       {icon && (
         <Image
           className="absolute top-[9rem] right-0 object-cover h-[2rem] max-h-[3.5rem]"
-          alt="article-cover"
+          alt={`${title}-icon`}
           width={40}
           height={50}
           src={icon}

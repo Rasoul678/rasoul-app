@@ -5,7 +5,7 @@ import Image from "next/image";
 
 type IProps = ImageProps & {
   fallbackSrc?: string | StaticImport;
-  src: string | StaticImport;
+  src?: string | StaticImport;
   alt: string;
 };
 
