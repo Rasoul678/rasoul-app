@@ -1,0 +1,13 @@
+{
+    "short_name": "RaHeRo",
+    "name": "Rasoul's Portfolio",
+    "description":"This website shows Rasoul Hesami Rostami's portfolio",
+    "lang":"en-US",
+    "scope": "/",
+    "start_url": "/",
+    "display": "browser",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "orientation": "landscape"
+}
+  

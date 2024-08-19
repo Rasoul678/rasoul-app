@@ -2,11 +2,17 @@ import React from "react";
 
 import { dehydrate } from "@tanstack/react-query";
 
+import { Metadata } from "next";
+
 import { notionService } from "@utils/api-service";
 import getQueryClient from "@utils/react-query/getQueryClient";
 import Hydrate from "@utils/react-query/hydrate.client";
 
 import NotionArticles from "./NotionArticles";
+
+export const metadata: Metadata = {
+  title: 'articles',
+}
 
 interface IProps {}
 

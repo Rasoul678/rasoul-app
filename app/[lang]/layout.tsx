@@ -1,26 +1,27 @@
-import "@styles/globals.css";
+
 import Footer from "@components/footer";
 import ServerIntlProvider from "@components/intl-provider";
 import Navbar from "@components/navbar";
 import TopLoader from "@components/top-loader";
 import type { Locale } from "@i18n-config";
+
+import "@styles/globals.css";
+
 import {
-  iranSans,
-  quicksand,
-  exo2,
   caveat,
   concert,
   edu,
+  exo2,
+  iranSans,
   lilita,
+  quicksand,
 } from "@utils";
+import { getMyMetadata } from '@utils/myMetadata';
 import RQProvider from "@utils/react-query/provider";
 
 import { getDictionary } from "./dictionaries";
 
-export const metadata = {
-  title: "Rasoul Portfolio",
-  description: "My portfolio website",
-};
+export const metadata = getMyMetadata();
 
 interface IProps {
   children: React.ReactNode;

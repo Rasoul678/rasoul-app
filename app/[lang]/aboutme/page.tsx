@@ -1,10 +1,16 @@
 import { dehydrate } from "@tanstack/react-query";
 
+import { Metadata } from "next";
+
 import { notionService } from "@utils/api-service";
 import getQueryClient from "@utils/react-query/getQueryClient";
 import Hydrate from "@utils/react-query/hydrate.client";
 
 import MyProfile from "./MyProfile";
+
+export const metadata: Metadata = {
+  title: 'about',
+}
 
 const getUser = async () => {
   const users = await notionService.getNotionUser();
