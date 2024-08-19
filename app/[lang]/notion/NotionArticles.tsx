@@ -36,19 +36,19 @@ const NotionArticles: React.FC<IProps> = (props) => {
   }
 
   const columnCount = (): number => {
-    if (windowState.width < 460) {
-      return 1;
-    }
-
-    if (windowState.width < 860 && windowState.width > 460) {
+    if (windowState.width < 520) {
       return 2;
     }
 
-    if (windowState.width > 860 && windowState.width < 1100) {
+    if (windowState.width < 860 && windowState.width > 520) {
       return 3;
     }
 
-    return 4;
+    if (windowState.width > 860 && windowState.width < 1100) {
+      return 4;
+    }
+
+    return 5;
   };
 
   console.log(records);
@@ -59,7 +59,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
           <VirtualizedGrid
             data={records?.results}
             columnCount={columnCount()}
-            rowHeight={350}
+            rowHeight={270}
           >
             {({ columnIndex, data, rowIndex, style }) => {
               const article = data.allData?.[rowIndex]?.[
