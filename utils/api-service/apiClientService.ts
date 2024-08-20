@@ -26,6 +26,12 @@ class APIClientSide {
     const records: QueryDatabaseResponse = await response.json();
     return records;
   };
+
+  public getDBRecByTag = async (tag?: string) => {
+    const response = await fetch(`/api/notion/maindb/${tag}`);
+    const records: QueryDatabaseResponse = await response.json();
+    return records;
+  };
 }
 
 export const clientService = new APIClientSide();

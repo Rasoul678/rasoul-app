@@ -1,8 +1,6 @@
-import React from "react";
-
 import { dehydrate } from "@tanstack/react-query";
 
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 
 import { notionService } from "@utils/api-service";
 import getQueryClient from "@utils/react-query/getQueryClient";
@@ -10,30 +8,37 @@ import Hydrate from "@utils/react-query/hydrate.client";
 
 import NotionArticles from "./NotionArticles";
 
-export const metadata: Metadata = {
-  title: 'articles',
-}
+type IProps = {
+  params: { article: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-interface IProps {}
+export const generateMetadata: (args: IProps) => Metadata = ({ params }) => {
+  return {
+    title: {
+      absolute: `@Articles | ${params.article}`,
+    },
+  };
+};
 
-const getRecords = async () => {
-  const records = await notionService.getDBMain();
+const getRecords = async (tag: string) => {
+  const records = await notionService.getDBMainByTag(tag);
 
   return records;
 };
 
-const Notion: React.FC<IProps> = async (props) => {
+const Articles: NextPage<IProps> = async ({ params }) => {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ["hydrate-notion-db"],
-    queryFn: getRecords,
+    queryKey: [`hydrate-notion-db-${params.article}`],
+    queryFn: () => getRecords(params.article),
   });
   const dehydratedState = dehydrate(queryClient);
 
   return (
     <div>
       <h1 className="font-nunito text-4xl text-center my-[2.5rem] text-green-600 uppercase">
-        My Articles
+        {params.article} Articles
       </h1>
       <Hydrate state={dehydratedState}>
         <NotionArticles />
@@ -42,4 +47,4 @@ const Notion: React.FC<IProps> = async (props) => {
   );
 };
 
-export default Notion;
+export default Articles;

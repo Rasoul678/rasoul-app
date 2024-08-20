@@ -10,15 +10,18 @@ import VirtualizedGrid from "@components/virtualized-grid";
 import { useElementSize } from "@hooks/useElementSize";
 import { MainDBPropertiesType, NotionDBResultsType } from "@types";
 import { clientService } from "@utils/api-service";
+import { useParams } from "next/navigation";
 
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
 const NotionArticles: React.FC<IProps> = (props) => {
+  const params = useParams<{ article: string }>();
+
   //! Fetch DB records on the client
   const { data: records } = useQuery({
-    queryKey: ["hydrate-notion-db"],
-    queryFn: () => clientService.getDBRecords(),
+    queryKey: [`hydrate-notion-db-${params.article}`],
+    queryFn: () => clientService.getDBRecByTag(params.article),
   });
 
   const [windowState] = useElementSize();
@@ -51,7 +54,6 @@ const NotionArticles: React.FC<IProps> = (props) => {
     return 5;
   };
 
-  console.log(records);
   return (
     <div className="h-screen w-full">
       {records && (

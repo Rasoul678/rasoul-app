@@ -1,5 +1,7 @@
 import { Client } from "@notionhq/client";
 
+type UserByRolleArgsType = { rolle?: "Admin" | "User" };
+
 //! Initializing a client
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -16,13 +18,25 @@ class NotionService {
     });
   };
 
-  public getDBUser = async () => {
+  public getDBMainByTag = async (tag?: string) => {
+    return await notion.databases.query({
+      database_id: process.env.NOTION_DB_ID,
+      filter: {
+        property: "Tags",
+        multi_select: {
+          contains: tag || "",
+        },
+      },
+    });
+  };
+
+  public getDBUserByRolle = async (args?: UserByRolleArgsType) => {
     return await notion.databases.query({
       database_id: process.env.NOTION_UDB_ID,
       filter: {
         property: "Rolle",
         select: {
-          equals: "Admin",
+          equals: args?.rolle || "Admin",
         },
       },
     });

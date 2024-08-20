@@ -2,7 +2,12 @@ import Hero from "@components/home_hero/Hero";
 import TimeLine from "@components/timeline/TimeLine";
 import { serverService } from "@utils/api-service";
 
-const Home = async () => {
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+const Home = async ({ params, searchParams }: Props) => {
   const repoWithLangs = await serverService.getAllRepoWithLangs();
 
   return (

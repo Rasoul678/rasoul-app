@@ -17,7 +17,7 @@ export const NavLinks = () => {
           className: "self-baseline",
         })}
       </CustomLink>
-      <CustomLink href="notion">
+      <CustomLink href="articles">
         {iconsList.ideas({
           alt: intl?.dict.nav.articles!,
           className: "self-baseline",

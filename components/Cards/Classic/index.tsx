@@ -6,7 +6,6 @@ import Image from "next/image";
 import ArticleCover from "@assets/wallpaper.jpg";
 import ImageWithFallback from "@components/ImageWithFallback";
 
-
 type IProps = {
   author?: string;
   title?: string | null;
@@ -23,11 +22,11 @@ const ClassicCard: React.FC<IProps> = ({
   icon,
 }) => {
   return (
-    <div className="shadow-[0px_4px_16px_px_#367E08] h-[15rem] sm:h-[16rem] w-[11rem] sm:w-[13rem] md:w-[15rem] group gap-[0.5em] rounded-[0.5em] relative flex justify-end flex-col px-[.8em] py-[.5em] z-[1] overflow-hidden">
+    <div className="shadow-[0px_4px_16px_px_#367E08] h-[15rem] sm:h-[16rem] w-[10rem] sm:w-[12.5rem] md:w-[15rem] group gap-[0.5em] rounded-[0.5em] relative flex justify-end flex-col px-[.8em] py-[.5em] z-[1] overflow-hidden">
       <div className="absolute top-0 left-0 h-full w-full bg-[#111111]"></div>
       <ImageWithFallback
         className="absolute top-0 left-0 object-cover h-[8rem] sm:h-[9rem] max-h-[10.5rem]"
-        alt={title || 'card'}
+        alt={title || "card"}
         width={350}
         height={150}
         src={src}
