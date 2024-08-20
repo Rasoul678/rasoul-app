@@ -1,4 +1,3 @@
-
 import Footer from "@components/footer";
 import ServerIntlProvider from "@components/intl-provider";
 import Navbar from "@components/navbar";
@@ -16,7 +15,7 @@ import {
   lilita,
   quicksand,
 } from "@utils";
-import { getMyMetadata } from '@utils/myMetadata';
+import { getMyMetadata } from "@utils/myMetadata";
 import RQProvider from "@utils/react-query/provider";
 
 import { getDictionary } from "./dictionaries";

@@ -1,7 +1,8 @@
 import React from "react";
 
-import CustomLink from "@components/CustomLink";
 import { Metadata } from "next";
+
+import CustomLink from "@components/CustomLink";
 
 export const metadata: Metadata = {
   title: "articles",

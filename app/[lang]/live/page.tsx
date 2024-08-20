@@ -1,7 +1,8 @@
 import React from "react";
 
-import { notionService } from "@utils/api-service";
 import { Metadata } from "next";
+
+import { notionService } from "@utils/api-service";
 
 export const metadata: Metadata = {
   title: "live coding",

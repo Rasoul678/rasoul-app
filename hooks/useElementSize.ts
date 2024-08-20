@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, useMemo, MutableRefObject } from "react";
+import { MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
+
 import { Subject, debounceTime } from "rxjs";
 
 // The shape for initial state before detection.

@@ -36,7 +36,7 @@ export const getMyMetadata: () => Metadata = () => ({
     title: "Dev Portfolio",
     description: "This website shows my portfolio",
     siteName: "Rasoul Portfolio",
-    images: "/og-main-image.png",
+    images: "/en/og-main-image.png",
     locale: "en_US",
     type: "website",
     emails: "h.rostami.r@gmail.com",

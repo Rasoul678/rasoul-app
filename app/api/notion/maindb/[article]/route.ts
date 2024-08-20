@@ -1,5 +1,6 @@
-import { notionService } from "@utils/api-service";
 import { NextApiRequest } from "next";
+
+import { notionService } from "@utils/api-service";
 
 export const GET = async (
   _req: NextApiRequest,

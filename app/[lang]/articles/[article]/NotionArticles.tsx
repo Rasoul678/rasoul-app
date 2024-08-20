@@ -4,13 +4,15 @@ import React from "react";
 
 import { useQuery } from "@tanstack/react-query";
 
+import { useParams } from "next/navigation";
+
 import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
 import ClassicCard from "@components/Cards/Classic";
 import VirtualizedGrid from "@components/virtualized-grid";
-import { useElementSize } from "@hooks/useElementSize";
 import { MainDBPropertiesType, NotionDBResultsType } from "@types";
 import { clientService } from "@utils/api-service";
-import { useParams } from "next/navigation";
+
+import { useColumnCount } from "./useColumnCount";
 
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
@@ -24,13 +26,13 @@ const NotionArticles: React.FC<IProps> = (props) => {
     queryFn: () => clientService.getDBRecByTag(params.article),
   });
 
-  const [windowState] = useElementSize();
+  const { columnCount, windowState: _s } = useColumnCount();
 
-  if (windowState.status === "unsupported") {
+  if (columnCount === -1) {
     return <div>It is probably server side rendering...</div>;
   }
 
-  if (windowState.status === "undetected") {
+  if (columnCount === 0) {
     return (
       <div className="font-nunito text-2xl h-screen flex justify-center align-middle">
         Preparing articles...
@@ -38,29 +40,13 @@ const NotionArticles: React.FC<IProps> = (props) => {
     );
   }
 
-  const columnCount = (): number => {
-    if (windowState.width < 520) {
-      return 2;
-    }
-
-    if (windowState.width < 860 && windowState.width > 520) {
-      return 3;
-    }
-
-    if (windowState.width > 860 && windowState.width < 1100) {
-      return 4;
-    }
-
-    return 5;
-  };
-
   return (
     <div className="h-screen w-full">
       {records && (
         <div className="h-full">
           <VirtualizedGrid
             data={records?.results}
-            columnCount={columnCount()}
+            columnCount={columnCount}
             rowHeight={270}
           >
             {({ columnIndex, data, rowIndex, style }) => {
