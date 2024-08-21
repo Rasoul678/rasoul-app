@@ -11,8 +11,12 @@ export const metadata: Metadata = {
 interface IProps {}
 
 const Codes: React.FC<IProps> = async (props) => {
-  const records = await notionService.getDBMainByTag();
-  console.log(records.results[0]);
+  try {
+    const records = await notionService.getDBMainByTag();
+    console.log(records.results[0]);
+  } catch (error) {
+    console.error(error);
+  }
 
   return <div>Codes</div>;
 };

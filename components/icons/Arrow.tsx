@@ -1,6 +1,5 @@
-import React from "react";
 
-import { Direction, arrows } from "./arrows";
+import { Direction, arrows } from "./svg/arrows";
 
 type IProps = {
   dir?: Direction;

@@ -9,7 +9,11 @@ import { useParams } from "next/navigation";
 import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
 import ClassicCard from "@components/Cards/Classic";
 import VirtualizedGrid from "@components/virtualized-grid";
-import { MainDBPropertiesType, NotionDBResultsType } from "@types";
+import {
+  MainDBPropertiesType,
+  NextParamsType,
+  NotionDBResultsType,
+} from "@types";
 import { clientService } from "@utils/api-service";
 
 import { useColumnCount } from "./useColumnCount";
@@ -18,7 +22,7 @@ interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
 const NotionArticles: React.FC<IProps> = (props) => {
-  const params = useParams<{ article: string }>();
+  const params = useParams<NextParamsType>();
 
   //! Fetch DB records on the client
   const { data: records } = useQuery({

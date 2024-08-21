@@ -1,10 +1,11 @@
 import { NextApiRequest } from "next";
 
+import { NextParamsType } from "@types";
 import { notionService } from "@utils/api-service";
 
 export const GET = async (
   _req: NextApiRequest,
-  { params }: { params: { article: string } }
+  { params }: { params: NextParamsType }
 ) => {
   try {
     const records = await notionService.getDBMainByTag(params.article);

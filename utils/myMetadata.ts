@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 
 export const getMyMetadata: () => Metadata = () => ({
   title: {
-    template: "@ME | %s",
+    template: "Rasoul | %s",
     default: "Rasoul's Portfolio",
   },
   description: "This website shows my portfolio",
   keywords: [
     "Next.js",
     "React",
-    "JavaScript",
+    "Javascript",
     "Typescript",
     "Rasoul Hesami Rostami",
   ],

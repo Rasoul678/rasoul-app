@@ -19,6 +19,8 @@ const AllArticles: React.FC<IProps> = async (props) => {
       <CustomLink href="/articles/Typescript">Typescript</CustomLink>
       <br />
       <CustomLink href="/articles/React">React</CustomLink>
+      <br />
+      <CustomLink href="/articles/Python">Python</CustomLink>
     </div>
   );
 };

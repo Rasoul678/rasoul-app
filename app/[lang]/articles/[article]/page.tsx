@@ -2,6 +2,7 @@ import { dehydrate } from "@tanstack/react-query";
 
 import { Metadata, NextPage } from "next";
 
+import { NextParamsType, NextSearchParamsType } from "@types";
 import { notionService } from "@utils/api-service";
 import getQueryClient from "@utils/react-query/getQueryClient";
 import Hydrate from "@utils/react-query/hydrate.client";
@@ -9,8 +10,8 @@ import Hydrate from "@utils/react-query/hydrate.client";
 import NotionArticles from "./NotionArticles";
 
 type IProps = {
-  params: { article: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: NextParamsType;
+  searchParams: NextSearchParamsType;
 };
 
 export const generateMetadata: (args: IProps) => Metadata = ({ params }) => {

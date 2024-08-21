@@ -1,5 +1,7 @@
 import { LinkProps } from "next/link";
 
+import { Locale } from "@i18n-config";
+
 export type SelectEvent = React.ChangeEvent<HTMLSelectElement>;
 
 export type InfiniteResponseDataType<T> = {
@@ -230,3 +232,12 @@ export type MainDBPropertiesType = {
 };
 
 export type CustomLinkType = LinkProps & React.HTMLProps<HTMLAnchorElement>;
+
+export type NextParamsType = {
+  lang: Locale;
+  article: string;
+};
+
+export type NextSearchParamsType = {
+  [key: string]: string | string[] | undefined;
+};
