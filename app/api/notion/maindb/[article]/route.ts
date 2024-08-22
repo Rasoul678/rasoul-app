@@ -1,10 +1,10 @@
-import { NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 
 import { NextParamsType } from "@types";
 import { notionService } from "@utils/api-service";
 
 export const GET = async (
-  _req: NextApiRequest,
+  _req: Request | NextRequest,
   { params }: { params: NextParamsType }
 ) => {
   try {

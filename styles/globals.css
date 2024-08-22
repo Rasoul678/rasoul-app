@@ -38,6 +38,7 @@ main {
 @import "crawler.css";
 @import "color_gradient.css";
 @import "navbar.css";
+@import "article_card.css";
 
 .out-view {
   @apply opacity-0 blur-sm translate-y-full flex;

@@ -27,7 +27,7 @@ export default function Icon({ params }: { params: NextParamsType }) {
           color: "white",
         }}
       >
-        {stackSVG[params.article as StackSVGType]}
+        {stackSVG[params.article as StackSVGType] || "R"}
       </div>
     ),
     // ImageResponse options

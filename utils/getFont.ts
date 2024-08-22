@@ -1,67 +1,139 @@
-import {
-  Caveat,
-  Concert_One,
-  Edu_VIC_WA_NT_Beginner,
-  Exo_2,
-  Lilita_One,
-  Quicksand,
-} from "next/font/google";
 import localFont from "next/font/local";
 
 export const iranSans = localFont({
   src: [
     {
-      path: "../public/fonts/IranSans/ttf/IRANSansWeb.ttf",
+      path: "../public/fonts/IranSans/IRANSansWeb-Light.ttf",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/IranSans/IRANSansWeb-Regular.ttf",
       weight: "400",
     },
     {
-      path: "../public/fonts/IranSans/ttf/IRANSansWeb_Bold.ttf",
+      path: "../public/fonts/IranSans/IRANSansWeb-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/IranSans/IRANSansWeb-Bold.ttf",
       weight: "700",
     },
   ],
   variable: "--font-iransans",
 });
 
-export const quicksand = Quicksand({
-  subsets: ["latin"],
+export const quicksand = localFont({
+  src: [
+    {
+      path: "../public/fonts/Quicksand/static/Quicksand-Light.ttf",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/Quicksand/static/Quicksand-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Quicksand/static/Quicksand-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Quicksand/static/Quicksand-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "../public/fonts/Quicksand/static/Quicksand-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-quicksand",
-  display: "swap",
-  adjustFontFallback: false,
 });
 
-export const exo2 = Exo_2({
-  subsets: ["latin"],
+export const exo2 = localFont({
+  src: [
+    {
+      path: "../public/fonts/Exo_2/static/Exo2-Light.ttf",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/Exo_2/static/Exo2-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Exo_2/static/Exo2-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Exo_2/static/Exo2-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "../public/fonts/Exo_2/static/Exo2-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-exo2",
-  display: "swap",
-  adjustFontFallback: false,
 });
 
-export const caveat = Caveat({
-  subsets: ["latin"],
+export const caveat = localFont({
+  src: [
+    {
+      path: "../public/fonts/Caveat/static/Caveat-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Caveat/static/Caveat-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Caveat/static/Caveat-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "../public/fonts/Caveat/static/Caveat-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-caveat",
-  display: "swap",
-  adjustFontFallback: false,
 });
 
-export const edu = Edu_VIC_WA_NT_Beginner({
-  subsets: ["latin"],
+export const edu = localFont({
+  src: [
+    {
+      path: "../public/fonts/Edu_Beginner/static/EduVICWANTBeginner-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Edu_Beginner/static/EduVICWANTBeginner-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Edu_Beginner/static/EduVICWANTBeginner-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "../public/fonts/Edu_Beginner/static/EduVICWANTBeginner-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-edu",
-  display: "swap",
-  adjustFontFallback: false,
 });
 
-export const lilita = Lilita_One({
-  subsets: ["latin"],
+export const lilita = localFont({
+  src: [
+    {
+      path: "../public/fonts/Lilita_One/LilitaOne-Regular.ttf",
+      weight: "400",
+    },
+  ],
   variable: "--font-lilita",
-  weight: "400",
-  display: "swap",
-  adjustFontFallback: false,
 });
 
-export const concert = Concert_One({
-  subsets: ["latin"],
+export const concert = localFont({
+  src: [
+    {
+      path: "../public/fonts/Concert_One/ConcertOne-Regular.ttf",
+      weight: "400",
+    },
+  ],
   variable: "--font-concert",
-  weight: "400",
-  display: "swap",
-  adjustFontFallback: false,
 });
