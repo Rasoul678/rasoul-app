@@ -30,8 +30,8 @@ const PythonCard: React.FC<IProps> = () => {
             y2="34.658"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#387EB8"></stop>
-            <stop offset="1" stop-color="#366994"></stop>
+            <stop stopColor="#387EB8"></stop>
+            <stop offset="1" stopColor="#366994"></stop>
           </linearGradient>
           <linearGradient
             id="b"
@@ -41,8 +41,8 @@ const PythonCard: React.FC<IProps> = () => {
             y2="45.163"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFE052"></stop>
-            <stop offset="1" stop-color="#FFC331"></stop>
+            <stop stopColor="#FFE052"></stop>
+            <stop offset="1" stopColor="#FFC331"></stop>
           </linearGradient>
         </defs>
       </svg>

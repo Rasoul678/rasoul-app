@@ -24,6 +24,10 @@ type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 const NotionArticles: React.FC<IProps> = (props) => {
   const params = useParams<NextParamsType>();
 
+  if (params.article in ["Typescript"]) {
+    console.log("hello");
+  }
+
   //! Fetch DB records on the client
   const { data: records } = useQuery({
     queryKey: [`hydrate-notion-db-${params.article}`],

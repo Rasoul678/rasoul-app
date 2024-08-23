@@ -22,17 +22,17 @@ const JavascriptCard: React.FC<IProps> = () => {
         <path
           fill="none"
           stroke="#18193f"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
+          strokeWidth="3"
           d="M7.5,28.559V11.5	c0-2.2,1.8-4,4-4h25c2.2,0,4,1.8,4,4v1.245"
         />
         <path
           fill="none"
           stroke="#18193f"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
-          stroke-width="3"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
+          strokeWidth="3"
           d="M40.5,18.617V36.5	c0,2.2-1.8,4-4,4h-25c-2.2,0-4-1.8-4-4v-1.755"
         />
         <path

@@ -19,7 +19,7 @@ const RustCard: React.FC<IProps> = () => {
         width="1434.979px"
         height="947px"
         viewBox="0 0 1434.979 1147"
-        enable-background="new 0 0 1434.979 1147"
+        enableBackground="new 0 0 1434.979 1147"
         xmlSpace="preserve"
       >
         <path

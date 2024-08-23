@@ -17,23 +17,23 @@ export const PythonIcon: React.FC<IProps> = (props) => {
       <path
         fill="none"
         stroke="#18193f"
-        stroke-linecap="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeWidth="3"
         d="M32.5,15.5h4.86c1.89,0,3.94,0.17,4.69,1.89	c0.65,1.5,1.45,3.11,1.45,6.61s-0.8,5.11-1.45,6.61c-0.75,1.72-2.8,1.89-4.69,1.89H24.5"
       />
       <path
         fill="none"
         stroke="#18193f"
-        stroke-linecap="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeWidth="3"
         d="M15,32.5h-4.36c-1.89,0-3.94-0.17-4.69-1.89	C5.3,29.11,4.5,27.5,4.5,24s0.8-5.11,1.45-6.61c0.75-1.72,2.8-1.89,4.69-1.89H23.5"
       />
       <path
         fill="none"
         stroke="#18193f"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
         d="M15.5,10.64	c0-1.89,0.17-3.94,1.89-4.69C18.89,5.3,20.5,4.5,24,4.5s5.11,0.8,6.61,1.45c1.72,0.75,1.89,2.8,1.89,4.69V19c0,2.761-2.239,5-5,5h-7	c-2.761,0-5,2.239-5,5v8.36c0,1.89,0.17,3.94,1.89,4.69c1.5,0.65,3.11,1.45,6.61,1.45s5.11-0.8,6.61-1.45	c1.049-0.458,1.522-1.399,1.731-2.493"
       />
       <circle cx="20.5" cy="10.5" r="1.5" fill="#18193f" />
