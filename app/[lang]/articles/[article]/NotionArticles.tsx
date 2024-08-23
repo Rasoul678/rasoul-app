@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 import { useParams } from "next/navigation";
 
@@ -28,6 +28,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
   const { data: records } = useQuery({
     queryKey: [`hydrate-notion-db-${params.article}`],
     queryFn: () => clientService.getDBRecByTag(params.article),
+    placeholderData: keepPreviousData,
   });
 
   const { columnCount, windowState: _s } = useColumnCount();

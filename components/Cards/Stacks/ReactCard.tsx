@@ -5,9 +5,9 @@ type IProps = {};
 
 const ReactCard: React.FC<IProps> = () => {
   return (
-    <div className="stack-card border-[#61dafb] text-[#61dafb] bg-[#1e2127]">
+    <div className="stack-card group border-[#61dafb] text-[#61dafb] bg-[#1e2127]">
       <svg
-        className="app-logo motion-safe:animate-[app-logo-spin_infinite_5s_linear]"
+        className="app-logo group-hover:motion-safe:animate-[app-logo-spin_1s_ease-in-out]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
         width="240px"

@@ -1,5 +1,5 @@
 .stack-card {
-  @apply w-[9rem] sm:w-[13rem] sm:min-w-[13rem] h-[13rem] sm:h-[15rem] text-[1.5em] font-bold p-[0.8em]  sm:p-[1.2em] rounded-[1.5rem] flex flex-col items-center justify-center border-[.2rem];
+  @apply w-[9rem] sm:w-[13rem] sm:min-w-[13rem] h-[12rem] sm:h-[15rem] text-[1.5em] font-bold p-[0.8em]  sm:p-[1.2em] rounded-[1.5rem] flex flex-col items-center justify-center border-[.2rem];
 }
 
 .app-logo {

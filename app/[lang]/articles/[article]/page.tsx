@@ -38,7 +38,7 @@ const Articles: NextPage<IProps> = async ({ params }) => {
 
   return (
     <div>
-      <h1 className="font-nunito text-4xl text-center my-[2.5rem] text-green-600 uppercase">
+      <h1 className="font-nunito text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase">
         {params.article} Articles
       </h1>
       <Hydrate state={dehydratedState}>
