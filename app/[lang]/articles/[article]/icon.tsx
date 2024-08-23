@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
 import { stackSVG, StackSVGType } from "@components/icons";
+import { Error404 } from "@components/icons/svg/NotFoundError";
 import { NextParamsType } from "@types";
 
 // Image metadata
@@ -27,7 +28,7 @@ export default function Icon({ params }: { params: NextParamsType }) {
           color: "white",
         }}
       >
-        {stackSVG[params.article as StackSVGType] || "R"}
+        {stackSVG[params.article as StackSVGType] || <Error404 />}
       </div>
     ),
     // ImageResponse options

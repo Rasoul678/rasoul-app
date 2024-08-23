@@ -16,6 +16,8 @@ import {
 } from "@types";
 import { clientService } from "@utils/api-service";
 
+import { articlesList } from "@utils/constants";
+
 import { useColumnCount } from "./useColumnCount";
 
 interface IProps {}
@@ -23,10 +25,6 @@ type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
 const NotionArticles: React.FC<IProps> = (props) => {
   const params = useParams<NextParamsType>();
-
-  if (params.article in ["Typescript"]) {
-    console.log("hello");
-  }
 
   //! Fetch DB records on the client
   const { data: records } = useQuery({
@@ -43,8 +41,19 @@ const NotionArticles: React.FC<IProps> = (props) => {
 
   if (columnCount === 0) {
     return (
-      <div className="font-nunito text-2xl h-screen flex justify-center align-middle">
+      <div className="font-nunito text-3xl h-screen flex justify-center align-middle">
         Preparing articles...
+      </div>
+    );
+  }
+
+  if (!articlesList.includes(params.article)) {
+    return (
+      <div className="flex flex-col justify-center items-center">
+        <div className="font-nunito p-4 text-3xl h-full flex justify-center items-center text-center">
+          Sorry! Your ordered article is not my strong suit.
+        </div>
+        <span className="text-[5rem]">🥺</span>
       </div>
     );
   }
