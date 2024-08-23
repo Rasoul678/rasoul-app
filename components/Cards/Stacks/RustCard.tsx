@@ -1,4 +1,5 @@
 import CustomLink from "@components/CustomLink";
+import { routes } from "@utils";
 
 type IProps = {};
 
@@ -142,7 +143,7 @@ const RustCard: React.FC<IProps> = () => {
 
       <div>Rust</div>
       <CustomLink
-        href="articles/Rust"
+        href={routes.ARTICLES_RUST}
         className="app-button border-[#E42B1E] hover:text-[#2e1513] hover:bg-[#E42B1E]"
       >
         Start reading

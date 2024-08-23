@@ -1,4 +1,5 @@
 import CustomLink from "@components/CustomLink";
+import { routes } from "@utils";
 
 type IProps = {};
 
@@ -40,7 +41,7 @@ const SQLCard: React.FC<IProps> = () => {
       </svg>
       <div>SQL</div>
       <CustomLink
-        href="articles/SQL"
+        href={routes.ARTICLES_SQL}
         className="app-button border-[#cbe6ff] hover:text-[#1e2127] hover:bg-[#cbe6ff]"
       >
         Start reading

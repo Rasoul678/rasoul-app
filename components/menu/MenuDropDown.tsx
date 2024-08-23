@@ -38,8 +38,8 @@ const MenuDropDown: React.FC<IProps> = ({ user }) => {
       <Triangle />
       <MenuItem
         noBorder
-        name={String(intl?.dict["my-prof"])}
-        href={`/${intl?.lang}/aboutme`}
+        name={String(intl?.dict["about"])}
+        href="about"
         icon={<ProfileImage wrapperClassName="w-[2rem]" animationType="hue" />}
       />
 

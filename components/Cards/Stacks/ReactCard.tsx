@@ -1,4 +1,5 @@
 import CustomLink from "@components/CustomLink";
+import { routes } from "@utils";
 
 type IProps = {};
 
@@ -30,7 +31,7 @@ const ReactCard: React.FC<IProps> = () => {
       </svg>
       <div>React</div>
       <CustomLink
-        href="articles/React"
+        href={routes.ARTICLES_REACT}
         className="app-button border-[#61dafb] hover:text-[#1e2127] hover:bg-[#61dafb]"
       >
         Start reading

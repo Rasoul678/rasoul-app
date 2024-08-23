@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 import JavascriptArticles from "@components/Cards/Stacks/JavascriptCard";
-import PythonArticles from "@components/Cards/Stacks/PythonCard";
+import NextJsArticles from "@components/Cards/Stacks/NextJsCard";
 import ReactArticles from "@components/Cards/Stacks/ReactCard";
 import RustArticle from "@components/Cards/Stacks/RustCard";
 import SQLArticle from "@components/Cards/Stacks/SQLCard";
@@ -21,9 +21,9 @@ const AllArticles: React.FC<IProps> = async (props) => {
       <h1 className="font-my_edu text-4xl text-center my-[2.5rem] text-green-600 uppercase">
         All Articles
       </h1>
-      <div className="w-full overflow-hidden flex gap-4 flex-wrap justify-center">
+      <div className="w-full overflow-hidden flex gap-6 lg:gap-4 flex-wrap justify-center">
         <ReactArticles />
-        <PythonArticles />
+        <NextJsArticles />
         <JavascriptArticles />
         <TypescriptArticles />
         <RustArticle />

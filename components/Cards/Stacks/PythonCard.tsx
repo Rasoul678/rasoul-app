@@ -49,7 +49,7 @@ const PythonCard: React.FC<IProps> = () => {
 
       <div>Python</div>
       <CustomLink
-        href="articles/Python"
+        href="#"
         className="app-button border-[#FFE052] hover:text-[#191e24] hover:bg-[#FFE052]"
       >
         Start reading

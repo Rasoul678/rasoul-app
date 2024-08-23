@@ -1,7 +1,6 @@
 import React from "react";
 
-import Link from "next/link";
-
+import CustomLink from "@components/CustomLink";
 import { ArrowIcon } from "@components/icons";
 import { useClickOutside } from "@hooks/useClickOutside";
 
@@ -36,9 +35,9 @@ export const MenuItem: React.FC<IProps> = (props) => {
     >
       {icon}
       {href ? (
-        <Link href={href}>
+        <CustomLink href={href}>
           <div className="menu-link">{name}</div>
-        </Link>
+        </CustomLink>
       ) : (
         <div className="relative flex-1">
           <div className="menu-regular">{name}</div>
