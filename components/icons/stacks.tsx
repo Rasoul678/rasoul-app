@@ -11,6 +11,8 @@ import webpack from "@assets/icon-pack/icons8-webpack.svg";
 import nextjs from "@assets/svg/nextjs.svg";
 import { IconType } from "@types";
 
+import { externalLinks } from "@utils/constants";
+
 import GeneralIcon from "./GeneralIcon";
 
 export type StackIconsType = {
@@ -19,27 +21,65 @@ export type StackIconsType = {
 
 //! Map icons name to svg file
 const IconsMap = {
-  html: html,
-  css: css,
-  git: git,
-  js: js,
-  postman: postman,
-  react: react,
-  nextjs: nextjs,
-  ts: ts,
-  docker: docker,
-  redux: redux,
-  webpack: webpack,
+  html: {
+    url: externalLinks.HTML5,
+    component: html,
+  },
+  css: {
+    url: externalLinks.CSS5,
+    component: css,
+  },
+  git: {
+    url: externalLinks.GIT,
+    component: git,
+  },
+  js: {
+    url: externalLinks.JAVASCRIPT,
+    component: js,
+  },
+  postman: {
+    url: externalLinks.POSTMAN,
+    component: postman,
+  },
+  react: {
+    url: externalLinks.REACTJS,
+    component: react,
+  },
+  nextjs: {
+    url: externalLinks.NEXTJS,
+    component: nextjs,
+  },
+  ts: {
+    url: externalLinks.TYPESCRIPT,
+    component: ts,
+  },
+  docker: {
+    url: externalLinks.DOCKER,
+    component: docker,
+  },
+  redux: {
+    url: externalLinks.REDUX,
+    component: redux,
+  },
+  webpack: {
+    url: externalLinks.WEBPACK,
+    component: webpack,
+  },
 };
 
 const stackLists = [...Object.keys(IconsMap)] as Array<keyof typeof IconsMap>;
 
 export const stackIcons: StackIconsType = stackLists.reduce(
-  (acc: any, value: (typeof stackLists)[number]) => {
-    acc[value] = (props?: IconType) => (
+  (acc: any, name: (typeof stackLists)[number]) => {
+    acc[name] = (props?: IconType) => (
       <GeneralIcon
-        src={IconsMap[value]}
-        alt={value}
+        asLink={{
+          href: IconsMap[name].url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+        }}
+        src={IconsMap[name].component}
+        alt={name}
         width={props?.width || 80}
         {...props}
       />

@@ -24,7 +24,7 @@ export const NavLinks = () => {
         })}
       </CustomLink>
       <CustomLink href="live">
-        {iconsList.stacks.js({
+        {iconsList.js({
           alt: intl?.dict.nav.code!,
           className: "self-baseline",
           width: 35,

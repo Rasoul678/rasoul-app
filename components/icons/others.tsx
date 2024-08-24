@@ -4,6 +4,7 @@ import home from "@assets/icon-pack/icons8-fido-420.svg";
 import gmail from "@assets/icon-pack/icons8-gmail-420.svg";
 import lang from "@assets/icon-pack/icons8-google-translate-new-420.svg";
 import ideas from "@assets/icon-pack/icons8-idea-420.svg";
+import js from "@assets/icon-pack/icons8-javascript-420.svg";
 import menu from "@assets/icon-pack/icons8-menu-420.svg";
 import ok from "@assets/icon-pack/icons8-ok-420.svg";
 import logout from "@assets/icon-pack/icons8-out-420.svg";
@@ -33,6 +34,7 @@ const IconsMap = {
   lang: lang,
   chatGPT: chatGPT,
   ok: ok,
+  js: js,
 };
 
 const otherLists = [...Object.keys(IconsMap)] as Array<keyof typeof IconsMap>;
