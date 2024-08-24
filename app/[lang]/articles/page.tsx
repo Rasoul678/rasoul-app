@@ -31,7 +31,7 @@ const AllArticles: React.FC<IProps> = async (props) => {
       <h1 className="font-my_edu text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase text-cyan-400">
         All Articles
       </h1>
-      <div className="w-full overflow-hidden flex gap-6 lg:gap-4 flex-wrap justify-center">
+      <div className="w-full overflow-hidden flex gap-6 lg:gap-4 flex-wrap justify-center p-4">
         {articleComponents.map(({ Component, name }) => (
           <Component key={name} />
         ))}

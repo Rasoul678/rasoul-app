@@ -7,8 +7,8 @@ export const TypescriptIcon: React.FC<IProps> = (props) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
-      width="240px"
-      height="240px"
+      width="250px"
+      height="250px"
     >
       <path
         fill="#90caf9"

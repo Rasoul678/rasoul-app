@@ -11,7 +11,11 @@ type IProps = {
 
 const Repos: React.FC<IProps> = ({ inView, repos }) => {
   return (
-    <div className="w-[77%] mt-14 flex flex-col gap-4 overflow-hidden">
+    <div className="w-[77%] mt-14 flex flex-col gap-4 overflow-hidden py-2">
+      <div className="hidden sm:flex justify-between text-[1.1rem] font-my_concert pb-2 border-b border-cyan-500">
+        <div>Repos Name</div>
+        <div>Languages</div>
+      </div>
       {repos.slice(0, 10).map((repo, i) => {
         return (
           <div

@@ -6,8 +6,8 @@ import { NextParamsType } from "@types";
 
 // Image metadata
 export const size = {
-  width: 180,
-  height: 180,
+  width: 200,
+  height: 200,
 };
 export const contentType = "image/png";
 

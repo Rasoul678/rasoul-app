@@ -18,7 +18,7 @@ const Repo: React.FC<IProps> = ({ repo }) => {
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="blue_gradient text-xl"
+          className="text-xl text-teal-400"
         >
           {repo.name}
         </Link>
@@ -27,7 +27,7 @@ const Repo: React.FC<IProps> = ({ repo }) => {
         {repo.all_languages.map((lang) => (
           <code
             key={lang[1]}
-            className="text-sm mx-[0.2rem] underline green_gradient font-bold"
+            className="font-my_edu text-xs mx-[0.2rem] underline blue_gradient font-bold border border-teal-400 rounded-2xl py-1 px-2"
           >
             {lang[0]}
           </code>

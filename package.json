@@ -12,7 +12,8 @@
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "notion": "bash ./scripts/notion.sh",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prebuild": "yarn lint --fix && yarn test:once"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
