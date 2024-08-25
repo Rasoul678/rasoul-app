@@ -26,7 +26,7 @@ const HomeHero: React.FC = () => {
       </div>
       <div className="flex flex-col justify-start gap-[0.7rem] sm:gap-[2.5rem] lg:gap-[3.5rem] h-full w-full items-center md:items-start">
         <div className="flex flex-col justify-center items-center md:block  md:text-5xl mt-[0.5rem] sm:mt-[2rem]">
-          <CustomLink href="/aboutme" className="w-[7rem] hidden sm:block">
+          <CustomLink href="aboutme" className="w-[7rem] hidden sm:block">
             <ProfileImage wrapperClassName="w-[7rem]" />
           </CustomLink>
           <span className="text-xl md:text-[1.5rem] font-bold">{welcome}</span>

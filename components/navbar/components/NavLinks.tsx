@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import Image from "next/image";
+
 import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons/icons";
 import { IntlContext } from "@components/intl-provider";
@@ -23,16 +25,17 @@ export const NavLinks = () => {
           className: "self-baseline",
         })}
       </CustomLink>
-      <CustomLink href="live">
-        {iconsList.js({
-          alt: intl?.dict.nav.code!,
-          className: "self-baseline",
-          width: 35,
-        })}
-
-        <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+      <CustomLink href="live" className="flex">
+        <Image
+          width="35"
+          height="35"
+          className="self-baseline"
+          alt={intl?.dict.nav.code || "live coding"}
+          src="https://img.icons8.com/pulsar-color/100/code.png"
+        />
+        <span className="relative flex h-[.6rem] w-[.55rem]">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-300 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-[.6rem] w-[.55rem] bg-teal-400"></span>
         </span>
       </CustomLink>
     </div>

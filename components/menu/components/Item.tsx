@@ -36,16 +36,20 @@ export const MenuItem: React.FC<IProps> = (props) => {
       {icon}
       {href ? (
         <CustomLink href={href}>
-          <div className="menu-link">{name}</div>
+          <div className="menu-link block sm:hidden">{name}</div>
         </CustomLink>
       ) : (
         <div className="relative flex-1">
-          <div className="menu-regular">{name}</div>
+          <div className={`menu-regular block ${subMenu && "sm:hidden"}`}>
+            {name}
+          </div>
           {subMenu && showSub && (
             <div
               ref={clickRef}
               className={`sub-menu-wrapper ${
-                dir === "right" ? "right-[10.5rem]" : "left-[10.5rem]"
+                dir === "right"
+                  ? "right-[10rem] sm:right-0 top-0 sm:top-[1.7rem]"
+                  : "left-[10rem] sm:left-0 top-0 sm:top-[1.7rem]"
               }`}
             >
               {subMenu?.map((sub, idx) => {
@@ -58,7 +62,7 @@ export const MenuItem: React.FC<IProps> = (props) => {
         </div>
       )}
       {!href && subMenu && (
-        <div>
+        <div className="block sm:hidden">
           <ArrowIcon dir={dir} />
         </div>
       )}
