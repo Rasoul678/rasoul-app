@@ -10,10 +10,21 @@ type IProps = {
   author?: string;
   title?: string | null;
   description?: string | null;
-  src: string | StaticImport;
+  src?: string | StaticImport;
   icon?: string | null;
 };
 
+/**
+ * Renders a classic card component with an image, title, author, and optional description and icon.
+ *
+ * @param {IProps} props - The props for the classic card component.
+ * @param {string} [props.author] - The author of the content.
+ * @param {string | null} [props.title] - The title of the content.
+ * @param {string | null} [props.description] - The description of the content.
+ * @param {string | StaticImport} props.src - The source of the image for the card.
+ * @param {string | null} [props.icon] - The optional icon to display on the card.
+ * @returns {React.ReactElement} - The rendered classic card component.
+ */
 const ClassicCard: React.FC<IProps> = ({
   author,
   title,
@@ -29,8 +40,8 @@ const ClassicCard: React.FC<IProps> = ({
         alt={title || "card"}
         width={350}
         height={150}
-        src={src}
-        fallbackSrc={ArticleCover}
+        src={src || ArticleCover}
+        onErrSrc={ArticleCover}
       />
       {icon && (
         <Image

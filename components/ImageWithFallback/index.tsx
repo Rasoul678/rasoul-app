@@ -3,24 +3,25 @@ import { useState } from "react";
 import { ImageProps, StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
-type IProps = ImageProps & {
-  fallbackSrc?: string | StaticImport;
+type IProps = Exclude<ImageProps, "src" | "alt"> & {
+  onErrSrc?: string | StaticImport;
   src?: string | StaticImport;
+  tesId?: string;
   alt: string;
 };
 
 const ImageWithFallback = (props: IProps) => {
-  const { src, fallbackSrc = "", alt, ...rest } = props;
+  const { src, onErrSrc, alt, tesId, ...rest } = props;
   const [imgSrc, setImgSrc] = useState(src);
 
   return (
     <Image
-      {...rest}
       alt={alt}
-      data-vi={`vi-${alt}`}
+      data-vi={`vi-${tesId || alt}`}
       src={imgSrc}
+      {...rest}
       onError={() => {
-        setImgSrc(fallbackSrc);
+        onErrSrc && setImgSrc(onErrSrc);
       }}
     />
   );

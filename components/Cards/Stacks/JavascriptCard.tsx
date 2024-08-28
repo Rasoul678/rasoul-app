@@ -3,6 +3,15 @@ import { routes } from "@utils";
 
 type IProps = {};
 
+/**
+ * Renders a card component that displays information about JavaScript, including an SVG logo, the text "JavaScript", and a link to the JavaScript articles page.
+ *
+ * @component
+ * @example
+ * return (
+ *   <JavascriptCard />
+ * )
+ */
 const JavascriptCard: React.FC<IProps> = () => {
   return (
     <div className="stack-card border-[#f7df1e] text-[#f7df1e] bg-[#25241c]">

@@ -30,6 +30,17 @@ class ResizeObserver {
 
 window.ResizeObserver = ResizeObserver;
 
+/**
+ * Mocks the `next/font/local` module, returning a default export that provides a mocked font class and font family.
+ * This is used to simulate the behavior of the `next/font/local` module in a testing environment where the actual font files are not available.
+ */
+vi.mock("next/font/local", () => ({
+  default: () => ({
+    className: "mocked-font-class",
+    style: { fontFamily: "mocked-font-family" },
+  }),
+}));
+
 afterEach(() => {
   cleanup();
 });

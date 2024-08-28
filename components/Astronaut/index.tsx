@@ -15,18 +15,13 @@ interface IProps {
 }
 
 /**
- * An Astronaut component.
+ * Renders an astronaut avatar with a heading and social media links.
  *
- * @component
- * @param {string} props.className - The class for image
- * @param {string} props.heading - The heading text
- * @returns {JSX.Element} The rendered Astronaut component.
- *
- * @example
- *  Render a Astronaut component and a text
- * <Astronaut heading="..." className="..." />
+ * @param {IProps} props - The component props.
+ * @param {string} [props.className] - An optional CSS class name to apply to the image.
+ * @param {string} [props.heading] - An optional heading to display below the astronaut image.
+ * @returns {React.ReactElement} - The rendered astronaut component.
  */
-
 const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
   const intl = useContext(IntlContext);
   const followMe = intl?.dict["follow-me"]!;
