@@ -1,6 +1,6 @@
 /*? Astronaut */
 .astronautWrapper {
-  @apply relative p-[1rem] overflow-hidden h-full w-[15.5rem] flex flex-col items-center justify-center;
+  @apply relative p-[1rem] overflow-hidden h-full w-[15.5rem] flex flex-col md:gap-[1rem] items-center justify-center;
 }
 
 .astronautWrapper .image {
@@ -14,7 +14,7 @@
 }
 
 .heading::after {
-  @apply content-[""] pointer-events-none absolute w-full h-full rounded-[2rem] top-[0%] left-[50%] filter blur-xl;
+  @apply content-[""] pointer-events-none absolute w-full h-full rounded-[2rem] top-[0%] left-[50%] filter blur-xl font-iransans;
   background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   animation: keyframes-intro 1s ease-in forwards;
 }

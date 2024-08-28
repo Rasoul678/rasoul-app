@@ -34,13 +34,6 @@ const MenuContents: React.FC<IProps> = () => {
   return (
     <>
       <MenuItem
-        noBorder
-        name={intl?.dict.about}
-        href="about"
-        icon={<ProfileImage wrapperClassName="w-[2rem]" animationType="hue" />}
-      />
-
-      <MenuItem
         name={intl?.dict.language}
         dir={isPersian ? "right" : "left"}
         subMenu={i18n.locales.map((locale) => ({
@@ -51,6 +44,12 @@ const MenuContents: React.FC<IProps> = () => {
           alt: intl?.dict.language,
           width: 35,
         })}
+      />
+      <MenuItem
+        noBorder
+        name={intl?.dict.about}
+        href="about"
+        icon={<ProfileImage wrapperClassName="w-[2rem]" animationType="hue" />}
       />
     </>
   );
