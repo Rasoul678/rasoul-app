@@ -5,18 +5,12 @@ import Link from "next/link";
 import { iconsList } from "@components/icons";
 import { externalLinks } from "@utils/constants";
 
-type IProps = {
-  inView: boolean;
-};
+type IProps = {};
 
-const Education: React.FC<IProps> = ({ inView }) => {
+const Education: React.FC<IProps> = () => {
   return (
     <div className="w-[90%] sm:w-[80%] mt-14 text-[1.1rem] sm:text-[1.3rem] flex flex-col gap-4 text-teal-400">
-      <div
-        className={`flex items-center px-5 h-10 gap-5 ${
-          inView ? "in-view delay-[350ms]" : "out-view"
-        }`}
-      >
+      <div className="flex items-center px-5 h-10 gap-5 fade-in-anim">
         {iconsList.ok({ width: 30, alt: "Ok" })}
         <span className="mt-2 flex gap-2">
           Master of Sience
@@ -32,11 +26,7 @@ const Education: React.FC<IProps> = ({ inView }) => {
           <span className="hidden lg:inline">(Shahid Beheshti University)</span>
         </span>
       </div>
-      <div
-        className={`flex items-center px-5 h-10 gap-5 ${
-          inView ? "in-view delay-[550ms]" : "out-view"
-        }`}
-      >
+      <div className="flex items-center px-5 h-10 gap-5 fade-in-anim">
         {iconsList.ok({ width: 30, alt: "Ok" })}
         <span className="mt-2 flex gap-2">
           Bachelor of Sience

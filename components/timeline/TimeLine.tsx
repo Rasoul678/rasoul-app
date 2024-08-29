@@ -10,7 +10,6 @@ import Education from "./components/Education";
 import Repos from "./components/Repos";
 import TechListIcons from "./components/TechListIcons";
 
-
 type IProps = {
   repos: RepoType[];
 };
@@ -18,17 +17,24 @@ type IProps = {
 const TimeLine: React.FC<IProps> = ({ repos }) => {
   return (
     <div>
-      <TimeSection loop title="Tools" wrapperId="tools" tagList={TAGS}>
-        {({ inView }) => <TechListIcons inView={inView} />}
+      <TimeSection
+        animate
+        animationDir="left"
+        title="Tools"
+        wrapperId="tools"
+        tagList={TAGS}
+      >
+        {() => <TechListIcons />}
       </TimeSection>
       <TimeSection
-        loop
+        animate
+        animationDir="right"
         title="Github Repositories"
         tagList={repos.map((r: any) => r.name)}
         color="ffe082"
         wrapperId="github"
       >
-        {({ inView }) => <Repos repos={repos} inView={inView} />}
+        {() => <Repos repos={repos} />}
       </TimeSection>
       <TimeSection
         title="Academic Educations"
@@ -36,7 +42,7 @@ const TimeLine: React.FC<IProps> = ({ repos }) => {
         color="f48fb1"
         wrapperId="education"
       >
-        {({ inView }) => <Education inView={inView} />}
+        {() => <Education />}
       </TimeSection>
     </div>
   );

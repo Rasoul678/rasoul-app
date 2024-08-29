@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-anim {
+    scale: 0.5;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 300px;
+  }
+
+  @keyframes fade-in {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+}

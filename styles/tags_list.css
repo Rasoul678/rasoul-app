@@ -3,17 +3,32 @@
   @apply w-full flex shrink-0 flex-col gap-y-2 gap-x-0 relative py-2 px-0 overflow-hidden rounded-md;
 }
 
-.loop-slider .tags-row {
-  animation-name: var(--animation);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: var(--direction);
-  animation-duration: var(--duration);
-  @apply flex w-fit motion-reduce:animate-none;
+.loop-slider {
+  @apply flex w-max flex-nowrap flex-col gap-2;
+  overflow-x: hidden;
+}
+.tags-row {
+  @apply flex w-max;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loop-slider[data-animated="true"] .tags-row {
+    animation: scrolling linear;
+    animation-timeline: scroll(root);
+  }
+
+  .loop-slider[data-direction="right"] .tags-row {
+    animation-direction: reverse;
+  }
+  @keyframes scrolling {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
 }
 
 .tag {
-  @apply text-sm min-w-max font-bold flex bg-gray-900/70 items-center gap-y-0 gap-x-1 rounded-md py-1 px-2 mr-4;
+  @apply text-sm min-w-max font-bold flex bg-gray-900/70 items-center gap-y-0 gap-x-1 rounded-md py-1 px-1 mr-2;
   color: var(--color);
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2),
     0 0.1rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.2rem 1.5rem rgba(0, 0, 0, 0.4);
@@ -23,19 +38,9 @@
   @apply pointer-events-none absolute inset-0;
   background: linear-gradient(
     60deg,
-    #101929,
-    transparent 25%,
-    transparent 75%,
-    #101929
+    #101929 5%,
+    transparent 15%,
+    transparent 85%,
+    #101929 95%
   );
-}
-
-@keyframes loop {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-30%);
-  }
 }

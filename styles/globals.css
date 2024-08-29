@@ -40,10 +40,4 @@ main {
 @import "navbar.css";
 @import "article_card.css";
 @import "word_loader.css";
-out-view {
-  @apply opacity-0 blur-sm translate-y-full flex;
-}
-
-.in-view {
-  @apply opacity-100 blur-0 translate-y-0 transition-all duration-[300ms] motion-reduce:transition-none flex;
-}
+@import "timeline.css";
