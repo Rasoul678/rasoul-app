@@ -13,7 +13,7 @@
 }
 
 .menu-wrapper {
-  @apply rounded-lg bg-gray-900 shadow-xl px-4 absolute mt-7 w-[13rem] break-all rtl:right-3 ltr:left-3;
+  @apply rounded-lg bg-gray-900 shadow-xl px-4 absolute mt-7 w-[13rem] break-all rtl:left-2 ltr:right-2;
 }
 
 .menu-link {

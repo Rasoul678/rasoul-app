@@ -5,7 +5,7 @@ interface IProps {}
 export const Triangle: React.FC<IProps> = (props) => {
   return (
     <svg
-      className="absolute bottom-full rtl:right-3 ltr:left-3"
+      className="absolute bottom-full rtl:left-3 ltr:right-3"
       width="30"
       height="20"
       viewBox="0 0 30 20"

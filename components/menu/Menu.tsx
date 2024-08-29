@@ -39,7 +39,7 @@ export const Menu: React.FC<IProps> = () => {
         </div>
         {showMenu && <MenuDropDown user={user} />}
       </div>
-      <div className="hidden sm:flex gap-2">
+      <div className="hidden sm:flex flex-row-reverse gap-2">
         <MenuContents />
       </div>
     </div>

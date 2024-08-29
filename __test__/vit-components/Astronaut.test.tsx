@@ -83,11 +83,10 @@ describe("Astronaut component", () => {
   });
 
   it("should render social media links", () => {
-    const { container } = render(<Astronaut />);
-    const socialLinks = container.querySelectorAll(
-      ".flex.justify-center.gap-2 a"
-    );
-    expect(socialLinks).toHaveLength(1);
+    const { container, getAllByDataVi } = render(<Astronaut />);
+    const socialLinks = getAllByDataVi("vit-astr-link");
+    console.log(socialLinks);
+    expect(socialLinks).toHaveLength(3);
     expect(socialLinks[0]).toHaveAttribute("href", "#");
   });
 

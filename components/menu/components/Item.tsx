@@ -28,7 +28,7 @@ export const MenuItem: React.FC<IProps> = (props) => {
 
   return (
     <div
-      className={`py-3 flex w-full items-center gap-2 ${
+      className={`py-3 flex flex-row-reverse w-full items-center gap-2 ${
         noBorder ? "" : "border-t"
       } border-gray-200`}
       onClick={handleClickItem}

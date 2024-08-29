@@ -37,13 +37,6 @@ const Shortcuts: React.FC<IProps> = (props) => {
       >
         <Link href="#experience">Experience</Link>
       </span>
-      <span
-        className="text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-200"
-        tabIndex={0}
-        aria-label="Github"
-      >
-        <Link href="#github">Github</Link>
-      </span>
     </div>
   );
 };

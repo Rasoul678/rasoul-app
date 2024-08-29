@@ -35,15 +35,21 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
         height={500}
         src={AstronautPNG}
       />
-      <div className="relative rounded-[2rem]">
+      <div className="relative flex flex-col gap-3 rounded-[2rem]">
         <div data-vi="vit-astr-head" className="heading">
           {heading || followMe}
         </div>
-      </div>
-      <div className="flex justify-center gap-2">
-        <Link href={"#"}>{iconsList.socials.github()}</Link>
-        {iconsList.socials.linkedin()}
-        {iconsList.socials.twitter()}
+        <div className="flex justify-center gap-2">
+          <Link data-vi="vit-astr-link" href={"#"}>
+            {iconsList.socials.github()}
+          </Link>
+          <Link data-vi="vit-astr-link" href={"#"}>
+            {iconsList.socials.linkedin()}
+          </Link>
+          <Link data-vi="vit-astr-link" href={"#"}>
+            {iconsList.socials.twitter()}
+          </Link>
+        </div>
       </div>
     </div>
   );

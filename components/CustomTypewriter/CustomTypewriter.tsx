@@ -46,8 +46,6 @@ export const CustomTypewriter: React.FC<TypewriterProps> = (props) => {
       onInit={(typewriter) => {
         if (text) {
           typewriter.typeString(text).start();
-        } else if (strings && strings.length > 0) {
-          typewriter.typeString(strings[0]).start();
         }
       }}
     />
