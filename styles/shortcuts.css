@@ -1,0 +1,7 @@
+.shortCutsWrapper {
+  @apply flex flex-wrap justify-center gap-2 md:gap-3  md:text-lg font-my_concert text-center w-full;
+}
+
+.shortCutItem {
+  @apply text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-400 cursor-pointer;
+}

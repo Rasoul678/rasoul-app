@@ -1,41 +1,57 @@
 import React from "react";
 
-import Link from "next/link";
+import useScrollTo from "@hooks/useScrollTo";
 
 interface IProps {}
 
 const Shortcuts: React.FC<IProps> = (props) => {
+  const scrollTo = useScrollTo({ offset: 250 });
+
+  const handleClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    const target = e.target as HTMLSpanElement;
+    const anchor = target.dataset.anchor;
+    if (anchor) {
+      scrollTo(anchor);
+    }
+  };
+
   return (
-    <div className="flex flex-wrap justify-center gap-2 md:gap-3  md:text-lg font-my_concert text-center w-full">
+    <div className="shortCutsWrapper">
       <span
-        className="text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-200"
+        className="shortCutItem"
         tabIndex={0}
         aria-label="Tools"
+        data-anchor="tools"
+        onClick={handleClick}
       >
-        <Link href="#tools">Tools</Link>
+        Tools
       </span>
       <span
-        className="text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-200"
+        className="shortCutItem"
         tabIndex={0}
         aria-label="Github"
+        data-anchor="github"
+        onClick={handleClick}
       >
-        <Link href="#github">Github</Link>
+        Github
       </span>
-
       <span
-        className="text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-200 block"
+        className="shortCutItem"
         tabIndex={0}
         aria-label="Education"
+        data-anchor="education"
+        onClick={handleClick}
       >
-        <Link href="#education">Education</Link>
+        Education
       </span>
-
       <span
-        className="text-teal-400 text-[1rem] sm:text-[1.2rem] p-1 border-b-2 border-cyan-200 block"
+        className="shortCutItem"
         tabIndex={0}
         aria-label="Experience"
+        data-anchor="experience"
+        onClick={handleClick}
       >
-        <Link href="#experience">Experience</Link>
+        Experience
       </span>
     </div>
   );

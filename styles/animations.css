@@ -1,6 +1,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .fade-in-anim {
-    scale: 0.6;
+    scale: 0.3;
     opacity: 0;
     animation: fade-in linear forwards;
     animation-timeline: view();
@@ -17,7 +17,7 @@
   @keyframes fade-out {
     to {
       opacity: 0;
-      scale: 0.6;
+      scale: 0.3;
     }
   }
 
