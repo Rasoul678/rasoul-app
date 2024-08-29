@@ -1,10 +1,10 @@
 .loader {
   --font-size: 2rem;
-  @apply text-[#c4c4c4] font-my_edu z-[100] rounded-[5rem] align-middle box-content flex justify-center items-center text-[length:calc(var(--font-size)-0.5rem)] md:text-[length:var(--font-size)] h-[calc(var(--font-size)+.3rem)] md:h-[calc(var(--font-size)+1.1rem)] bg-black py-[0.3rem] px-[1.5rem];
+  @apply text-[#c4c4c4] font-my_exo2 z-[100] rounded-[5rem] align-middle box-content flex justify-center items-center text-[length:calc(var(--font-size)-0.5rem)] md:text-[length:var(--font-size)] h-[calc(var(--font-size)+.3rem)] md:h-[calc(var(--font-size)+1.1rem)] bg-black py-[0.3rem] px-[1.5rem];
 }
 
 .words {
-  @apply overflow-hidden relative h-[calc(var(--font-size)+.7rem)] md:h-[calc(var(--font-size)+1.5rem)];
+  @apply overflow-hidden relative h-[calc(var(--font-size)+.3rem)] md:h-[calc(var(--font-size)+1.1rem)];
 }
 
 .words::after {

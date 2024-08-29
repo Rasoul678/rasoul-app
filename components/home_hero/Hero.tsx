@@ -37,7 +37,7 @@ const HomeHero: React.FC = () => {
         </div>
         <div
           className={`text-center text-[1.5rem] md:text-3xl p-2 ${
-            intl?.lang !== "fa" && "font-my_edu"
+            intl?.lang !== "fa" && "font-my_exo2"
           }`}
         >
           May I introduce myself?!

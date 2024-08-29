@@ -11,7 +11,7 @@ const WordLoader = ({}: Props) => {
 
   return (
     <div className="loader">
-      <p className="">I love</p>
+      <p>I love</p>
       <div className="words">
         {typewriter.map((word) => (
           <span className="word" key={word}>
