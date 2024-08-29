@@ -141,7 +141,7 @@ const RustCard: React.FC<IProps> = () => {
         <path d="M807.895,626.942c-7.131-58.735-72.193-61.431-72.193-61.431c-50.936,11.227-59.183,47.369-57.392,75.104L807.895,626.942z" />
       </svg>
 
-      <div>Rust</div>
+      <div className="card-title">Rust</div>
       <CustomLink
         href={routes.ARTICLES_RUST}
         className="app-button border-[#E42B1E] hover:text-[#2e1513] hover:bg-[#E42B1E]"

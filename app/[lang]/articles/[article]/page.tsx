@@ -41,12 +41,13 @@ const Articles: NextPage<IProps> = async ({ params }) => {
 
   return (
     <div>
-      <h1
-        className={`${
-          ArticleNotExist ? "text-red-500" : "text-cyan-400"
-        } font-nunito text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase`}
-      >
-        {params.article} Articles
+      <h1 className="font-my_exo2 text-3xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase">
+        <span
+          className={`${ArticleNotExist ? "text-red-500" : "text-cyan-400"}`}
+        >
+          {params.article}
+        </span>{" "}
+        Articles
       </h1>
       <Hydrate state={dehydratedState}>
         <NotionArticles />

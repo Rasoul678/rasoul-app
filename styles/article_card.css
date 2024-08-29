@@ -1,13 +1,17 @@
 .stack-card {
-  @apply w-[9rem] sm:w-[13rem] sm:min-w-[13rem] h-[12rem] sm:h-[15rem] text-[1.5em] font-bold p-[0.8em]  sm:p-[1.2em] rounded-[1.5rem] flex flex-col items-center justify-center border-[.2rem];
+  @apply w-full sm:w-[13rem] sm:min-w-[13rem] h-[4rem] sm:h-[15rem] text-[1.5em] font-bold p-[0.5em]  sm:p-[1.2em] rounded-xl sm:rounded-[1.5rem] flex sm:flex-col items-center justify-between sm:justify-center border-[.2rem];
 }
 
 .app-logo {
-  @apply mt-[-1rem] pointer-events-none;
+  @apply sm:mt-[-1rem] pointer-events-none w-[3rem] sm:w-auto;
 }
 
 .app-button {
-  @apply text-[0.6rem] sm:text-[0.9rem] duration-200 mt-[1rem] py-[0.6em] px-[1.3em] rounded-[5em] bg-transparent border-[.2rem];
+  @apply text-[0.8rem] sm:text-[0.9rem] duration-200 sm:mt-[1rem] py-[0.6em] px-[1em] sm:px-[1.3em] rounded-[5em] bg-transparent border-[.2rem];
+}
+
+.card-title {
+  @apply w-[8rem] sm:w-auto text-[1.3rem] sm:text-[1.5rem];
 }
 
 @keyframes app-logo-spin {

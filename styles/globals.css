@@ -40,4 +40,5 @@ main {
 @import "navbar.css";
 @import "article_card.css";
 @import "word_loader.css";
-@import "timeline.css";
+@import "animations.css";
+@import "home_hero.css";

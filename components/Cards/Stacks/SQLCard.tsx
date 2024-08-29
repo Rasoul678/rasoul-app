@@ -39,7 +39,7 @@ const SQLCard: React.FC<IProps> = () => {
           ></path>
         </g>
       </svg>
-      <div>SQL</div>
+      <div className="card-title">SQL</div>
       <CustomLink
         href={routes.ARTICLES_SQL}
         className="app-button border-[#cbe6ff] hover:text-[#1e2127] hover:bg-[#cbe6ff]"

@@ -1,0 +1,15 @@
+.heroWrapper {
+  @apply min-h-[calc(100dvh-3.3rem)] flex flex-col-reverse md:flex-row justify-around lg:justify-start gap-0 items-center md:items-stretch px-[2rem] sm:px-[6rem];
+}
+
+.heroInfos {
+  @apply flex flex-col justify-center gap-[0.7rem] md:gap-[2.5rem] h-full md:min-h-[calc(100dvh-3.3rem)] w-full items-center;
+}
+
+.heroImage {
+  @apply w-full flex flex-col justify-center items-center md:block  md:text-5xl;
+}
+
+.heroImage .me {
+  @apply text-[1.5rem] sm:text-[2rem] md:text-[3rem] xl:text-[3.3rem] font-bold block leading-[4rem] md:leading-[5rem] text-center;
+}

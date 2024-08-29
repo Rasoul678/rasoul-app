@@ -51,7 +51,7 @@ const NotionArticles: React.FC<IProps> = (props) => {
     return (
       <div className="flex flex-col justify-center items-center">
         <div className="font-nunito p-4 text-3xl h-full flex justify-center items-center text-center">
-          Sorry! Your ordered article is not my strong suit.
+          Sorry! This article is not my strong suit.
         </div>
         <span className="text-[5rem]">🥺</span>
       </div>

@@ -28,10 +28,10 @@ interface IProps {}
 const AllArticles: React.FC<IProps> = async (props) => {
   return (
     <div>
-      <h1 className="font-my_edu text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase text-cyan-400">
+      <h1 className="font-my_exo2 text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase text-cyan-400">
         All Articles
       </h1>
-      <div className="w-full overflow-hidden flex gap-6 lg:gap-4 flex-wrap justify-center p-4">
+      <div className="fade-out-anim w-full overflow-hidden flex gap-4 sm:gap-6 lg:gap-4 flex-wrap justify-center p-4">
         {articleComponents.map(({ Component, name }) => (
           <Component key={name} />
         ))}

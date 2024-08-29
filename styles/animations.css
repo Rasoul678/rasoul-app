@@ -8,6 +8,19 @@
     animation-range-end: 300px;
   }
 
+  .fade-out-anim {
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+      scale: 0.8;
+    }
+  }
+
   @keyframes fade-in {
     to {
       scale: 1;
