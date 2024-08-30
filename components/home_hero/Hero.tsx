@@ -40,7 +40,7 @@ const HomeHero: React.FC = () => {
             intl?.lang !== "fa" && "font-my_exo2"
           }`}
         >
-          May I introduce myself?!
+          Who am I ?
         </div>
         <WordLoader />
         <div className="md:hidden">

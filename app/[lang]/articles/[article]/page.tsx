@@ -18,7 +18,7 @@ type IProps = {
 export const generateMetadata: (args: IProps) => Metadata = ({ params }) => {
   return {
     title: {
-      absolute: `@Articles | ${params.article}`,
+      absolute: `🏠 ➜ articles ➜ ${params.article}`,
     },
   };
 };

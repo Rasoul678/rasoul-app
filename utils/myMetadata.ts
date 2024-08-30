@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 export const getMyMetadata: () => Metadata = () => ({
   title: {
-    template: "Rasoul | %s",
-    default: "Rasoul's Portfolio",
+    template: "🏠 ➜ %s",
+    default: "Who am I ?",
   },
   description: "This website shows my portfolio",
   keywords: [
