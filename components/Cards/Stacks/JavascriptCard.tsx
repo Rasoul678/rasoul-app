@@ -1,20 +1,16 @@
-import CustomLink from "@components/CustomLink";
 import { routes } from "@utils";
+
+import GeneralCard from "./GeneralCard";
 
 type IProps = {};
 
-/**
- * Renders a card component that displays information about JavaScript, including an SVG logo, the text "JavaScript", and a link to the JavaScript articles page.
- *
- * @component
- * @example
- * return (
- *   <JavascriptCard />
- * )
- */
 const JavascriptCard: React.FC<IProps> = () => {
   return (
-    <div className="stack-card border-[#f7df1e] text-[#f7df1e] bg-[#25241c]">
+    <GeneralCard
+      href={routes.ARTICLES_JAVASCRIPT}
+      title="Javascript"
+      colors={{ main: "#f7df1e", bg: "#25241c", textHover: "#2e2d23" }}
+    >
       <svg
         className="app-logo"
         aria-label="JavaScript"
@@ -53,14 +49,7 @@ const JavascriptCard: React.FC<IProps> = () => {
           d="M18.623,32.464c0.466,0.827,1.176,1.462,2.195,1.462c0.975,0,1.537-0.381,1.537-1.864V22.4h3.074	v10.129c0,3.072-1.801,4.471-4.431,4.471c-2.376,0-4.091-1.593-4.79-3.074L18.623,32.464z"
         />
       </svg>
-      <div className="card-title">Javascript</div>
-      <CustomLink
-        href={routes.ARTICLES_JAVASCRIPT}
-        className="app-button border-[#f7df1e] hover:text-[#2e2d23] hover:bg-[#f7df1e]"
-      >
-        Start reading
-      </CustomLink>
-    </div>
+    </GeneralCard>
   );
 };
 

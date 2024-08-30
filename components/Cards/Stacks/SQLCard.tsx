@@ -1,11 +1,16 @@
-import CustomLink from "@components/CustomLink";
 import { routes } from "@utils";
+
+import GeneralCard from "./GeneralCard";
 
 type IProps = {};
 
 const SQLCard: React.FC<IProps> = () => {
   return (
-    <div className="stack-card group border-[#cbe6ff] text-[#cbe6ff] bg-[#1f1e27]">
+    <GeneralCard
+      href={routes.ARTICLES_SQL}
+      title="SQL"
+      colors={{ main: "#cbe6ff", bg: "#1f1e27", textHover: "#1e2127" }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -39,14 +44,7 @@ const SQLCard: React.FC<IProps> = () => {
           ></path>
         </g>
       </svg>
-      <div className="card-title">SQL</div>
-      <CustomLink
-        href={routes.ARTICLES_SQL}
-        className="app-button border-[#cbe6ff] hover:text-[#1e2127] hover:bg-[#cbe6ff]"
-      >
-        Start reading
-      </CustomLink>
-    </div>
+    </GeneralCard>
   );
 };
 

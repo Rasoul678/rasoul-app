@@ -1,10 +1,13 @@
-import CustomLink from "@components/CustomLink";
+import GeneralCard from "./GeneralCard";
 
 type IProps = {};
 
 const PythonCard: React.FC<IProps> = () => {
   return (
-    <div className="stack-card border-[#387EB8] text-[#FFE052] bg-[#191e24]">
+    <GeneralCard
+      title="Python"
+      colors={{ main: "#387EB8", bg: "#191e24", textHover: "#191e24" }}
+    >
       <svg
         className="app-logo"
         viewBox="0 0 64 64"
@@ -46,15 +49,7 @@ const PythonCard: React.FC<IProps> = () => {
           </linearGradient>
         </defs>
       </svg>
-
-      <div className="card-title">Python</div>
-      <CustomLink
-        href="#"
-        className="app-button border-[#FFE052] hover:text-[#191e24] hover:bg-[#FFE052]"
-      >
-        Start reading
-      </CustomLink>
-    </div>
+    </GeneralCard>
   );
 };
 
