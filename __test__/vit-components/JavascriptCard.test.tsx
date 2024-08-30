@@ -31,8 +31,8 @@ describe("JavascriptCard component", () => {
   it("should render a CustomLink with correct props", () => {
     const expectedHref = expect.stringMatching(routes.ARTICLES_JAVASCRIPT);
 
-    const { getByText } = render(<JavascriptCard />);
-    const link = getByText("Start reading");
+    const { getByDataVi } = render(<JavascriptCard />);
+    const link = getByDataVi("vi-Javascript-card");
     expect(link).toHaveAttribute("href", expectedHref);
     expect(link).toHaveClass(
       "app-button",

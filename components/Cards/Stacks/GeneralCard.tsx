@@ -17,7 +17,7 @@ type IProps = {
 const GeneralCard: React.FC<IProps> = ({ children, title, href, colors }) => {
   return (
     <div
-      className={`stack-card border-[${colors?.main}] text-[${
+      className={`stack-card group border-[${colors?.main}] text-[${
         colors?.text || colors?.main
       }] bg-[${colors?.bg}]`}
     >
@@ -26,6 +26,7 @@ const GeneralCard: React.FC<IProps> = ({ children, title, href, colors }) => {
       <CustomLink
         href={href || "#"}
         className={`group app-button border-[${colors?.main}] hover:text-[${colors?.textHover}] hover:bg-[${colors?.main}]`}
+        data-vi={`vi-${title}-card`}
       >
         <div className="group-hover:hidden sm:hidden">
           {iconsList.folder({ width: 25 })}
