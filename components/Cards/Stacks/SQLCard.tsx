@@ -9,7 +9,13 @@ const SQLCard: React.FC<IProps> = () => {
     <GeneralCard
       href={routes.ARTICLES_SQL}
       title="SQL"
-      colors={{ main: "#cbe6ff", bg: "#1f1e27", textHover: "#1e2127" }}
+      colors={{
+        border: "border-[#cbe6ff]",
+        bg: "bg-[#1f1e27]",
+        bgHover: "hover:bg-[#cbe6ff]",
+        text: "text-[#cbe6ff]",
+        textHover: "hover:text-[#1e2127]",
+      }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

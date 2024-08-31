@@ -6,7 +6,13 @@ const PythonCard: React.FC<IProps> = () => {
   return (
     <GeneralCard
       title="Python"
-      colors={{ main: "#387EB8", bg: "#191e24", textHover: "#191e24" }}
+      colors={{
+        border: "border-[#387EB8]",
+        bg: "bg-[#191e24]",
+        bgHover: "hover:bg-[#387EB8]",
+        text: "text-[#387EB8]",
+        textHover: "hover:text-[#191e24]",
+      }}
     >
       <svg
         className="app-logo"

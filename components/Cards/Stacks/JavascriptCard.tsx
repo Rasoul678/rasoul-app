@@ -9,10 +9,16 @@ const JavascriptCard: React.FC<IProps> = () => {
     <GeneralCard
       href={routes.ARTICLES_JAVASCRIPT}
       title="Javascript"
-      colors={{ main: "#f7df1e", bg: "#25241c", textHover: "#2e2d23" }}
+      colors={{
+        border: "border-[#f7df1e]",
+        bg: "bg-[#25241c]",
+        bgHover: "hover:bg-[#f7df1e]",
+        text: "text-[#f7df1e]",
+        textHover: "hover:text-[#2e2d23]",
+      }}
     >
       <svg
-        className="app-logo"
+        className="app-logo group-hover:motion-safe:animate-[wobble-hor-bottom_0.9s_ease-in_both]"
         aria-label="JavaScript"
         role="img"
         xmlns="http://www.w3.org/2000/svg"

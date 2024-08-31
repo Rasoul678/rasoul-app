@@ -9,7 +9,13 @@ const ReactCard: React.FC<IProps> = () => {
     <GeneralCard
       href={routes.ARTICLES_REACT}
       title="React"
-      colors={{ main: "#61dafb", bg: "#1e2127", textHover: "#1e2127" }}
+      colors={{
+        border: "border-[#61dafb]",
+        bg: "bg-[#1e2127]",
+        bgHover: "hover:bg-[#61dafb]",
+        text: "text-[#61dafb]",
+        textHover: "hover:text-[#1e2127]",
+      }}
     >
       <svg
         className="app-logo group-hover:motion-safe:animate-[app-logo-spin_1s_ease-in-out]"

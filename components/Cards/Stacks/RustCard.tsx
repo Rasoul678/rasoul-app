@@ -10,10 +10,11 @@ const RustCard: React.FC<IProps> = () => {
       href={routes.ARTICLES_RUST}
       title="Rust"
       colors={{
-        main: "#E42B1E",
-        bg: "#2e1513",
-        textHover: "#2e1513",
-        text: "#e23c30",
+        border: "border-[#E42B1E]",
+        bg: "bg-[#2e1513]",
+        bgHover: "hover:bg-[#E42B1E]",
+        text: "text-[#e23c30]",
+        textHover: "hover:text-[#2e1513]",
       }}
     >
       <svg

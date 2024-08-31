@@ -9,10 +9,16 @@ const NextJsCard: React.FC<IProps> = () => {
     <GeneralCard
       href={routes.ARTICLES_NEXTJS}
       title="Next.js"
-      colors={{ main: "#eee", bg: "#191e24", textHover: "#191e24" }}
+      colors={{
+        border: "border-[#eee]",
+        bg: "bg-[#191e24]",
+        bgHover: "hover:bg-[#eee]",
+        text: "text-[#eee]",
+        textHover: "hover:text-[#191e24]",
+      }}
     >
       <svg
-        className="app-logo mt-[0rem]"
+        className="app-logo mt-[0rem] group-hover:motion-safe:animate-[wobble-hor-bottom_0.9s_ease-in_both]"
         height="359"
         preserveAspectRatio="xMidYMid"
         viewBox="0 0 512 359"

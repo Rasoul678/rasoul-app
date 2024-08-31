@@ -9,10 +9,16 @@ const TypescriptCard: React.FC<IProps> = () => {
     <GeneralCard
       href={routes.ARTICLES_TYPESCRIPT}
       title="Typescript"
-      colors={{ main: "#659AD2", bg: "#131c25", textHover: "#282c34" }}
+      colors={{
+        border: "border-[#659AD2]",
+        bg: "bg-[#131c25]",
+        bgHover: "hover:bg-[#659AD2]",
+        text: "text-[#659AD2]",
+        textHover: "hover:text-[#282c34]",
+      }}
     >
       <svg
-        className="app-logo"
+        className="app-logo group-hover:motion-safe:animate-[wobble-hor-bottom_0.9s_ease-in_both]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 48 48"
         width="240px"

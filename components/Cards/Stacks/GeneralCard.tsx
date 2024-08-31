@@ -7,25 +7,24 @@ type IProps = {
   title?: string;
   href?: routes;
   colors?: {
-    main: string;
+    border: string;
     bg: string;
+    bgHover: string;
     textHover: string;
-    text?: string;
+    text: string;
   };
 };
 
 const GeneralCard: React.FC<IProps> = ({ children, title, href, colors }) => {
   return (
     <div
-      className={`stack-card group border-[${colors?.main}] text-[${
-        colors?.text || colors?.main
-      }] bg-[${colors?.bg}]`}
+      className={`stack-card group ${colors?.border} ${colors?.text} ${colors?.bg}`}
     >
       {children}
       <div className="card-title">{title}</div>
       <CustomLink
         href={href || "#"}
-        className={`group app-button border-[${colors?.main}] hover:text-[${colors?.textHover}] hover:bg-[${colors?.main}]`}
+        className={`group app-button ${colors?.border} ${colors?.textHover} ${colors?.bgHover}`}
         data-vi={`vi-${title}-card`}
       >
         <div className="group-hover:hidden sm:hidden">
