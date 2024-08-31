@@ -13,7 +13,7 @@ export const useColumnCount = () => {
       break;
     case "detected":
       if (windowState.width < 520) {
-        columnCount = 2;
+        columnCount = 1;
       } else if (windowState.width < 860 && windowState.width > 520) {
         columnCount = 3;
       } else if (windowState.width > 860 && windowState.width < 1100) {

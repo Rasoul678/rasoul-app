@@ -6,9 +6,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 import { useParams } from "next/navigation";
 
-import ProfilePic from "@assets/icon-pack/icons8-anonymous-mask-420.svg";
 import ClassicCard from "@components/Cards/Classic";
-import VirtualizedGrid from "@components/virtualized-grid";
 import {
   MainDBPropertiesType,
   NextParamsType,
@@ -18,8 +16,6 @@ import { clientService } from "@utils/api-service";
 
 import { articlesList } from "@utils/constants";
 
-import { useColumnCount } from "./useColumnCount";
-
 interface IProps {}
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
@@ -27,19 +23,13 @@ const NotionArticles: React.FC<IProps> = (props) => {
   const params = useParams<NextParamsType>();
 
   //! Fetch DB records on the client
-  const { data: records } = useQuery({
+  const { data: records, isLoading } = useQuery({
     queryKey: [`hydrate-notion-db-${params.article}`],
     queryFn: () => clientService.getDBRecByTag(params.article),
     placeholderData: keepPreviousData,
   });
 
-  const { columnCount, windowState: _s } = useColumnCount();
-
-  if (columnCount === -1) {
-    return <div>It is probably server side rendering...</div>;
-  }
-
-  if (columnCount === 0) {
+  if (isLoading) {
     return (
       <div className="font-nunito text-3xl h-screen flex justify-center align-middle">
         Preparing articles...
@@ -59,41 +49,23 @@ const NotionArticles: React.FC<IProps> = (props) => {
   }
 
   return (
-    <div className="h-screen w-full">
-      {records && (
-        <div className="h-full">
-          <VirtualizedGrid
-            data={records?.results}
-            columnCount={columnCount}
-            rowHeight={270}
-          >
-            {({ columnIndex, data, rowIndex, style }) => {
-              const article = data.allData?.[rowIndex]?.[
-                columnIndex
-              ] as MainDBResultsType;
-
-              if (article) {
-                return (
-                  <div style={style} className="flex justify-center">
-                    <ClassicCard
-                      src={
-                        article?.properties?.Data.files[0]?.file?.url ||
-                        ProfilePic
-                      }
-                      author={article.properties.Author.people[0].name}
-                      title={article.properties.Title.title[0].text.content}
-                      description={
-                        article.properties.Text.rich_text[0]?.text.content
-                      }
-                      icon={article.icon?.external?.url}
-                    />
-                  </div>
-                );
-              }
-            }}
-          </VirtualizedGrid>
-        </div>
-      )}
+    <div className="h-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6 p-4 fade-out-anim">
+      {records?.results?.map((article) => {
+        const {
+          properties: { Data, Author, Title, Text },
+          icon,
+        } = article as MainDBResultsType;
+        return (
+          <ClassicCard
+            key={article.id}
+            src={Data.files[0]?.file?.url}
+            author={Author.people[0].name}
+            title={Title.title[0].text.content}
+            description={Text.rich_text[0]?.text.content}
+            icon={icon?.external?.url}
+          />
+        );
+      })}
     </div>
   );
 };

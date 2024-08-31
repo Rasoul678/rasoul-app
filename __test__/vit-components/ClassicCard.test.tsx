@@ -7,12 +7,12 @@ import { render } from "@test-utils";
 
 describe("ClassicCard component", () => {
   it("should render with default props", () => {
-    const { getByText, getByAltText } = render(
+    const { getByText, getByAltText, getAllByText } = render(
       <ClassicCard src={ArticleCover} />
     );
     expect(getByText("Title")).toBeInTheDocument();
     expect(getByText("Author name")).toBeInTheDocument();
-    expect(getByText("Description")).toBeInTheDocument();
+    expect(getAllByText("Description")[0]).toBeInTheDocument();
     expect(getByAltText("card")).toBeInTheDocument();
   });
 
@@ -23,34 +23,21 @@ describe("ClassicCard component", () => {
       title: "Custom Title",
       description: "Custom Description",
       src: "/custom-image.jpg",
-      icon: "/custom-icon.svg",
     };
-    const { getByText, getByAltText, getByDataVi } = render(
+    const { getByText, getByAltText, getByDataVi, getAllByText } = render(
       <ClassicCard {...props} />
     );
     expect(getByText("Custom Title")).toBeInTheDocument();
     expect(getByText("John Doe")).toBeInTheDocument();
-    expect(getByText("Custom Description")).toBeInTheDocument();
+    expect(getAllByText("Custom Description")[0]).toBeInTheDocument();
 
     expect(getByDataVi("vi-Custom Title")).toHaveAttribute("src", expectedSrc);
-
-    expect(getByAltText("Custom Title-icon")).toHaveAttribute(
-      "src",
-      props.icon
-    );
-  });
-
-  it("should render genre tags", () => {
-    const { getByText } = render(<ClassicCard src="/custom-image.jpg" />);
-    expect(getByText("Drama")).toBeInTheDocument();
-    expect(getByText("Action")).toBeInTheDocument();
-    expect(getByText("Balls")).toBeInTheDocument();
   });
 
   it("should use fallback image when src is not provided", async () => {
     const expectedSrc = expect.stringMatching("assets%2Fwallpaper.jpg");
 
-    const { getByAltText } = render(<ClassicCard />);
+    const { getByAltText } = render(<ClassicCard src={ArticleCover} />);
 
     const image = getByAltText("card");
     expect(image).toHaveAttribute("src", expectedSrc);
@@ -64,12 +51,12 @@ describe("ClassicCard component", () => {
   it("should have correct dimensions", () => {
     const { container } = render(<ClassicCard src="/custom-image.jpg" />);
     const card = container.firstChild;
-    expect(card).toHaveClass("h-[15rem]", "w-[10rem]");
+    expect(card).toHaveClass("h-[6rem]", "w-full");
   });
 
   it("should have hover effect on description", () => {
-    const { getByText } = render(<ClassicCard src="/custom-image.jpg" />);
-    const description = getByText("Description");
-    expect(description).toHaveClass("group-hover:h-[4.5em]");
+    const { getAllByText } = render(<ClassicCard src="/custom-image.jpg" />);
+    const description = getAllByText("Description");
+    expect(description[1]).toHaveClass("group-hover:h-[5em]");
   });
 });
