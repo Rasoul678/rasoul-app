@@ -1,5 +1,5 @@
 .imageLoader {
-  @apply absolute border-l-[0.2rem] border-l-cyan-500 sm:border-none top-0 right-0 sm:left-0 overflow-hidden w-[7.5rem] min-[400px]:w-[9rem] sm:w-full  h-full sm:h-[9rem] max-h-[10.5rem];
+  @apply absolute group-hover:opacity-0 duration-500 ease-in-out border-l-[0.2rem] border-l-cyan-500 sm:border-none top-0 right-0 sm:left-0 overflow-hidden w-[7.5rem] min-[400px]:w-[9rem] min-[470px]:w-[12rem] min-[570px]:w-[13.5rem] sm:w-full  h-full sm:h-[9rem] max-h-[10.5rem];
 }
 
 .imageLoader:before {

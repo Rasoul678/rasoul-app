@@ -57,6 +57,6 @@ describe("ClassicCard component", () => {
   it("should have hover effect on description", () => {
     const { getAllByText } = render(<ClassicCard src="/custom-image.jpg" />);
     const description = getAllByText("Description");
-    expect(description[1]).toHaveClass("group-hover:h-[5em]");
+    expect(description[1]).toHaveClass("group-hover:h-[9em]");
   });
 });
