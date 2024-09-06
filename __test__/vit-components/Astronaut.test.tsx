@@ -101,6 +101,6 @@ describe("Astronaut component", () => {
     const { getByDataVi } = render(<Astronaut />);
     expect(getByDataVi("vi-github")).toBeInTheDocument();
     expect(getByDataVi("vi-linkedin")).toBeInTheDocument();
-    expect(getByDataVi("vi-twitter")).toBeInTheDocument();
+    expect(getByDataVi("vi-telegram")).toBeInTheDocument();
   });
 });

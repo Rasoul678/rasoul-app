@@ -1,0 +1,15 @@
+.footerWrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 justify-items-center relative p-4 bg-black mt-[7rem];
+}
+
+.footerInfoWarapper {
+  @apply sm:order-last w-full h-full flex flex-col items-center sm:items-start p-2;
+}
+
+.footerInfoItem {
+  @apply flex justify-start items-center font-my_exo2 gap-3 hover:text-teal-400;
+}
+
+.footerLinks {
+  @apply flex gap-4 p-4 font-my_quicksand font-medium text-[1.2rem];
+}

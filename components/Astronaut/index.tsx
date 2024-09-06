@@ -9,20 +9,27 @@ import { iconsList } from "@components/icons";
 import ImageWithFallback from "@components/ImageWithFallback";
 import { IntlContext } from "@components/intl-provider";
 
-interface IProps {
+type SocialItems =
+  | "telegram"
+  | "twitter"
+  | "github"
+  | "linkedin"
+  | "medium"
+  | "stack"
+  | "youtube";
+
+type IProps = {
   className?: string;
   heading?: string;
-}
+  socials?: Array<SocialItems>;
+};
 
-/**
- * Renders an astronaut avatar with a heading and social media links.
- *
- * @param {IProps} props - The component props.
- * @param {string} [props.className] - An optional CSS class name to apply to the image.
- * @param {string} [props.heading] - An optional heading to display below the astronaut image.
- * @returns {React.ReactElement} - The rendered astronaut component.
- */
-const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
+const Astronaut: React.FC<IProps> = (props) => {
+  const {
+    className = "w-[15rem]",
+    heading,
+    socials = ["github", "telegram", "linkedin"],
+  } = props;
   const intl = useContext(IntlContext);
   const followMe = intl?.dict["follow-me"]!;
 
@@ -40,15 +47,18 @@ const Astronaut: React.FC<IProps> = ({ className = "w-[15rem]", heading }) => {
           {heading || followMe}
         </div>
         <div className="flex justify-center gap-2">
-          <Link data-vi="vit-astr-link" href={"#"}>
-            {iconsList.socials.github()}
-          </Link>
-          <Link data-vi="vit-astr-link" href={"#"}>
-            {iconsList.socials.linkedin()}
-          </Link>
-          <Link data-vi="vit-astr-link" href={"#"}>
-            {iconsList.socials.twitter()}
-          </Link>
+          {socials?.map((social) => {
+            return (
+              <Link
+                data-vi="vit-astr-link"
+                key={social}
+                href={"#"}
+                className="flex items-center justify-center"
+              >
+                {iconsList.socials[social]({ width: 40 })}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
