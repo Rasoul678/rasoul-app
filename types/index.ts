@@ -131,6 +131,7 @@ export type RepoType = {
 
 // Notion Types
 type NotionUser = "person" | "bot";
+type ID_Type = { id: string; type: string };
 
 export type NotionUserType = {
   avatar_url: string;
@@ -141,6 +142,8 @@ export type NotionUserType = {
   type: NotionUser;
 };
 
+type EmptyObject = Record<string, never>;
+
 export type NotionRespondType<RT> = {
   has_more: boolean;
   next_cursor: null | number;
@@ -148,30 +151,41 @@ export type NotionRespondType<RT> = {
   request_id: string;
   results: Array<RT>;
   type: NotionUser;
-  user: {};
+  user: EmptyObject;
 };
 
 type NotionFileType = { url: string; expiry_time: string } | null;
+type DateienUndMedien = {};
+type Parent = {
+  type: string;
+  database_id: string;
+};
+type Createdby = {
+  object: string;
+  id: string;
+};
+type Cover = { type: string; file: NotionFileType } | null;
+type Icon = {
+  type: string;
+  emoji?: string;
+  external?: { url: string };
+} | null;
 
 export type NotionDBResultsType<T> = {
-  archived: boolean;
-  cover: { type: string; file: NotionFileType };
-  created_by: { object: string; id: string };
-  created_time: string;
-  icon: {
-    type: string;
-    emoji?: string;
-    external?: { url: string };
-  } | null;
-  id: string;
-  in_trash: boolean;
-  last_edited_by: { object: string; id: string };
-  last_edited_time: string;
   object: string;
-  parent: { type: string; database_id: string };
-  properties: T | MainDBPropertiesType;
-  public_url: null | string;
+  id: string;
+  created_time: string;
+  last_edited_time: string;
+  created_by: Createdby;
+  last_edited_by: Createdby;
+  cover: Cover;
+  icon: Icon;
+  parent: Parent;
+  archived: boolean;
+  in_trash: boolean;
+  properties: T;
   url: string;
+  public_url: null | string;
 };
 
 type DBTitleType = {
@@ -240,4 +254,146 @@ export type NextParamsType = {
 
 export type NextSearchParamsType = {
   [key: string]: string | string[] | undefined;
+};
+
+export type DBUserPropertiesType = {
+  Media: MediaType;
+  LinkedIn: UrlType;
+  Website: UrlType;
+  EMail: EMailType;
+  Birthday: DateType;
+  Medium: UrlType;
+  Education: MultiSelectType;
+  Text: TextType;
+  Rolle: SelectType;
+  Github: UrlType;
+  Telefon: TelefonType;
+  ID: EmptyObject;
+  Hobbys: MultiSelectType;
+  X: UrlType;
+  Bachelor: UrlType;
+  Master: UrlType;
+  Person: PersonType;
+  Rasoulmedia: RasoulmediaType;
+  Name: NameType;
+};
+
+type DateType = {
+  id: string;
+  type: string;
+  date: Date;
+};
+
+type Date = {
+  start: string;
+  end: null;
+  time_zone: null;
+};
+
+type EMailType = {
+  id: string;
+  type: string;
+  email: string;
+};
+
+type TextType = {
+  id: string;
+  type: string;
+  rich_text: any[];
+};
+
+type SelectType = {
+  id: string;
+  type: string;
+  select: Select;
+};
+
+type Select = {
+  id: string;
+  name: string;
+  color: string;
+};
+
+type TelefonType = {
+  id: string;
+  type: string;
+  phone_number: string;
+};
+
+type MultiSelectType = {
+  id: string;
+  type: string;
+  multi_select: Select[];
+};
+
+type RasoulmediaType = {
+  id: string;
+  type: string;
+  relation: Relation[];
+  has_more: boolean;
+};
+
+type Relation = {
+  id: string;
+};
+
+type PersonType = {
+  id: string;
+  type: string;
+  people: People[];
+};
+
+type People = {
+  object: string;
+  id: string;
+  name: string;
+  avatar_url: string;
+  type: string;
+  person: {
+    email: string;
+  };
+};
+
+type MediaType = {
+  id: string;
+  type: string;
+  files: Files[];
+};
+
+type Files = {
+  name: string;
+  type: string;
+  file: NotionFileType;
+};
+
+type UrlType = ID_Type & {
+  url: string;
+};
+
+type NameType = {
+  id: string;
+  type: string;
+  title: Title[];
+};
+
+type Title = {
+  type: string;
+  text: Text;
+  annotations: Annotations;
+  plain_text: string;
+  href: null;
+};
+
+type Annotations = {
+  bold: boolean;
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+  code: boolean;
+  color: string;
+};
+
+type Text = {
+  content: string;
+  link: null;
 };

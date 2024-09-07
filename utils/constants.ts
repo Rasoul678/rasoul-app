@@ -21,6 +21,7 @@ export enum externalLinks {
   CSS5 = "https://developer.mozilla.org/en-US/docs/Web/CSS",
   TAILWINDCSS = "https://tailwindcss.com/",
   WEBASSEMBLY = "https://webassembly.org/",
+  RUST = "https://www.rust-lang.org/",
   JEST = "https://jestjs.io/",
   MUT = "https://mut.ac.ir",
   SBU = "https://sbu.ac.ir",

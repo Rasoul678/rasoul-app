@@ -83,7 +83,7 @@ const IconsMap = {
     component: wasn,
   },
   rust: {
-    url: externalLinks.WEBASSEMBLY,
+    url: externalLinks.RUST,
     component: rust,
   },
 };
