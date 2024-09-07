@@ -4,9 +4,10 @@ import React from "react";
 
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import ClassicCard from "@components/Cards/Classic";
+import { iconsList } from "@components/icons";
 import {
   MainDBPropertiesType,
   NextParamsType,
@@ -21,6 +22,7 @@ type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
 const NotionArticles: React.FC<IProps> = (props) => {
   const params = useParams<NextParamsType>();
+  const router = useRouter();
 
   //! Fetch DB records on the client
   const { data: records, isLoading } = useQuery({
@@ -40,10 +42,17 @@ const NotionArticles: React.FC<IProps> = (props) => {
   if (!articlesList.includes(params.article)) {
     return (
       <div className="flex flex-col justify-center items-center">
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className="flex items-center justify-center gap-1 rounded-full text-black bg-[#FFE082] p-1"
+        >
+          {iconsList.restart()}
+        </button>
         <div className="font-nunito p-4 text-3xl h-full flex justify-center items-center text-center">
           Sorry! This article is not my strong suit.
         </div>
-        <span className="text-[5rem]">🥺</span>
+        <span className="text-[5rem]">{iconsList.dino({ width: 100 })}</span>
       </div>
     );
   }

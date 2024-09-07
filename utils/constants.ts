@@ -19,6 +19,9 @@ export enum externalLinks {
   DOCKER = "https://www.docker.com/",
   HTML5 = "https://developer.mozilla.org/en-US/docs/Web/HTML",
   CSS5 = "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  TAILWINDCSS = "https://tailwindcss.com/",
+  WEBASSEMBLY = "https://webassembly.org/",
+  JEST = "https://jestjs.io/",
   MUT = "https://mut.ac.ir",
   SBU = "https://sbu.ac.ir",
 }

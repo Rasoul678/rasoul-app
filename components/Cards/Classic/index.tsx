@@ -33,7 +33,7 @@ const ClassicCard: React.FC<IProps> = ({
   icon,
 }) => {
   return (
-    <div className="shadow-[0px_4px_16px_px_#367E08] h-[6rem] min-[400px]:h-[7rem] sm:h-[16rem] w-full sm:w-auto group gap-[0.5em] rounded-[0.5em] relative flex flex-row-reverse justify-end sm:flex-col px-[.8em] py-[.5em] z-[1] overflow-hidden">
+    <div className="shadow-[0px_4px_16px_px_#367E08] h-[6rem] min-[400px]:h-[7rem] sm:h-[16rem] w-full sm:w-auto group gap-[0.5em] rounded-[0.7em] relative flex flex-row-reverse justify-end sm:flex-col px-[.8em] py-[.5em] z-[1] overflow-hidden border-[2px] border-cyan-500">
       <div className="absolute group-hover:opacity-60 top-0 left-0 h-full w-full bg-[#111111]"></div>
       {src ? (
         <ImageWithFallback

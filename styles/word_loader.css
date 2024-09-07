@@ -19,7 +19,7 @@
 
 .word {
   @apply block h-full pl-[1rem] text-[#956afa] motion-safe:animate-[word-loader_9s_ease-in-out_infinite];
-  animation-delay: 1s;
+  animation-delay: 200ms;
 }
 
 @keyframes word-loader {

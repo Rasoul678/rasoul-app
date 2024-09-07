@@ -1,5 +1,5 @@
 .footerWrapper {
-  @apply grid grid-cols-1 sm:grid-cols-2 justify-items-center relative p-4 bg-black mt-[7rem];
+  @apply grid grid-cols-1 sm:grid-cols-2 justify-items-center p-4 mt-[7rem];
 }
 
 .footerInfoWarapper {
@@ -7,9 +7,13 @@
 }
 
 .footerInfoItem {
-  @apply flex justify-start items-center font-my_exo2 gap-3 hover:text-teal-400;
+  @apply flex justify-start items-center font-my_exo2 gap-3 text-[1.2rem] hover:text-teal-400;
 }
 
 .footerLinks {
-  @apply flex gap-4 p-4 font-my_quicksand font-medium text-[1.2rem];
+  @apply w-full flex justify-center gap-4 p-4 font-my_quicksand font-medium text-[1.3rem] text-cyan-500;
+}
+
+.footerMadeWithLove {
+  @apply flex justify-center items-center font-my_exo2 p-2;
 }
