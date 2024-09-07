@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { UserContext } from "@components/user-provider";
 
 type IProps = {};
 
 const DescriptionColumn: React.FC<IProps> = () => {
+  const userContext = useContext(UserContext);
+
   return (
     <div className="w-full md:w-9/12 sm:mx-3 mt-4 sm:mt-0">
       <div className="bg-gray-900 p-3 shadow-sm rounded-md">
@@ -28,32 +32,28 @@ const DescriptionColumn: React.FC<IProps> = () => {
         <div className="text-gray-300">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 text-sm">
             <div className="grid grid-cols-[1fr_2.8fr]">
-              <div className="px-4 py-2 font-semibold text-left">
-                First Name:
+              <div className="px-4 py-2 font-semibold text-left">Name:</div>
+              <div className="py-2 text-left">
+                {userContext?.user.Person.people[0].name}
               </div>
-              <div className="px-4 py-2 flex">Rasoul</div>
-            </div>
-            <div className="grid grid-cols-[1fr_2.8fr]">
-              <div className="px-4 py-2 font-semibold text-left">
-                Last Name:
-              </div>
-              <div className="px-4 py-2 flex">Hesami Rostami</div>
             </div>
 
             <div className="grid grid-cols-[1fr_2.8fr]">
               <div className="px-4 py-2 font-semibold text-left">Email:</div>
-              <div className="px-4 py-2 flex">
+              <div className="py-2 text-left">
                 <a
                   className="text-sky-500"
-                  href={`mailto:h.rostami.r@gmail.com`}
+                  href={`mailto:${userContext?.user.EMail.email}`}
                 >
-                  h.rostami.r@gmail.com
+                  {userContext?.user.EMail.email}
                 </a>
               </div>
             </div>
             <div className="grid grid-cols-[1fr_2.8fr]">
               <div className="px-4 py-2 font-semibold text-left">Birthday:</div>
-              <div className="px-4 py-2 flex">Feb 06, 1998</div>
+              <div className="py-2 text-left">
+                {userContext?.user.Birthday.date.start}
+              </div>
             </div>
           </div>
         </div>

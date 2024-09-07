@@ -5,7 +5,7 @@ import useScrollTo from "@hooks/useScrollTo";
 interface IProps {}
 
 const Shortcuts: React.FC<IProps> = (props) => {
-  const scrollTo = useScrollTo({ offset: 250 });
+  const scrollTo = useScrollTo({ offset: 200 });
 
   const handleClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
     const target = e.target as HTMLSpanElement;
@@ -47,11 +47,11 @@ const Shortcuts: React.FC<IProps> = (props) => {
       <span
         className="shortCutItem"
         tabIndex={0}
-        aria-label="Experience"
-        data-anchor="experience"
+        aria-label="Contact"
+        data-anchor="contact"
         onClick={handleClick}
       >
-        Experience
+        Contact
       </span>
     </div>
   );

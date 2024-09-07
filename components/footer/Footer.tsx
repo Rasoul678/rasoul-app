@@ -14,7 +14,7 @@ interface IProps {}
 export const Footer: React.FC<IProps> = (props) => {
   const userContext = useContext(UserContext);
   return (
-    <div className="relative bg-black">
+    <div className="relative bg-black" id="contact">
       <div className="footerWrapper">
         <div className="footerInfoWarapper">
           <div className="flex flex-col gap-3 flex-grow justify-center">

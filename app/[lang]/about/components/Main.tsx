@@ -2,12 +2,11 @@
 
 import React from "react";
 
-import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
 import ProfileImage from "@components/ProfileImage";
+import { DBUserPropertiesType } from "@types";
 
 interface IProps {
-  user: PersonUserObjectResponse;
+  user: DBUserPropertiesType | undefined;
 }
 
 const ProfileMain: React.FC<IProps> = ({ user }) => {
@@ -15,12 +14,15 @@ const ProfileMain: React.FC<IProps> = ({ user }) => {
     <>
       <div className="flex flex-wrap justify-center items-start">
         <div className="flex justify-center">
-          <ProfileImage wrapperClassName="w-[8rem] -top-[3.5rem]" />
+          <ProfileImage
+            src={user?.Media.files[1].file?.url}
+            wrapperClassName="w-[8rem] -top-[3.5rem]"
+          />
         </div>
       </div>
       <div className="text-center -mt-6">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
-          {user.name}
+          {user?.Person.people[0].name}
         </h3>
         <p className="text-sm text-gray-400 hover:text-gray-500 leading-6 sm:mx-2 md:mx-32">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.

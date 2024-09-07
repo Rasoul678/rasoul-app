@@ -27,7 +27,7 @@ const HomeHero: React.FC = () => {
       <div className="heroInfos">
         <div className="heroImage">
           <CustomLink
-            href="aboutme"
+            href="about"
             className="w-[7rem] hidden md:block md:m-auto"
           >
             <ProfileImage wrapperClassName="w-[7rem]" />

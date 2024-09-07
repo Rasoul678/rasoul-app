@@ -18,8 +18,8 @@
 }
 
 .word {
-  @apply block h-full pl-[1rem] text-[#956afa] motion-safe:animate-[word-loader_9s_ease-in-out_infinite];
-  animation-delay: 200ms;
+  @apply block h-full pl-[1rem] text-[#a27bfd] motion-safe:animate-[word-loader_10s_ease-in-out_infinite];
+  animation-delay: 300ms;
 }
 
 @keyframes word-loader {
