@@ -1,5 +1,8 @@
+.footerContainer {
+  @apply flex flex-col justify-end gap-6 sm:gap-10 relative bg-black h-[100dvh];
+}
 .footerWrapper {
-  @apply grid grid-cols-1 sm:grid-cols-2 justify-items-center p-4 mt-[7rem];
+  @apply grid grid-cols-1 sm:grid-cols-2 justify-items-center;
 }
 
 .footerInfoWarapper {
@@ -11,7 +14,7 @@
 }
 
 .footerLinks {
-  @apply w-full flex justify-center gap-4 p-4 font-my_quicksand font-medium text-[1.3rem] text-cyan-500;
+  @apply w-full flex justify-center gap-4 sm:gap-[5rem] p-4 font-my_quicksand font-medium text-[1.3rem] text-[#f5cd55];
 }
 
 .footerMadeWithLove {

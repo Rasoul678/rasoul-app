@@ -1,21 +1,22 @@
-import "server-only";
+import en from "@assets/dictionaries/en/en.json";
+import es from "@assets/dictionaries/es/es.json";
+import fa from "@assets/dictionaries/fa/fa.json";
+import fr from "@assets/dictionaries/fr/fr.json";
+import hi from "@assets/dictionaries/hi/hi.json";
+import nl from "@assets/dictionaries/nl/nl.json";
+
 import type { Locale } from "@i18n-config";
+import "server-only";
 
 const dictionaries = {
-  en: () =>
-    import("@assets/dictionaries/en/en.json").then((module) => module.default),
-  nl: () =>
-    import("@assets/dictionaries/nl/nl.json").then((module) => module.default),
-  es: () =>
-    import("@assets/dictionaries/es/es.json").then((module) => module.default),
-  fr: () =>
-    import("@assets/dictionaries/fr/fr.json").then((module) => module.default),
-  fa: () =>
-    import("@assets/dictionaries/fa/fa.json").then((module) => module.default),
-  hi: () =>
-    import("@assets/dictionaries/hi/hi.json").then((module) => module.default),
+  en,
+  nl,
+  es,
+  fr,
+  fa,
+  hi,
 };
 
-export type Dictionaries = Awaited<ReturnType<(typeof dictionaries)["en"]>>;
+export type Dictionaries = (typeof dictionaries)["en"];
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionary = async (locale: Locale) => dictionaries[locale];

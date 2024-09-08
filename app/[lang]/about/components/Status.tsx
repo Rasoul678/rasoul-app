@@ -10,7 +10,7 @@ const Status: React.FC<IProps> = () => {
       <div className="flex justify-center py-4 lg:pt-4 pt-8">
         <div className="mr-4 p-3 text-center">
           <div className="relative flex justify-center">
-            {iconsList.uncheckAll({ width: 50 })}
+            {iconsList["uncheck-all"]({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
               {67}
             </span>
@@ -19,7 +19,7 @@ const Status: React.FC<IProps> = () => {
         </div>
         <div className="mr-4 p-3 text-center">
           <div className="relative flex justify-center">
-            {iconsList.uncheckAll({ width: 50 })}
+            {iconsList["uncheck-all"]({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
               {20}
             </span>
@@ -28,7 +28,7 @@ const Status: React.FC<IProps> = () => {
         </div>
         <div className="lg:mr-4 p-3 text-center">
           <div className="relative flex justify-center">
-            {iconsList.uncheckAll({ width: 50 })}
+            {iconsList["uncheck-all"]({ width: 50 })}
             <span className="absolute top-[33%] text-sm text-gray-800 font-bold uppercase tracking-wide text-blueGray-600">
               {10}
             </span>

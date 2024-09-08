@@ -14,13 +14,13 @@ export const NavLinks = () => {
   return (
     <div className="nav-links">
       <CustomLink href="/">
-        {iconsList.home({
+        {iconsList.fido({
           alt: intl?.dict.nav.home!,
           className: "self-baseline",
         })}
       </CustomLink>
       <CustomLink href="articles">
-        {iconsList.ideas({
+        {iconsList.idea({
           alt: intl?.dict.nav.articles!,
           className: "self-baseline",
         })}

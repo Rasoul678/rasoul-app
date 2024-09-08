@@ -14,12 +14,12 @@ interface IProps {}
 export const Footer: React.FC<IProps> = (props) => {
   const userContext = useContext(UserContext);
   return (
-    <div className="relative bg-black" id="contact">
+    <div className="footerContainer fade-in-anim" id="contact">
       <div className="footerWrapper">
         <div className="footerInfoWarapper">
-          <div className="flex flex-col gap-3 flex-grow justify-center">
+          <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
-              {iconsList.user()}
+              {iconsList["user-male"]()}
               <span>{userContext?.user.Person.people[0].name}</span>
             </div>
             <div className="footerInfoItem">
@@ -35,7 +35,7 @@ export const Footer: React.FC<IProps> = (props) => {
               </a>
             </div>
             <div className="footerInfoItem">
-              {iconsList.googleMapsOld()}
+              {iconsList["google-maps-old"]()}
               <Link
                 href="https://maps.app.goo.gl/ndSDE2sZNMPXYqHz6"
                 target="_blank"
@@ -59,7 +59,7 @@ export const Footer: React.FC<IProps> = (props) => {
         <CustomLink href="about">About</CustomLink>
       </div>
       <div className="footerMadeWithLove">
-        Mit {iconsList.forYou({ width: 30, className: "mr-1" })} gemacht
+        Mit {iconsList["for-you"]({ width: 30, className: "mr-1" })} gemacht
       </div>
     </div>
   );

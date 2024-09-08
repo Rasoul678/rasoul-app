@@ -46,7 +46,7 @@ const MenuContents: React.FC<IProps> = () => {
           name: intl?.dict.lang[locale],
           onClick: () => handleSelectChange(locale),
         }))}
-        icon={iconsList.lang({
+        icon={iconsList.translate({
           alt: intl?.dict.language,
           width: 35,
         })}

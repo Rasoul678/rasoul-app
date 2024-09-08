@@ -8,5 +8,6 @@ export {
   quicksand,
 } from "./getFont";
 export { chunks } from "./helpers";
+export { importIconPack } from "./importIconPack";
 export { parseDate } from "./parseDate";
 export { routes } from "./routes";

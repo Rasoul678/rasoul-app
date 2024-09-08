@@ -31,7 +31,7 @@ const GeneralCard: React.FC<IProps> = ({ children, title, href, colors }) => {
           {iconsList.folder({ width: 25 })}
         </div>
         <div className="hidden group-hover:block sm:group-hover:hidden">
-          {iconsList.openFolder({ width: 25 })}
+          {iconsList["opened-folder"]({ width: 25 })}
         </div>
         <span className="hidden sm:inline">Read more</span>
       </CustomLink>

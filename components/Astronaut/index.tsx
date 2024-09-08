@@ -6,22 +6,14 @@ import Link from "next/link";
 
 import AstronautPNG from "@assets/astronaut.png";
 import { iconsList } from "@components/icons";
+import { SocialListType } from "@components/icons/socials";
 import ImageWithFallback from "@components/ImageWithFallback";
 import { IntlContext } from "@components/intl-provider";
-
-type SocialItems =
-  | "telegram"
-  | "twitter"
-  | "github"
-  | "linkedin"
-  | "medium"
-  | "stack"
-  | "youtube";
 
 type IProps = {
   className?: string;
   heading?: string;
-  socials?: Array<SocialItems>;
+  socials?: Array<SocialListType>;
 };
 
 const Astronaut: React.FC<IProps> = (props) => {

@@ -92,14 +92,15 @@ const stackLists = [...Object.keys(IconsMap)] as Array<keyof typeof IconsMap>;
 
 export const stackIcons: StackIconsType = stackLists.reduce(
   (acc: any, name: (typeof stackLists)[number]) => {
+    const { url, component } = IconsMap[name];
     acc[name] = (props?: IconType) => (
       <GeneralIcon
         asLink={{
-          href: IconsMap[name].url,
+          href: url,
           target: "_blank",
           rel: "noopener noreferrer",
         }}
-        src={IconsMap[name].component}
+        src={component}
         alt={name}
         width={props?.width || 80}
         {...props}
