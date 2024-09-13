@@ -1,32 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import verified from "@assets/icon-pack/icons8-instagram-verification-badge-420.svg";
-import { UserContext } from "@components/user-provider";
+import { iconsList } from "@components/icons";
 
 type IProps = {};
 
 const UserExcerptColumn: React.FC<IProps> = () => {
-  const userContext = useContext(UserContext);
-
   return (
     <div className="w-full md:w-3/12 md:mx-2">
       <div className="bg-gray-900 rounded-md p-3">
-        <div className="overflow-hidden">
-          <iframe
-            src={userContext?.user?.Media.files[0].file?.url}
-            height="380"
-            width="100%"
-          ></iframe>
-          <Link
-            href={userContext?.user?.Media.files[0].file?.url as string}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            fullscreen
-          </Link>
+        {/* TODO: pdf download */}
+        <div className="flex justify-center">
+          {iconsList.download({ width: 100 })}
         </div>
         <h1 className="text-white font-bold text-xl leading-8 my-1 mt-4">
           Rasoul Hesami Rostami

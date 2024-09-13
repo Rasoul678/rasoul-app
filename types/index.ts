@@ -257,20 +257,22 @@ export type NextSearchParamsType = {
 };
 
 export type DBUserPropertiesType = {
-  Media: MediaType;
+  ProfileImage: MediaType;
+  CV: MediaType;
   LinkedIn: UrlType;
   Website: UrlType;
+  Telegram: UrlType;
+  Medium: UrlType;
+  Github: UrlType;
+  X: UrlType;
   EMail: EMailType;
   Birthday: DateType;
-  Medium: UrlType;
   Education: MultiSelectType;
   Text: TextType;
   Rolle: SelectType;
-  Github: UrlType;
   Telefon: TelefonType;
   ID: EmptyObject;
   Hobbys: MultiSelectType;
-  X: UrlType;
   Bachelor: UrlType;
   Master: UrlType;
   Person: PersonType;

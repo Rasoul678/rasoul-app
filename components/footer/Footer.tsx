@@ -1,18 +1,16 @@
 "use client";
 
-import React, { useContext } from "react";
+import React from "react";
 
 import Link from "next/link";
 
 import Astronaut from "@components/Astronaut";
 import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
-import { UserContext } from "@components/user-provider";
 
 interface IProps {}
 
 export const Footer: React.FC<IProps> = (props) => {
-  const userContext = useContext(UserContext);
   return (
     <div className="footerContainer fade-in-anim" id="contact">
       <div className="footerWrapper">
@@ -20,19 +18,15 @@ export const Footer: React.FC<IProps> = (props) => {
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
               {iconsList["user-male"]()}
-              <span>{userContext?.user.Person.people[0].name}</span>
+              <span>Rasoul Hesami Rostami</span>
             </div>
             <div className="footerInfoItem">
               {iconsList.phone()}
-              <a href={`tel:${userContext?.user.Telefon.phone_number}`}>
-                {userContext?.user.Telefon.phone_number}
-              </a>
+              <a href="tel:+989399138354">+989399138354</a>
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}
-              <a href={`mailto:${userContext?.user.EMail.email}`}>
-                {userContext?.user.EMail.email}
-              </a>
+              <a href="mailto:h.rostami.r@gmail.com">h.rostami.r@gmail.com</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}

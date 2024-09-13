@@ -23,6 +23,7 @@ const Astronaut: React.FC<IProps> = (props) => {
     socials = ["github", "telegram", "linkedin"],
   } = props;
   const intl = useContext(IntlContext);
+
   const followMe = intl?.dict["follow-me"]!;
 
   return (

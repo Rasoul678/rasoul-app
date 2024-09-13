@@ -2,12 +2,10 @@ import Footer from "@components/footer";
 import ServerIntlProvider from "@components/intl-provider";
 import Navbar from "@components/navbar";
 import TopLoader from "@components/top-loader";
-import UserProvider from "@components/user-provider";
 import type { Locale } from "@i18n-config";
 
 import "@styles/globals.css";
 
-import { DBUserPropertiesType, NotionDBResultsType } from "@types";
 import {
   caveat,
   concert,
@@ -17,7 +15,6 @@ import {
   lilita,
   quicksand,
 } from "@utils";
-import { notionService } from "@utils/api-service";
 import { getMyMetadata } from "@utils/myMetadata";
 import RQProvider from "@utils/react-query/provider";
 
@@ -36,10 +33,10 @@ const RootLayout: React.FC<IProps> = async (props) => {
     params: { lang },
   } = props;
 
-  const { results } = await notionService.getDBUserByRolle();
+  // const { results } = await notionService.getDBUserByRolle();
 
-  const { properties: user } =
-    results[0] as NotionDBResultsType<DBUserPropertiesType>;
+  // const { properties: user } =
+  //   results[0] as NotionDBResultsType<DBUserPropertiesType>;
 
   const dict = await getDictionary(lang);
 
@@ -55,15 +52,15 @@ const RootLayout: React.FC<IProps> = async (props) => {
       <body className="select-none">
         <RQProvider>
           <ServerIntlProvider dict={dict} lang={lang}>
-            <UserProvider user={user}>
-              <TopLoader />
-              <Navbar />
-              <div className="main_gradient">
-                <div className="gradient" />
-              </div>
-              <main>{children}</main>
-              <Footer />
-            </UserProvider>
+            {/* <UserProvider user={user}> */}
+            <TopLoader />
+            <Navbar />
+            <div className="main_gradient">
+              <div className="gradient" />
+            </div>
+            <main>{children}</main>
+            <Footer />
+            {/* </UserProvider> */}
           </ServerIntlProvider>
         </RQProvider>
       </body>

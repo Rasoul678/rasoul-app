@@ -3,26 +3,20 @@
 import React from "react";
 
 import ProfileImage from "@components/ProfileImage";
-import { DBUserPropertiesType } from "@types";
 
-interface IProps {
-  user: DBUserPropertiesType | undefined;
-}
+interface IProps {}
 
-const ProfileMain: React.FC<IProps> = ({ user }) => {
+const ProfileMain: React.FC<IProps> = () => {
   return (
     <>
       <div className="flex flex-wrap justify-center items-start">
         <div className="flex justify-center">
-          <ProfileImage
-            src={user?.Media.files[1].file?.url}
-            wrapperClassName="w-[8rem] -top-[3.5rem]"
-          />
+          <ProfileImage wrapperClassName="w-[8rem] -top-[3.5rem]" />
         </div>
       </div>
       <div className="text-center -mt-6">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
-          {user?.Person.people[0].name}
+          Rasoul Hesami Rostami
         </h3>
         <p className="text-sm text-gray-400 hover:text-gray-500 leading-6 sm:mx-2 md:mx-32">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.

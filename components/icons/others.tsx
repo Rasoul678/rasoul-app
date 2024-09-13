@@ -27,6 +27,7 @@ const iconLists = [
   "dino",
   "restart",
   "uncheck-all",
+  "download",
 ] as const;
 
 export const otherIcons: OtherIconsType = iconLists.reduce(

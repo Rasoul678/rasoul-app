@@ -1,12 +1,8 @@
-import React, { useContext } from "react";
-
-import { UserContext } from "@components/user-provider";
+import React from "react";
 
 type IProps = {};
 
 const DescriptionColumn: React.FC<IProps> = () => {
-  const userContext = useContext(UserContext);
-
   return (
     <div className="w-full md:w-9/12 sm:mx-3 mt-4 sm:mt-0">
       <div className="bg-gray-900 p-3 shadow-sm rounded-md">
@@ -33,27 +29,20 @@ const DescriptionColumn: React.FC<IProps> = () => {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 text-sm">
             <div className="grid grid-cols-[1fr_2.8fr]">
               <div className="px-4 py-2 font-semibold text-left">Name:</div>
-              <div className="py-2 text-left">
-                {userContext?.user.Person.people[0].name}
-              </div>
+              <div className="py-2 text-left">Rasoul Hesami Rostami</div>
             </div>
 
             <div className="grid grid-cols-[1fr_2.8fr]">
               <div className="px-4 py-2 font-semibold text-left">Email:</div>
               <div className="py-2 text-left">
-                <a
-                  className="text-sky-500"
-                  href={`mailto:${userContext?.user.EMail.email}`}
-                >
-                  {userContext?.user.EMail.email}
+                <a className="text-sky-500" href="mailto:h.rostami.r@gmail.com">
+                  h.rostami.r@gmail.com
                 </a>
               </div>
             </div>
             <div className="grid grid-cols-[1fr_2.8fr]">
               <div className="px-4 py-2 font-semibold text-left">Birthday:</div>
-              <div className="py-2 text-left">
-                {userContext?.user.Birthday.date.start}
-              </div>
+              <div className="py-2 text-left">April 7 1988</div>
             </div>
           </div>
         </div>
