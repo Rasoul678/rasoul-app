@@ -21,12 +21,12 @@ export const Footer: React.FC<IProps> = (props) => {
               <span>Rasoul Hesami Rostami</span>
             </div>
             <div className="footerInfoItem">
-              {iconsList.phone()}
-              <a href="tel:+989399138354">+989399138354</a>
-            </div>
-            <div className="footerInfoItem">
               {iconsList.mail()}
               <a href="mailto:h.rostami.r@gmail.com">h.rostami.r@gmail.com</a>
+            </div>
+            <div className="footerInfoItem">
+              {iconsList.phone()}
+              <a href="tel:+989399138354">+989399138354</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}

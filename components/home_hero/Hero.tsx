@@ -26,6 +26,13 @@ const HomeHero: React.FC = () => {
       </div>
       <div className="heroInfos">
         <div className="heroImage">
+          <div
+            className={`text-center text-[1.5rem] md:text-3xl p-2 md:hidden ${
+              intl?.lang !== "fa" && "font-my_exo2"
+            }`}
+          >
+            Who am I ?
+          </div>
           <CustomLink
             href="about"
             className="w-[7rem] hidden md:block md:m-auto"
@@ -34,13 +41,6 @@ const HomeHero: React.FC = () => {
           </CustomLink>
 
           <span className="me">{me}</span>
-        </div>
-        <div
-          className={`text-center text-[1.5rem] md:text-3xl p-2 ${
-            intl?.lang !== "fa" && "font-my_exo2"
-          }`}
-        >
-          Who am I ?
         </div>
         <WordLoader />
         <div className="md:hidden">

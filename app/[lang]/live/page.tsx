@@ -2,6 +2,7 @@ import React from "react";
 
 import { Metadata } from "next";
 
+import Loader from "@components/loader";
 import { notionService } from "@utils/api-service";
 
 export const metadata: Metadata = {
@@ -18,7 +19,11 @@ const Codes: React.FC<IProps> = async (props) => {
     console.error(error);
   }
 
-  return <div>Codes</div>;
+  return (
+    <div className="flex justify-center">
+      <Loader />
+    </div>
+  );
 };
 
 export default Codes;
