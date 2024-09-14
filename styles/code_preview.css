@@ -1,0 +1,7 @@
+.previewIframe {
+  @apply w-full bg-white;
+}
+
+.previewError {
+  @apply w-full p-[1rem] text-[crimson] bg-white;
+}

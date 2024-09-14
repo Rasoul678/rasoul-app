@@ -1,0 +1,23 @@
+.resizableHhandle {
+  @apply relative flex h-[0.7rem] text-[2.5rem] justify-center items-end bg-[#333] top-[0.25rem] leading-8;
+}
+
+.resizableVhandle {
+  @apply relative h-full w-[0.6rem] text-[2.5rem] flex flex-col justify-center items-center bg-[#333] left-0;
+}
+
+.resizableVhandle span {
+  @apply h-full flex flex-col justify-end items-center;
+}
+
+.resizableVhandle div {
+  @apply h-[0.8rem];
+}
+
+/* .resizable__Vhandle span::after {
+    content: ".";
+  }
+  
+  .resizable__Hhandle span::after {
+    content: ".";
+  } */
