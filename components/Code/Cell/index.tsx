@@ -40,9 +40,21 @@ const CodeCell: React.FC<IProps> = () => {
   }, [text]);
 
   return (
-    <ResizableBox direction="vertical">
-      <div className="cellWrapper">
-        <ResizableBox direction="horizontal" width={"50%"} maxWidth={"70%"}>
+    <>
+      <ResizableBox direction="vertical" className="hidden md:block">
+        <div className="cellWrapper">
+          <ResizableBox direction="horizontal" width={"50%"} maxWidth={"70%"}>
+            <CodeEditor defaultValue={editorDefault} onChange={setText} />
+          </ResizableBox>
+          {isBundling ? (
+            <ProgressBar />
+          ) : (
+            <Preview code={result.code} err={result.err} />
+          )}
+        </div>
+      </ResizableBox>
+      <div className="cellWrapper md:hidden">
+        <ResizableBox direction="vertical" width="100%" height="50%">
           <CodeEditor defaultValue={editorDefault} onChange={setText} />
         </ResizableBox>
         {isBundling ? (
@@ -51,7 +63,7 @@ const CodeCell: React.FC<IProps> = () => {
           <Preview code={result.code} err={result.err} />
         )}
       </div>
-    </ResizableBox>
+    </>
   );
 };
 

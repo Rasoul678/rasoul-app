@@ -1,7 +1,7 @@
 .previewIframe {
-  @apply w-full bg-white;
+  @apply w-full h-full p-2 bg-white rounded-b-xl md:rounded-b-none md:rounded-tr-xl;
 }
 
 .previewError {
-  @apply w-full p-[1rem] text-[crimson] bg-white;
+  @apply w-full h-full p-[1rem] text-[crimson] bg-white rounded-b-xl md:rounded-b-none md:rounded-tr-xl;
 }

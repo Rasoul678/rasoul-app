@@ -8,16 +8,25 @@ interface IProps extends PropsWithChildren {
   direction: "horizontal" | "vertical";
   width?: string | number;
   maxWidth?: string | number;
+  height?: string | number;
+  className?: string;
 }
 
 const ResizableBox: React.FC<IProps> = (props) => {
-  const { direction, children, width = "100%", maxWidth = "100%" } = props;
+  const {
+    direction,
+    children,
+    width = "100%",
+    maxWidth = "100%",
+    height = "auto",
+    className,
+  } = props;
 
   return (
     <Resizable
       defaultSize={{
         width,
-        height: "auto",
+        height: height,
       }}
       minWidth="30%"
       maxWidth={maxWidth}
@@ -29,7 +38,8 @@ const ResizableBox: React.FC<IProps> = (props) => {
         ...(direction === "horizontal" ? { right: true } : { bottom: true }),
       }}
       minHeight="10vh"
-      maxHeight="80vh"
+      maxHeight="85vh"
+      className={className}
     >
       {children}
     </Resizable>

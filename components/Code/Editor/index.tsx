@@ -15,6 +15,9 @@ import {
 import prettier from "prettier";
 import parser from "prettier/parser-babel";
 
+import prettierSVG from "@assets/svg/prettier.svg";
+import GeneralIcon from "@components/icons/GeneralIcon";
+
 // import Prettier from "../icons/Prettier";
 
 interface IProps extends PropsWithChildren {
@@ -93,14 +96,17 @@ const CodeEditor: React.FC<IProps> = (props) => {
   return (
     <div className="group editorWrapper">
       <div
-        className="formatterButton group-hover:opacity-100"
+        className="formatterButton md:group-hover:opacity-100"
         onClick={onClickFormat}
       >
-        {/* <Prettier /> */}
-        prettier icon
+        <GeneralIcon
+          src={prettierSVG}
+          className="rounded-full"
+          alt="format with prettier"
+        />
       </div>
       <MonacoEditor
-        className={"editor"}
+        className="editor"
         height="100%"
         language="javascript"
         path={`file:///${id}-index.tsx`}

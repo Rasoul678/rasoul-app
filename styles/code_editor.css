@@ -45,15 +45,20 @@
   color: #e6e676;
 }
 
+.editor .overflow-guard {
+  @apply rounded-tr-xl rounded-tl-xl md:rounded-tr-none md:rounded-bl-none;
+}
+.editor .monaco-editor {
+  border-radius: 0.75rem;
+}
+
 /* Editor */
 .editorWrapper {
   @apply relative h-full w-full;
 }
 
 .formatterButton {
-  @apply flex justify-center items-center cursor-pointer top-[0.5rem] right-[1.5rem] z-[100] opacity-0 rounded-[50%] p-[0.5rem];
-  position: absolute !important;
-  border: 1px solid #666;
+  @apply flex w-[2.2rem] h-[2.2rem] !absolute border-[2px] border-cyan-400 justify-center items-center cursor-pointer top-[0.5rem] right-[0.5rem] md:right-[1.5rem] z-[100] opacity-80 md:opacity-0 rounded-[50%];
   transition: opacity 0.3s ease-in-out !important;
 }
 
