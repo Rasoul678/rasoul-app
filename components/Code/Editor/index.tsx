@@ -16,9 +16,8 @@ import prettier from "prettier";
 import parser from "prettier/parser-babel";
 
 import prettierSVG from "@assets/svg/prettier.svg";
+import { iconsList } from "@components/icons";
 import GeneralIcon from "@components/icons/GeneralIcon";
-
-// import Prettier from "../icons/Prettier";
 
 interface IProps extends PropsWithChildren {
   defaultValue: string;
@@ -74,16 +73,19 @@ const CodeEditor: React.FC<IProps> = (props) => {
   const formatCode = async (unformatted: string | undefined) => {
     if (!unformatted) return;
 
-    //* format that value
-    const formatted = await prettier.format(unformatted, {
-      parser: "babel",
-      plugins: [parser],
-      useTabs: false,
-      singleQuote: false,
-      semi: true,
-    });
+    //* format that unformatted code
+    const formatted = await prettier
+      .format(unformatted, {
+        parser: "babel",
+        plugins: [parser],
+        useTabs: false,
+        singleQuote: false,
+        semi: true,
+      })
+      .replace(/\n$/, "");
+
     //* Set formatted value back in the editor
-    editorRef.current?.setValue(formatted.replace(/\n$/, ""));
+    editorRef.current?.setValue(formatted);
   };
 
   const onClickFormat = () => {
@@ -104,6 +106,9 @@ const CodeEditor: React.FC<IProps> = (props) => {
           className="rounded-full"
           alt="format with prettier"
         />
+      </div>
+      <div className="infoBox md:group-hover:opacity-100">
+        {iconsList.info()}
       </div>
       <MonacoEditor
         className="editor"

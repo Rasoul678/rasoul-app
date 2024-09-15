@@ -65,7 +65,7 @@ export const IFRAME_SRCDOC = `
     </html>
 `;
 
-export const editorDefault = `// Use "show()" to display something! 🤩 \n// e.g: show(<div>Hello World!</div>)`;
+export const editorDefault = `// Use "show()" to display something! 🤩 \n // e.g: show(<h1 style={{display: "flex", justifyContent: "center", fontFamily: "Ubuntu"}}>Welcome to my Portfolio!</h1>)`;
 
 export const showFunc = `
     import _React from 'react';

@@ -11,7 +11,7 @@ const CodeEditor = ({}: Props) => {
   const isReady = useBundlerService();
 
   return (
-    <div className="flex justify-center h-[calc(88dvh)] m-[1rem]">
+    <div className="flex justify-center h-[calc(88dvh)] m-[1rem] mt-[1.5rem]">
       {isReady ? <CodeCell /> : <Loader />}
     </div>
   );
