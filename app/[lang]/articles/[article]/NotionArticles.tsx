@@ -17,10 +17,10 @@ import { clientService } from "@utils/api-service";
 
 import { articlesList } from "@utils/constants";
 
-interface IProps {}
+type IProps = {};
 type MainDBResultsType = NotionDBResultsType<MainDBPropertiesType>;
 
-const NotionArticles: React.FC<IProps> = (props) => {
+const NotionArticles: React.FC<IProps> = () => {
   const params = useParams<NextParamsType>();
   const router = useRouter();
 
@@ -60,18 +60,10 @@ const NotionArticles: React.FC<IProps> = (props) => {
   return (
     <div className="h-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6 p-4 fade-out-anim">
       {records?.results?.map((article) => {
-        const {
-          properties: { Data, Author, Title, Text },
-          icon,
-        } = article as MainDBResultsType;
         return (
           <ClassicCard
             key={article.id}
-            src={Data.files[0]?.file?.url}
-            author={Author.people[0].name}
-            title={Title.title[0].text.content}
-            description={Text.rich_text[0]?.text.content}
-            icon={icon?.external?.url}
+            properties={(article as MainDBResultsType).properties}
           />
         );
       })}

@@ -206,7 +206,7 @@ type DBTitleType = {
 export type MainDBPropertiesType = {
   ArticlePage: { id: string; type: string; rich_text: [] };
   Author: { id: string; type: string; people: Array<NotionUserType> };
-  Button: { id: string; type: string; button: {} };
+  Button: { id: string; type: string; button: EmptyObject };
   CreatedAt: { id: string; type: string; created_time: string };
   CreatedBy: { id: string; type: string; created_by: NotionUserType };
   Data: {
@@ -215,7 +215,7 @@ export type MainDBPropertiesType = {
     files: Array<{ name: string; type: string; file: NotionFileType }>;
   };
   Date: { id: string; type: string; date: null | string };
-  ID: { id: string; type: string; unique_id: {} };
+  ID: { id: string; type: string; unique_id: EmptyObject };
   LastChangeAt: { id: string; type: string; last_edited_time: string };
   LastChangeBy: { id: string; type: string; last_edited_by: NotionUserType };
   Likes: { id: string; type: string; number: null | number };
