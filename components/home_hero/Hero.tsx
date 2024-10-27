@@ -7,12 +7,18 @@ import CustomLink from "@components/CustomLink";
 import { IntlContext } from "@components/intl-provider";
 import ProfileImage from "@components/ProfileImage";
 
+import { UserContext } from "@components/user-provider";
 import WordLoader from "@components/WordLoader";
+
+import { myContact } from "@utils/constants";
 
 import Shortcuts from "./Shortcuts";
 
 const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
+  const userContext = useContext(UserContext);
+
+  const name = userContext?.user.Person.people[0].name || myContact.name;
 
   const me = intl?.dict.me!;
 
@@ -40,7 +46,7 @@ const HomeHero: React.FC = () => {
             <ProfileImage wrapperClassName="w-[7rem]" />
           </CustomLink>
 
-          <span className="me">{me}</span>
+          <span className="me">{name}</span>
         </div>
         <WordLoader />
         <div className="md:hidden">
