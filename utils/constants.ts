@@ -8,21 +8,21 @@ export const articlesList = [
 ];
 
 export const myDefault = {
-  name: "Rasoul Rostami",
+  name: "Rasoul Hesami Rostami",
   email: "h.rostami.r@gmail.com",
   phone: "+989399138354",
   location: "Iran",
-  github: "https://github.com/RasoulRostami",
-  linkedin: "https://www.linkedin.com/in/rasoulrostami/",
-  telegram: "https://t.me/RasoulRostami",
-  medium: "https://medium.com/@rasoulrostami",
-  youtube: "https://www.youtube.com/@rasoulrostami",
-  instagram: "https://www.instagram.com/rasoulrostami/",
-  facebook: "https://www.facebook.com/rasoulrostami",
-  twitter: "https://twitter.com/rasoulrostami",
-  whatsapp: "https://wa.me/989399138354",
-  stackoverflow: "https://stackoverflow.com/users/13835483/rasoulrostami",
-  leetcode: "https://leetcode.com/rasoulrostami/",
+  //   github: "https://github.com/RasoulRostami",
+  //   linkedin: "https://www.linkedin.com/in/rasoulrostami/",
+  //   telegram: "https://t.me/RasoulRostami",
+  //   medium: "https://medium.com/@rasoulrostami",
+  //   youtube: "https://www.youtube.com/@rasoulrostami",
+  //   instagram: "https://www.instagram.com/rasoulrostami/",
+  //   facebook: "https://www.facebook.com/rasoulrostami",
+  //   twitter: "https://twitter.com/rasoulrostami",
+  //   whatsapp: "https://wa.me/989399138354",
+  //   stackoverflow: "https://stackoverflow.com/users/13835483/rasoulrostami",
+  //   leetcode: "https://leetcode.com/rasoulrostami/",
 };
 
 export enum externalLinks {

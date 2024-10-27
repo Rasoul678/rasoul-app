@@ -20,7 +20,8 @@ export const Footer: React.FC<IProps> = (props) => {
   const name = userContext?.user.Person.people[0].name || myDefault.name;
   const email = userContext?.user.EMail.email || myDefault.email;
   const phone = userContext?.user.Telefon.phone_number || myDefault.phone;
-  const location = userContext?.user.Location.rich_text || myDefault.location;
+  const location =
+    userContext?.user.Location.rich_text[0] || myDefault.location;
 
   return (
     <div className="footerContainer fade-in-anim" id="contact">
