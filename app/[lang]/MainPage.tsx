@@ -13,7 +13,7 @@ type Props = {
 
 const MainPage = ({ repos }: Props) => {
   const { data: user } = useQuery({
-    queryKey: ["hydrate-notion-user"],
+    queryKey: ["hydrate-db-user"],
     queryFn: () => clientService.getDBUser(),
   });
 
