@@ -11,7 +11,7 @@
   .fade-out-anim {
     animation: fade-out linear;
     animation-timeline: view();
-    animation-range: exit;
+    animation-range: 75%;
   }
 
   @keyframes fade-out {

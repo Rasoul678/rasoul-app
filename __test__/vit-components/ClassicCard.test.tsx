@@ -4,6 +4,7 @@ import ArticleCover from "@assets/wallpaper.jpg";
 
 import ClassicCard from "@components/Cards/Classic";
 import { render } from "@test-utils";
+import { MainDBPropertiesType } from "@types";
 
 describe("ClassicCard component", () => {
   it("should render with default props", () => {
@@ -18,14 +19,63 @@ describe("ClassicCard component", () => {
 
   it("should render with custom props", () => {
     const expectedSrc = expect.stringMatching("custom-image.jpg");
-    const props = {
-      author: "John Doe",
-      title: "Custom Title",
-      description: "Custom Description",
-      src: "/custom-image.jpg",
+    const properties: Partial<MainDBPropertiesType> = {
+      Author: {
+        id: "author-123",
+        type: "people",
+        people: [
+          {
+            id: "user-456",
+            name: "John Doe",
+            avatar_url: "https://example.com/avatar.jpg",
+            person: {
+              email: "john.doe@example.com",
+            },
+            type: "person",
+            object: "",
+          },
+        ],
+      },
+      Data: {
+        id: "id1",
+        type: "file",
+        files: [
+          {
+            name: "name",
+            type: "pdf",
+            file: {
+              url: "",
+              expiry_time: "",
+            },
+          },
+        ],
+      },
+      Title: {
+        id: "id2",
+        title: [
+          {
+            annotations: {
+              bold: false,
+              code: false,
+              color: "",
+              italic: false,
+              strikethrough: false,
+              underline: false,
+            },
+            href: null,
+            plain_text: "",
+            text: {
+              content: null,
+              link: null,
+            },
+            type: "",
+          },
+        ],
+        type: "title",
+      },
     };
     const { getByText, getByAltText, getByDataVi, getAllByText } = render(
-      <ClassicCard {...props} />
+      <ClassicCard properties={properties} />
     );
     expect(getByText("Custom Title")).toBeInTheDocument();
     expect(getByText("John Doe")).toBeInTheDocument();

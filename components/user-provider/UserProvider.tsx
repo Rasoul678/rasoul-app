@@ -8,13 +8,15 @@ export const UserContext = createContext<{
   user: DBUserPropertiesType;
 } | null>(null);
 
-interface IProps {
+type IProps = {
   children: React.ReactNode;
-  user: DBUserPropertiesType;
-}
+  user: DBUserPropertiesType | null;
+};
 
 export const UserProvider: React.FC<IProps> = ({ children, user }) => {
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={user ? { user } : null}>
+      {children}
+    </UserContext.Provider>
   );
 };

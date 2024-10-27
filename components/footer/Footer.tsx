@@ -1,16 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 
 import Link from "next/link";
 
 import Astronaut from "@components/Astronaut";
 import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
+import { UserContext } from "@components/user-provider";
 
 interface IProps {}
 
 export const Footer: React.FC<IProps> = (props) => {
+  const userContext = useContext(UserContext);
+
   return (
     <div className="footerContainer fade-in-anim" id="contact">
       <div className="footerWrapper">
@@ -18,7 +21,7 @@ export const Footer: React.FC<IProps> = (props) => {
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
               {iconsList["user-male"]()}
-              <span>Rasoul Hesami Rostami</span>
+              <span>{userContext?.user.Person.people[0].name || "Rasoul"}</span>
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}

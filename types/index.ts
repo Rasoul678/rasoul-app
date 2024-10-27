@@ -399,3 +399,5 @@ type Text = {
   content: string;
   link: null;
 };
+
+export type DBUser = NotionDBResultsType<DBUserPropertiesType>;

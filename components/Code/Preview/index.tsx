@@ -19,7 +19,7 @@ const Preview: React.FC<IProps> = ({ code, err }) => {
     //* Because it takes time to sets iframe's srcDoc,
     //* we must wait a litle and then post a message!!
     setTimeout(() => {
-      ref.current!.contentWindow!.postMessage(code, "*");
+      ref.current?.contentWindow?.postMessage(code, "*");
     }, 50);
   }, [code, err]);
 

@@ -4,7 +4,7 @@ import {
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 
-import { NotionRespondType, NotionUserType } from "@types";
+import { DBUserPropertiesType } from "@types";
 
 class APIClientSide {
   public getNotionAuthUser = async (isTest: boolean = false) => {
@@ -17,8 +17,8 @@ class APIClientSide {
 
   public getDBUser = async () => {
     const response = await fetch("/api/notion/userdb");
-    const users: NotionRespondType<NotionUserType> = await response.json();
-    return users;
+    const user: DBUserPropertiesType = await response.json();
+    return user;
   };
 
   public getDBRecords = async () => {

@@ -1,6 +1,6 @@
-import Hero from "@components/home_hero/Hero";
-import TimeLine from "@components/timeline/TimeLine";
 import { serverService } from "@utils/api-service";
+
+import MainPage from "./MainPage";
 
 type Props = {
   params: { id: string };
@@ -12,8 +12,7 @@ const Home = async ({ params, searchParams }: Props) => {
 
   return (
     <main className="min-h-screen">
-      <Hero />
-      <TimeLine repos={repoWithLangs} />
+      <MainPage repos={repoWithLangs} />
     </main>
   );
 };

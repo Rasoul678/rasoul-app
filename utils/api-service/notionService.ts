@@ -31,15 +31,24 @@ class NotionService {
   };
 
   public getDBUserByRolle = async (args?: UserByRolleArgsType) => {
-    return await notion.databases.query({
-      database_id: process.env.NOTION_UDB_ID,
-      filter: {
-        property: "Rolle",
-        select: {
-          equals: args?.rolle || "Admin",
+    let db_response;
+
+    try {
+      db_response = await notion.databases.query({
+        database_id: process.env.NOTION_UDB_ID,
+        filter: {
+          property: "Rolle",
+          select: {
+            equals: args?.rolle || "Admin",
+          },
         },
-      },
-    });
+      });
+    } catch (err) {
+      db_response = null;
+      console.error("Wow! Notion disappointed us!");
+    }
+
+    return db_response;
   };
 }
 
