@@ -17,8 +17,6 @@ const MainPage = ({ repos }: Props) => {
     queryFn: () => clientService.getDBUser(),
   });
 
-  console.log({ user });
-
   return (
     <>
       {/* <UserProvider user={user || null}> */}

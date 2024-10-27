@@ -21,7 +21,7 @@ export const Footer: React.FC<IProps> = (props) => {
   const email = userContext?.user.EMail.email || myDefault.email;
   const phone = userContext?.user.Telefon.phone_number || myDefault.phone;
   const location =
-    userContext?.user.Location.rich_text[0] || myDefault.location;
+    userContext?.user.Location.rich_text[0].plain_text || myDefault.location;
 
   return (
     <div className="footerContainer fade-in-anim" id="contact">
@@ -34,22 +34,22 @@ export const Footer: React.FC<IProps> = (props) => {
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}
-              <a href={`mailto:${email}`}>{"email"}</a>
+              <a href={`mailto:${email}`}>{email}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList.phone()}
-              <a href={`tel:${phone}`}>{"phone"}</a>
+              <a href={`tel:${phone}`}>{phone}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}
-              <span>{"location"}</span>
+              <span>{location}</span>
             </div>
           </div>
         </div>
         <Astronaut
           socials={["github", "linkedin", "telegram", "medium", "youtube"]}
           className="w-[9rem]"
-          heading="Find me on social media"
+          heading={find_me}
         />
       </div>
       <div className="footerLinks">

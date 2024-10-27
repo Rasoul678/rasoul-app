@@ -302,7 +302,7 @@ type EMailType = {
 type TextType = {
   id: string;
   type: string;
-  rich_text: any[];
+  rich_text: Richtext[];
 };
 
 type SelectType = {
@@ -376,15 +376,15 @@ type UrlType = ID_Type & {
 type NameType = {
   id: string;
   type: string;
-  title: Title[];
+  title: Richtext[];
 };
 
-type Title = {
+type Richtext = {
   type: string;
   text: Text;
   annotations: Annotations;
   plain_text: string;
-  href: null;
+  href: string | null;
 };
 
 type Annotations = {
@@ -398,7 +398,7 @@ type Annotations = {
 
 type Text = {
   content: string;
-  link: null;
+  link: string | null;
 };
 
 export type DBUser = NotionDBResultsType<DBUserPropertiesType>;

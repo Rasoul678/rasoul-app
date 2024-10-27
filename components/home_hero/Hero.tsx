@@ -20,8 +20,6 @@ const HomeHero: React.FC = () => {
 
   const name = userContext?.user.Person.people[0].name || myDefault.name;
 
-  const me = intl?.dict.me!;
-
   return (
     <div className="heroWrapper fade-out-anim">
       <div className="hidden lg:block">
