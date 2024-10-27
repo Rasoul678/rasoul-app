@@ -34,15 +34,15 @@ export const Footer: React.FC<IProps> = (props) => {
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}
-              <a href={`mailto:${email}`}>{email}</a>
+              <a href={`mailto:${email}`}>{"email"}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList.phone()}
-              <a href={`tel:${phone}`}>{phone}</a>
+              <a href={`tel:${phone}`}>{"phone"}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}
-              <span>{location}</span>
+              <span>{"location"}</span>
             </div>
           </div>
         </div>
