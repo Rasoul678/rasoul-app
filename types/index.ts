@@ -278,6 +278,7 @@ export type DBUserPropertiesType = {
   Person: PersonType;
   Rasoulmedia: RasoulmediaType;
   Name: NameType;
+  Location: TextType;
 };
 
 type DateType = {

@@ -7,6 +7,24 @@ export const articlesList = [
   "SQL",
 ];
 
+export const myContact = {
+  name: "Rasoul Rostami",
+  email: "h.rostami.r@gmail.com",
+  phone: "+989399138354",
+  location: "Iran",
+  github: "https://github.com/RasoulRostami",
+  linkedin: "https://www.linkedin.com/in/rasoulrostami/",
+  telegram: "https://t.me/RasoulRostami",
+  medium: "https://medium.com/@rasoulrostami",
+  youtube: "https://www.youtube.com/@rasoulrostami",
+  instagram: "https://www.instagram.com/rasoulrostami/",
+  facebook: "https://www.facebook.com/rasoulrostami",
+  twitter: "https://twitter.com/rasoulrostami",
+  whatsapp: "https://wa.me/989399138354",
+  stackoverflow: "https://stackoverflow.com/users/13835483/rasoulrostami",
+  leetcode: "https://leetcode.com/rasoulrostami/",
+};
+
 export enum externalLinks {
   JAVASCRIPT = "https://javascript.info/",
   TYPESCRIPT = "https://www.typescriptlang.org/",
@@ -65,7 +83,7 @@ export const IFRAME_SRCDOC = `
     </html>
 `;
 
-export const editorDefault = `// Use "show()" to display something! 🤩 \n // e.g: show(<h1 style={{display: "flex", justifyContent: "center", fontFamily: "Ubuntu"}}>Welcome to my Portfolio!</h1>)`;
+export const editorDefault = `// Use "show()" to display something! 🤩 \nshow(<h1 style={{display: "flex", justifyContent: "center", fontFamily: "Ubuntu"}}>Welcome to my Portfolio!</h1>)`;
 
 export const showFunc = `
     import _React from 'react';

@@ -83,27 +83,6 @@
   "select-lang": "Seleccione el idioma",
   "select-theme": "Seleccione el tema",
   "send": "Enviar",
-  "step": {
-    "asktour": "¿Te gustaría hacer un recorrido?",
-    "darkmode": "Alternar entre modo oscuro y claro",
-    "enjoy": "Disfrútala",
-    "enterEmail": "Introduce tu correo electrónico",
-    "enterName": "Ingresa tu nombre",
-    "enterSubject": "Introduce el asunto (opcional)",
-    "info": "Aquí encontrarás información sucinta sobre mí y mis habilidades.",
-    "lang": "Elija el idioma del sitio",
-    "nav": "Navegar entre páginas",
-    "no": "Naaah!",
-    "passion": "Estas son mis pasiones",
-    "send": "Y envíamelo",
-    "social": "Esta es mi foto y mis redes sociales 😊",
-    "startContact": "Aquí es donde puedes contactarme",
-    "theme": "Elige el color del tema",
-    "tnx": "¡Gracias! 🎉",
-    "warning": "Si lo cancelas aquí, no lo volverás a ver.",
-    "writeMsg": "Escriba su mensaje aquí",
-    "yes": "Si vamos"
-  },
   "subject": "Sujeto",
   "tech-stack": "Tecnología",
   "typewriter": ["Me gusta diseñar", "Me gusta conocer gente nueva"],
@@ -116,5 +95,6 @@
   },
   "language": "idioma",
   "about": "mi perfil",
-  "follow-me": "Sígueme"
+  "follow-me": "Sígueme",
+  "find-me": "Encuéntrame en las redes sociales"
 }

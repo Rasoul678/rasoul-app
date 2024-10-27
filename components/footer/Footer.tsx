@@ -2,17 +2,25 @@
 
 import React, { useContext } from "react";
 
-import Link from "next/link";
-
 import Astronaut from "@components/Astronaut";
 import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
+import { IntlContext } from "@components/intl-provider";
 import { UserContext } from "@components/user-provider";
+import { myContact } from "@utils/constants";
 
-interface IProps {}
+type IProps = {};
 
 export const Footer: React.FC<IProps> = (props) => {
   const userContext = useContext(UserContext);
+  const intl = useContext(IntlContext);
+
+  const find_me = intl?.dict["find-me"];
+
+  const name = userContext?.user.Person.people[0].name || myContact.name;
+  const email = userContext?.user.EMail.email || myContact.email;
+  const phone = userContext?.user.Telefon.phone_number || myContact.phone;
+  const location = userContext?.user.Location.rich_text || myContact.location;
 
   return (
     <div className="footerContainer fade-in-anim" id="contact">
@@ -21,32 +29,26 @@ export const Footer: React.FC<IProps> = (props) => {
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
               {iconsList["user-male"]()}
-              <span>{userContext?.user.Person.people[0].name || "Rasoul"}</span>
+              <span>{name}</span>
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}
-              <a href="mailto:h.rostami.r@gmail.com">h.rostami.r@gmail.com</a>
+              <a href={`mailto:${email}`}>{email}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList.phone()}
-              <a href="tel:+989399138354">+989399138354</a>
+              <a href={`tel:${phone}`}>{phone}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}
-              <Link
-                href="https://maps.app.goo.gl/ndSDE2sZNMPXYqHz6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Iran
-              </Link>
+              <span>{location}</span>
             </div>
           </div>
         </div>
         <Astronaut
           socials={["github", "linkedin", "telegram", "medium", "youtube"]}
           className="w-[9rem]"
-          heading="Find me in social media"
+          heading={find_me}
         />
       </div>
       <div className="footerLinks">

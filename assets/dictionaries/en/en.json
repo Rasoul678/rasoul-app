@@ -83,27 +83,6 @@
   "select-lang": "Select language",
   "select-theme": "Select theme",
   "send": "Send",
-  "step": {
-    "asktour": "Would you like to take a tour?",
-    "darkmode": "Toggle between dark and light mode",
-    "enjoy": "Enjoy it",
-    "enterEmail": "Enter your E-mail",
-    "enterName": "Enter you name",
-    "enterSubject": "Enter subject (optional)",
-    "info": "Here you would find succinct information about me and my skills",
-    "lang": "Choose site language",
-    "nav": "Navigate between pages",
-    "no": "Naaah!",
-    "passion": "These are my passions",
-    "send": "And, send it to me",
-    "social": "This is my picture and my social networks 😊",
-    "startContact": "This is where you can contact me",
-    "theme": "Choose theme color",
-    "tnx": "Thank You! 🎉",
-    "warning": "If you cancel it here, won't see it again.",
-    "writeMsg": "Write your message here",
-    "yes": "Yes, let's go"
-  },
   "subject": "Subject",
   "tech-stack": "Technology",
   "typewriter": ["I like to design", "I like meeting new people"],
@@ -116,5 +95,6 @@
   },
   "language": "language",
   "about": "about me",
-  "follow-me": "Follow me"
+  "follow-me": "Follow me",
+  "find-me": "Find me in social media"
 }

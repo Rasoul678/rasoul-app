@@ -83,27 +83,6 @@
   "select-lang": "Choisir la langue",
   "select-theme": "Sélectionne un thème",
   "send": "Envoyer",
-  "step": {
-    "asktour": "Souhaitez-vous faire un tour?",
-    "darkmode": "Basculer entre les modes sombre et clair",
-    "enjoy": "Profitez-en",
-    "enterEmail": "Entrer votre Email",
-    "enterName": "Entrez votre nom",
-    "enterSubject": "Entrez le sujet (facultatif)",
-    "info": "Vous trouverez ici des informations succinctes sur moi et mes compétences",
-    "lang": "Choisissez la langue du site",
-    "nav": "Naviguer entre les pages",
-    "no": "Naaah !",
-    "passion": "Ce sont mes passions",
-    "send": "Et, envoie-le-moi",
-    "social": "Ceci est ma photo et mes réseaux sociaux 😊",
-    "startContact": "C'est ici que vous pouvez me contacter",
-    "theme": "Choisissez la couleur du thème",
-    "tnx": "Merci! 🎉",
-    "warning": "Si vous l'annulez ici, vous ne le reverrez plus.",
-    "writeMsg": "Ecrivez votre message ici",
-    "yes": "Oui allons-y"
-  },
   "subject": "Sujet",
   "tech-stack": "La technologie",
   "typewriter": [
@@ -119,5 +98,6 @@
   },
   "language": "langue",
   "about": "mon profil",
-  "follow-me": "Suis-moi"
+  "follow-me": "Suis-moi",
+  "find-me": "Finissez-moi dans les médias sociaux"
 }

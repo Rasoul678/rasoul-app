@@ -83,27 +83,6 @@
   "select-lang": "Selecteer taal",
   "select-theme": "Selecteer thema",
   "send": "Versturen",
-  "step": {
-    "asktour": "Wilt u een rondleiding volgen?",
-    "darkmode": "Schakelen tussen donkere en lichte modus",
-    "enjoy": "Geniet ervan",
-    "enterEmail": "Voer uw e-mailadres in",
-    "enterName": "Vul je naam in",
-    "enterSubject": "Voer onderwerp in (optioneel)",
-    "info": "Hier vind je beknopte informatie over mij en mijn vaardigheden",
-    "lang": "Kies de taal van de site",
-    "nav": "Navigeren tussen pagina's",
-    "no": "Naaah!",
-    "passion": "Dit zijn mijn passies",
-    "send": "En stuur het naar mij",
-    "social": "Dit is mijn foto en mijn sociale netwerken 😊",
-    "startContact": "Hier kunt u contact met mij opnemen",
-    "theme": "Kies themakleur",
-    "tnx": "Bedankt!",
-    "warning": "Als je het hier annuleert, zie je het niet meer terug.",
-    "writeMsg": "Schrijf je bericht hier",
-    "yes": "Ja laten we gaan"
-  },
   "subject": "Onderwerp",
   "tech-stack": "Technologie",
   "typewriter": [
@@ -119,5 +98,6 @@
   },
   "language": "taal",
   "about": "mijn profiel",
-  "follow-me": "Volg mij"
+  "follow-me": "Volg mij",
+  "find-me": "Vind mij op sociale media"
 }
