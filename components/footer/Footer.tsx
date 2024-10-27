@@ -7,7 +7,7 @@ import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import { UserContext } from "@components/user-provider";
-import { myContact } from "@utils/constants";
+import { myDefault } from "@utils/constants";
 
 type IProps = {};
 
@@ -17,10 +17,10 @@ export const Footer: React.FC<IProps> = (props) => {
 
   const find_me = intl?.dict["find-me"];
 
-  const name = userContext?.user.Person.people[0].name || myContact.name;
-  const email = userContext?.user.EMail.email || myContact.email;
-  const phone = userContext?.user.Telefon.phone_number || myContact.phone;
-  const location = userContext?.user.Location.rich_text || myContact.location;
+  const name = userContext?.user.Person.people[0].name || myDefault.name;
+  const email = userContext?.user.EMail.email || myDefault.email;
+  const phone = userContext?.user.Telefon.phone_number || myDefault.phone;
+  const location = userContext?.user.Location.rich_text || myDefault.location;
 
   return (
     <div className="footerContainer fade-in-anim" id="contact">
@@ -48,7 +48,7 @@ export const Footer: React.FC<IProps> = (props) => {
         <Astronaut
           socials={["github", "linkedin", "telegram", "medium", "youtube"]}
           className="w-[9rem]"
-          heading={find_me}
+          heading="Find me on social media"
         />
       </div>
       <div className="footerLinks">

@@ -7,7 +7,7 @@ export const articlesList = [
   "SQL",
 ];
 
-export const myContact = {
+export const myDefault = {
   name: "Rasoul Rostami",
   email: "h.rostami.r@gmail.com",
   phone: "+989399138354",

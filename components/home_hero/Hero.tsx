@@ -10,7 +10,7 @@ import ProfileImage from "@components/ProfileImage";
 import { UserContext } from "@components/user-provider";
 import WordLoader from "@components/WordLoader";
 
-import { myContact } from "@utils/constants";
+import { myDefault } from "@utils/constants";
 
 import Shortcuts from "./Shortcuts";
 
@@ -18,7 +18,7 @@ const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
   const userContext = useContext(UserContext);
 
-  const name = userContext?.user.Person.people[0].name || myContact.name;
+  const name = userContext?.user.Person.people[0].name || myDefault.name;
 
   const me = intl?.dict.me!;
 
