@@ -19,7 +19,7 @@ export const getMyMetadata: () => Metadata = () => ({
   ],
   creator: "Rasoul Hesami Rostami",
   metadataBase: new URL("https://rasoul-app.vercel.app"),
-  manifest: "/en/manifest.json",
+  manifest: "//manifest.webmanifest",
   alternates: {
     canonical: "/",
     languages: {
@@ -36,7 +36,7 @@ export const getMyMetadata: () => Metadata = () => ({
     title: "Dev Portfolio",
     description: "This website shows my portfolio",
     siteName: "Rasoul Portfolio",
-    images: "/en/og-main-image.png",
+    images: "/og-main-image.png",
     locale: "en_US",
     type: "website",
     emails: "h.rostami.r@gmail.com",
