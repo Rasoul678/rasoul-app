@@ -26,6 +26,14 @@ class NotionService {
         multi_select: {
           contains: tag || "",
         },
+        and: [
+          {
+            property: "Status",
+            status: {
+              equals: "Erledigt",
+            },
+          },
+        ],
       },
     });
   };
