@@ -1,7 +1,7 @@
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 import { i18n } from "./i18n-config";
 
@@ -23,12 +23,20 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
+const PUBLIC_FILE = /\.(.*)$/;
 export const middleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
 
-  //! / `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
+  //! / `/_next/` and `/api/` are ignored by the matcher, but we need to ignore files in `public` manually.
   //! If you have one
-  if (["/favicon.ico", "/fonts/"].includes(pathname)) {
+  if (
+    [
+      "/favicon.ico",
+      "/fonts/",
+      "/og-main-image.png",
+      "/manifest.webmanifest",
+    ].includes(pathname)
+  ) {
     return;
   }
 
@@ -54,5 +62,7 @@ export const middleware = async (request: NextRequest) => {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|og-main-image.png).*)",
+  ],
 };
