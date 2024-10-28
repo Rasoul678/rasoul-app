@@ -22,11 +22,13 @@ class NotionService {
     return await notion.databases.query({
       database_id: process.env.NOTION_DB_ID,
       filter: {
-        property: "Tags",
-        multi_select: {
-          contains: tag || "",
-        },
         and: [
+          {
+            property: "Tags",
+            multi_select: {
+              contains: tag || "",
+            },
+          },
           {
             property: "Status",
             status: {
