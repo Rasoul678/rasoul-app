@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import esbuild from "esbuild-wasm";
 
-export const useBundlerService = () => {
+export const useESBuildService = () => {
   const serviceRef = useRef(false);
   const [isReady, setIsReady] = useState(false);
 

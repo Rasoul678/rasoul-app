@@ -68,7 +68,7 @@
 }
 
 .infoBox::after {
-  @apply text-[0.8rem] md:text-[1rem] font-my_exo2 transition ease-in-out duration-[0.5s] opacity-0 absolute -top-[2rem] md:-top-0 rounded-3xl px-[0.5rem] -right-[2rem] md:right-[2rem] border border-cyan-400 w-max bg-black;
+  @apply text-[0.8rem] md:text-[1rem] font-my_exo2 transition ease-in-out duration-[0.5s] opacity-0 absolute -top-[2rem] md:-top-0 rounded-3xl py-[0.3rem] px-[0.7rem] -right-[2rem] md:right-[2rem] border border-cyan-400 w-max bg-black;
   content: "Code editor consumes your mouse and keyboard";
 }
 

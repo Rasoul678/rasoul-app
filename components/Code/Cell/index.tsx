@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import ResizableBox from "@components/Resizable";
 
@@ -7,14 +7,13 @@ import bundler from "@utils/bundler";
 import { editorDefault, showFunc } from "@utils/constants";
 
 import CodeEditor from "../Editor";
-import Preview from "../Preview";
-import ProgressBar from "../ProgressBar";
+import CodeView from "../View";
 
 type ResultType = Awaited<ReturnType<typeof bundler>>;
 type IProps = {};
 
 const CodeCell: React.FC<IProps> = () => {
-  const [isBundling, setIsBundling] = useState(false);
+  const isBundling = useRef(false);
   const [text, setText] = useState("");
   const [result, setResult] = useState<ResultType>({
     code: "",
@@ -28,13 +27,15 @@ const CodeCell: React.FC<IProps> = () => {
   };
 
   useEffect(() => {
-    setIsBundling(true);
+    isBundling.current = true;
+
     const timer = setTimeout(async () => {
       bundleCode(text);
-      setIsBundling(false);
-    }, 600);
+      isBundling.current = false;
+    }, 500);
 
     return () => {
+      isBundling.current = false;
       clearTimeout(timer);
     };
   }, [text]);
@@ -46,22 +47,22 @@ const CodeCell: React.FC<IProps> = () => {
           <ResizableBox direction="horizontal" width={"50%"} maxWidth={"70%"}>
             <CodeEditor defaultValue={editorDefault} onChange={setText} />
           </ResizableBox>
-          {isBundling ? (
-            <ProgressBar />
-          ) : (
-            <Preview code={result.code} err={result.err} />
-          )}
+          <CodeView
+            code={result.code}
+            error={result.err}
+            isBundling={isBundling.current}
+          />
         </div>
       </ResizableBox>
       <div className="cellWrapper md:hidden">
         <ResizableBox direction="vertical" width="100%" height="50%">
           <CodeEditor defaultValue={editorDefault} onChange={setText} />
         </ResizableBox>
-        {isBundling ? (
-          <ProgressBar />
-        ) : (
-          <Preview code={result.code} err={result.err} />
-        )}
+        <CodeView
+          code={result.code}
+          error={result.err}
+          isBundling={isBundling.current}
+        />
       </div>
     </>
   );

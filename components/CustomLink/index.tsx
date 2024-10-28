@@ -20,7 +20,7 @@ type IProps = {};
  * @returns A React element representing the custom link.
  */
 const CustomLink = (props: PropsWithChildren<IProps & CustomLinkType>) => {
-  const { children, href, ...others } = props;
+  const { children, href, locale: _, ...others } = props;
 
   const intl = useContext(IntlContext);
 
