@@ -28,37 +28,43 @@ export const MenuItem: React.FC<IProps> = (props) => {
 
   return (
     <div
-      className={`py-3 flex flex-row-reverse w-full items-center gap-2 ${
-        noBorder ? "" : "border-t"
+      className={`py-2 flex flex-row-reverse w-full justify-between items-center ${
+        noBorder ? "" : "border-t sm:border-none"
       } border-gray-200`}
       onClick={handleClickItem}
     >
-      {icon}
       {href ? (
-        <CustomLink href={href}>
+        <CustomLink
+          href={href}
+          className="flex flex-row-reverse items-center gap-4"
+        >
+          {icon}
           <div className="menu-link block sm:hidden">{name}</div>
         </CustomLink>
       ) : (
-        <div className="relative flex-1">
-          <div className={`menu-regular block ${subMenu && "sm:hidden"}`}>
-            {name}
-          </div>
-          {subMenu && showSub && (
-            <div
-              ref={clickRef}
-              className={`sub-menu-wrapper ${
-                dir === "right"
-                  ? "right-[10rem] sm:right-0 top-0 sm:top-[1.7rem]"
-                  : "left-[10rem] sm:left-0 top-0 sm:top-[1.7rem]"
-              }`}
-            >
-              {subMenu?.map((sub, idx) => {
-                return (
-                  <MenuItem noBorder={idx === 0} key={sub.name} {...sub} />
-                );
-              })}
+        <div className="flex items-center flex-row-reverse gap-4">
+          {icon}
+          <div className="relative flex-1">
+            <div className={`menu-regular block ${subMenu && "sm:hidden"}`}>
+              {name}
             </div>
-          )}
+            {subMenu && showSub && (
+              <div
+                ref={clickRef}
+                className={`sub-menu-wrapper ${
+                  dir === "right"
+                    ? "right-[10rem] sm:right-0 top-0 sm:top-[1.7rem]"
+                    : "left-[10rem] sm:left-0 top-0 sm:top-[1.7rem]"
+                }`}
+              >
+                {subMenu?.map((sub, idx) => {
+                  return (
+                    <MenuItem noBorder={idx === 0} key={sub.name} {...sub} />
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       )}
       {!href && subMenu && (

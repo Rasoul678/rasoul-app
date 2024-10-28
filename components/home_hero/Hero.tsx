@@ -19,11 +19,12 @@ const HomeHero: React.FC = () => {
   const userContext = useContext(UserContext);
 
   const name = userContext?.user.Person.people[0].name || myDefault.name;
+  const profilePic = userContext?.user.ProfileImage.files[0].file?.url;
 
   return (
     <div className="heroWrapper fade-out-anim">
       <div className="hidden lg:block">
-        <Astronaut className="md:w-[12rem]" />
+        <Astronaut className="md:w-[11rem]" />
       </div>
       <div className="mb-3 md:hidden">
         <Shortcuts />
@@ -41,7 +42,7 @@ const HomeHero: React.FC = () => {
             href="about"
             className="w-[7rem] hidden md:block md:m-auto"
           >
-            <ProfileImage wrapperClassName="w-[7rem]" />
+            <ProfileImage src={profilePic} wrapperClassName="w-[7rem]" />
           </CustomLink>
 
           <span className="me">{name}</span>

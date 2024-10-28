@@ -9,8 +9,8 @@ import Hydrate from "@utils/react-query/hydrate.client";
 import MyProfile from "./MyProfile";
 
 export const metadata: Metadata = {
-  title: 'about',
-}
+  title: "about",
+};
 
 const getUser = async () => {
   const users = await notionService.getNotionUser();
@@ -28,7 +28,7 @@ const ProfilePage = async () => {
 
   return (
     <div>
-      <main className="md:p-14 mt-[5rem] md:mt-[1.5rem] mx-4">
+      <main className="md:p-14 mt-[5rem] md:mt-[1.5rem] mx-5 sm:m-auto sm:w-[85%] lg:w-[67%]">
         <section className="px-3 bg-gray-900 rounded-xl">
           <Hydrate state={dehydratedState}>
             <MyProfile />

@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import ProfileImage from "@components/ProfileImage";
+import { UserContext } from "@components/user-provider";
 import { i18n, Locale } from "@i18n-config";
 
 import { MenuItem } from "./Item";
@@ -13,9 +14,12 @@ type IProps = {};
 
 const MenuContents: React.FC<IProps> = () => {
   const intl = React.useContext(IntlContext);
+  const userContext = React.useContext(UserContext);
 
   const pathName = usePathname();
   const router = useRouter();
+
+  const profilePic = userContext?.user.ProfileImage.files[0].file?.url;
 
   const isPersian = intl?.lang === "fa";
 
@@ -37,7 +41,13 @@ const MenuContents: React.FC<IProps> = () => {
         noBorder
         name={intl?.dict.about}
         href="about"
-        icon={<ProfileImage wrapperClassName="w-[2rem]" animationType="hue" />}
+        icon={
+          <ProfileImage
+            src={profilePic}
+            wrapperClassName="w-[2rem]"
+            animationType="hue"
+          />
+        }
       />
       <MenuItem
         name={intl?.dict.language}

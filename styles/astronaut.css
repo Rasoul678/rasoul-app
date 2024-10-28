@@ -10,7 +10,7 @@
 .astronautWrapper .heading {
   @apply font-semibold text-2xl text-center mt-[calc(1em*-2)] rounded-[2rem] text-white font-my_caveat;
   padding-block-start: 2em;
-  animation: keyframes-flash-text 0.5s infinite;
+  animation: keyframes-flash-text 0.7s infinite;
 }
 
 .heading::after {

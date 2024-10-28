@@ -19,10 +19,8 @@ const MainPage = ({ repos }: Props) => {
 
   return (
     <>
-      {/* <UserProvider user={user || null}> */}
       <Hero />
       <TimeLine repos={repos} />
-      {/* </UserProvider> */}
     </>
   );
 };
