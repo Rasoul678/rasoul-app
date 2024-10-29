@@ -50,6 +50,8 @@ const Astronaut: React.FC<IProps> = (props) => {
                 key={social}
                 href={user.socialLinks[social]}
                 className="flex items-center justify-center"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {iconsList.socials[social]({ width: 40 })}
               </Link>
