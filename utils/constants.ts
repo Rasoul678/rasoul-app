@@ -4,7 +4,6 @@ export const articlesList = [
   "Javascript",
   "Typescript",
   "Rust",
-  "SQL",
 ];
 
 export const myDefaultUser = {
@@ -18,9 +17,9 @@ export const myDefaultUser = {
     linkedin: "https://www.linkedin.com/in/rasoul-hesami-rostami",
     stackoverflow:
       "https://stackoverflow.com/users/13294844/rasoul-hesami-rostami",
-    telegram: "https://t.me/@RaHeRo",
+    telegram: "https://t.me/RaHeRo",
     medium: "https://medium.com/@hesami-rasoul",
-    youtube: "https://www.youtube.com/@rasoulrostami",
+    youtube: "https://www.youtube.com/@rasoul-hesami-rostami",
   },
 
   //   instagram: "https://www.instagram.com/rasoulrostami/",
