@@ -29,12 +29,12 @@ export const getDBUser = async () => {
     user.phone = Telefon.phone_number;
     user.location = Location.rich_text[0].plain_text;
     //! social links
-    user.socialLinks.github = Github.url;
-    user.socialLinks.linkedin = LinkedIn.url;
-    user.socialLinks.medium = Medium.url;
-    user.socialLinks.telegram = Telegram.url;
-    user.socialLinks.stackoverflow = Stackoverflow.url;
-    user.socialLinks.youtube = YouTube.url;
+    Github.url && (user.socialLinks.github = Github.url);
+    LinkedIn.url && (user.socialLinks.linkedin = LinkedIn.url);
+    Medium.url && (user.socialLinks.medium = Medium.url);
+    Telegram.url && (user.socialLinks.telegram = Telegram.url);
+    Stackoverflow.url && (user.socialLinks.stackoverflow = Stackoverflow.url);
+    YouTube.url && (user.socialLinks.youtube = YouTube.url);
   }
 
   return user;
