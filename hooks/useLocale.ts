@@ -1,4 +1,5 @@
 import { usePathname } from "next/navigation";
+
 import { Locale } from "@i18n-config";
 
 export const useLocale = (): Locale => {

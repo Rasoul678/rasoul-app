@@ -7,21 +7,14 @@ import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import { UserContext } from "@components/user-provider";
-import { myDefault } from "@utils/constants";
 
 type IProps = {};
 
-export const Footer: React.FC<IProps> = (props) => {
-  const userContext = useContext(UserContext);
+export const Footer: React.FC<IProps> = () => {
+  const { user } = useContext(UserContext);
   const intl = useContext(IntlContext);
 
   const find_me = intl?.dict["find-me"];
-
-  const name = userContext?.user.Person.people[0].name || myDefault.name;
-  const email = userContext?.user.EMail.email || myDefault.email;
-  const phone = userContext?.user.Telefon.phone_number || myDefault.phone;
-  const location =
-    userContext?.user.Location.rich_text[0].plain_text || myDefault.location;
 
   return (
     <div className="footerContainer fade-in-anim" id="contact">
@@ -30,19 +23,19 @@ export const Footer: React.FC<IProps> = (props) => {
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
               {iconsList["user-male"]()}
-              <span>{name}</span>
+              <span>{user?.name}</span>
             </div>
             <div className="footerInfoItem">
               {iconsList.mail()}
-              <a href={`mailto:${email}`}>{email}</a>
+              <a href={`mailto:${user?.email}`}>{user?.email}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList.phone()}
-              <a href={`tel:${phone}`}>{phone}</a>
+              <a href={`tel:${user?.phone}`}>{user?.phone}</a>
             </div>
             <div className="footerInfoItem">
               {iconsList["google-maps-old"]()}
-              <span>{location}</span>
+              <span>{user?.location}</span>
             </div>
           </div>
         </div>

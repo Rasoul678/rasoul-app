@@ -9,6 +9,7 @@ import { iconsList } from "@components/icons";
 import { SocialListType } from "@components/icons/socials";
 import ImageWithFallback from "@components/ImageWithFallback";
 import { IntlContext } from "@components/intl-provider";
+import { UserContext } from "@components/user-provider";
 
 type IProps = {
   className?: string;
@@ -22,7 +23,9 @@ const Astronaut: React.FC<IProps> = (props) => {
     heading,
     socials = ["github", "telegram", "linkedin"],
   } = props;
+
   const intl = useContext(IntlContext);
+  const { user } = useContext(UserContext);
 
   const followMe = intl?.dict["follow-me"]!;
 
@@ -45,7 +48,7 @@ const Astronaut: React.FC<IProps> = (props) => {
               <Link
                 data-vi="vit-astr-link"
                 key={social}
-                href={"#"}
+                href={user.socialLinks[social]}
                 className="flex items-center justify-center"
               >
                 {iconsList.socials[social]({ width: 40 })}

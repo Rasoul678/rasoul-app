@@ -4,29 +4,25 @@ import React from "react";
 
 import ProfileImage from "@components/ProfileImage";
 import { UserContext } from "@components/user-provider";
-import { myDefault } from "@utils/constants";
 
 interface IProps {}
 
 const ProfileMain: React.FC<IProps> = () => {
-  const userContext = React.useContext(UserContext);
-
-  const name = userContext?.user.Person.people[0].name || myDefault.name;
-  const profilePic = userContext?.user.ProfileImage.files[0].file?.url;
+  const { user } = React.useContext(UserContext);
 
   return (
     <>
       <div className="flex flex-wrap justify-center items-start">
         <div className="flex justify-center">
           <ProfileImage
-            src={profilePic}
+            src={user.picture_url}
             wrapperClassName="w-[8rem] -top-[3.5rem]"
           />
         </div>
       </div>
       <div className="text-center -mt-6">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
-          {name}
+          {user.name}
         </h3>
         <p className="text-sm text-gray-400 hover:text-gray-500 leading-6 sm:mx-2 md:mx-32">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.

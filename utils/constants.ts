@@ -7,21 +7,26 @@ export const articlesList = [
   "SQL",
 ];
 
-export const myDefault = {
+export const myDefaultUser = {
   name: "Rasoul Hesami Rostami",
   email: "h.rostami.r@gmail.com",
-  phone: "+989399138354",
+  phone: "+989107608940",
   location: "Iran",
-  //   github: "https://github.com/RasoulRostami",
-  //   linkedin: "https://www.linkedin.com/in/rasoulrostami/",
-  //   telegram: "https://t.me/RasoulRostami",
-  //   medium: "https://medium.com/@rasoulrostami",
-  //   youtube: "https://www.youtube.com/@rasoulrostami",
+  picture_url: "",
+  socialLinks: {
+    github: "https://github.com/Rasoul678",
+    linkedin: "https://www.linkedin.com/in/rasoul-hesami-rostami",
+    stackoverflow:
+      "https://stackoverflow.com/users/13294844/rasoul-hesami-rostami",
+    telegram: "https://t.me/@RaHeRo",
+    medium: "https://medium.com/@hesami-rasoul",
+    youtube: "https://www.youtube.com/@rasoulrostami",
+  },
+
   //   instagram: "https://www.instagram.com/rasoulrostami/",
   //   facebook: "https://www.facebook.com/rasoulrostami",
   //   twitter: "https://twitter.com/rasoulrostami",
   //   whatsapp: "https://wa.me/989399138354",
-  //   stackoverflow: "https://stackoverflow.com/users/13835483/rasoulrostami",
   //   leetcode: "https://leetcode.com/rasoulrostami/",
 };
 

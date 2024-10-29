@@ -2,21 +2,20 @@
 
 import React, { createContext } from "react";
 
-import { DBUserPropertiesType } from "@types";
+import { GetDBUserReturnType } from "@utils";
+import { myDefaultUser } from "@utils/constants";
 
 export const UserContext = createContext<{
-  user: DBUserPropertiesType;
-} | null>(null);
+  user: GetDBUserReturnType;
+}>({ user: myDefaultUser });
 
 type IProps = {
   children: React.ReactNode;
-  user: DBUserPropertiesType | null;
+  user: GetDBUserReturnType;
 };
 
 export const UserProvider: React.FC<IProps> = ({ children, user }) => {
   return (
-    <UserContext.Provider value={user ? { user } : null}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
   );
 };

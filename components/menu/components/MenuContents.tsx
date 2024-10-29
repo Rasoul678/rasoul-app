@@ -14,12 +14,10 @@ type IProps = {};
 
 const MenuContents: React.FC<IProps> = () => {
   const intl = React.useContext(IntlContext);
-  const userContext = React.useContext(UserContext);
+  const { user } = React.useContext(UserContext);
 
   const pathName = usePathname();
   const router = useRouter();
-
-  const profilePic = userContext?.user.ProfileImage.files[0].file?.url;
 
   const isPersian = intl?.lang === "fa";
 
@@ -43,7 +41,7 @@ const MenuContents: React.FC<IProps> = () => {
         href="about"
         icon={
           <ProfileImage
-            src={profilePic}
+            src={user.picture_url}
             wrapperClassName="w-[2rem]"
             animationType="hue"
           />

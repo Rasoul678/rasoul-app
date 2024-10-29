@@ -260,6 +260,8 @@ export type DBUserPropertiesType = {
   ProfileImage: MediaType;
   CV: MediaType;
   LinkedIn: UrlType;
+  Stackoverflow: UrlType;
+  YouTube: UrlType;
   Website: UrlType;
   Telegram: UrlType;
   Medium: UrlType;

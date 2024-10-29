@@ -10,16 +10,11 @@ import ProfileImage from "@components/ProfileImage";
 import { UserContext } from "@components/user-provider";
 import WordLoader from "@components/WordLoader";
 
-import { myDefault } from "@utils/constants";
-
 import Shortcuts from "./Shortcuts";
 
 const HomeHero: React.FC = () => {
   const intl = useContext(IntlContext);
-  const userContext = useContext(UserContext);
-
-  const name = userContext?.user.Person.people[0].name || myDefault.name;
-  const profilePic = userContext?.user.ProfileImage.files[0].file?.url;
+  const { user } = useContext(UserContext);
 
   return (
     <div className="heroWrapper fade-out-anim">
@@ -42,10 +37,10 @@ const HomeHero: React.FC = () => {
             href="about"
             className="w-[7rem] hidden md:block md:m-auto"
           >
-            <ProfileImage src={profilePic} wrapperClassName="w-[7rem]" />
+            <ProfileImage src={user.picture_url} wrapperClassName="w-[7rem]" />
           </CustomLink>
 
-          <span className="me">{name}</span>
+          <span className="me">{user.name}</span>
         </div>
         <WordLoader />
         <div className="md:hidden">

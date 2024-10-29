@@ -10,13 +10,9 @@ export type SocialIconsType = {
   [key in SocialListType]: (props?: IconType) => JSX.Element;
 };
 const socialLists = [
-  "discord",
   "github",
   "linkedin",
   "medium",
-  "reddit",
-  "stack-overflow",
-  "twitterx",
   "telegram",
   "youtube",
 ] as const;

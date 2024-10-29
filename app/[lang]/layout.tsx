@@ -7,18 +7,17 @@ import type { Locale } from "@i18n-config";
 
 import "@styles/globals.css";
 
-import { DBUser } from "@types";
 import {
   caveat,
   concert,
   edu,
   exo2,
+  getDBUser,
+  getMyMetadata,
   iranSans,
   lilita,
   quicksand,
 } from "@utils";
-import { notionService } from "@utils/api-service";
-import { getMyMetadata } from "@utils/myMetadata";
 import RQProvider from "@utils/react-query/provider";
 
 import { getDictionary } from "./dictionaries";
@@ -36,13 +35,7 @@ const RootLayout: React.FC<IProps> = async (props) => {
     params: { lang },
   } = props;
 
-  let user = null;
-
-  const db_users = await notionService.getDBUserByRolle();
-
-  if (db_users) {
-    user = (db_users.results[0] as DBUser).properties;
-  }
+  const user = await getDBUser();
 
   const dict = await getDictionary(lang);
 
