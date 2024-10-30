@@ -1,18 +1,19 @@
-import css from "@assets/icon-pack/icons8-css3-420.svg";
-import git from "@assets/icon-pack/icons8-git-420.svg";
-import html from "@assets/icon-pack/icons8-html-5-420.svg";
-import js from "@assets/icon-pack/icons8-javascript-420.svg";
-import postman from "@assets/icon-pack/icons8-postman-api-420.svg";
-import redux from "@assets/icon-pack/icons8-redux.svg";
-import ts from "@assets/icon-pack/icons8-typescript.svg";
-import docker from "@assets/svg/docker-icon-svgrepo-com.svg";
-import react from "@assets/svg/icons8-react-512.svg";
-import webpack from "@assets/svg/icons8-webpack-512.svg";
-import jest from "@assets/svg/jest-svgrepo-com.svg";
-import nextjs from "@assets/svg/nextjs-svgrepo-com.svg";
-import rust from "@assets/svg/rust-svgrepo-com.svg";
-import tailwind from "@assets/svg/tailwindcss-icon-svgrepo-com.svg";
-import wasn from "@assets/svg/webassembly-svgrepo-com.svg";
+import css from "@assets/icon-pack/css3.svg";
+import git from "@assets/icon-pack/git.svg";
+import html from "@assets/icon-pack/html_5.svg";
+import js from "@assets/icon-pack/javascript.svg";
+import postman from "@assets/icon-pack/postman_api.svg";
+import redux from "@assets/icon-pack/redux.svg";
+import ts from "@assets/icon-pack/typescript.svg";
+
+import docker from "@assets/svg/docker.svg";
+import jest from "@assets/svg/jest.svg";
+import nextjs from "@assets/svg/next_js3.svg";
+import react from "@assets/svg/react.svg";
+import rust from "@assets/svg/rust1.svg";
+import tailwind from "@assets/svg/tailwindcss.svg";
+import wasn from "@assets/svg/webassembly.svg";
+import webpack from "@assets/svg/webpack.svg";
 import { IconType } from "@types";
 
 import { externalLinks } from "@utils/constants";

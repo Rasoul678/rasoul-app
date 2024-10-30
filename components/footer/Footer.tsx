@@ -22,7 +22,7 @@ export const Footer: React.FC<IProps> = () => {
         <div className="footerInfoWarapper">
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
-              {iconsList["user-male"]()}
+              {iconsList["user_male"]()}
               <span>{user?.name}</span>
             </div>
             <div className="footerInfoItem">
@@ -34,7 +34,7 @@ export const Footer: React.FC<IProps> = () => {
               <a href={`tel:${user?.phone}`}>{user?.phone}</a>
             </div>
             <div className="footerInfoItem">
-              {iconsList["google-maps-old"]()}
+              {iconsList["google_maps_old"]()}
               <span>{user?.location}</span>
             </div>
           </div>
@@ -52,7 +52,7 @@ export const Footer: React.FC<IProps> = () => {
         <CustomLink href="about">About</CustomLink>
       </div>
       <div className="footerMadeWithLove">
-        Mit {iconsList["for-you"]({ width: 30, className: "mr-1" })} gemacht
+        Mit {iconsList["for_you"]({ width: 30, className: "mr-1" })} gemacht
       </div>
     </div>
   );

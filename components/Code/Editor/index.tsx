@@ -15,7 +15,7 @@ import {
 import prettier from "prettier";
 import parser from "prettier/parser-babel";
 
-import prettierSVG from "@assets/svg/prettier.svg";
+import prettierSVG from "@assets/svg/prettier_logo.svg";
 import { iconsList } from "@components/icons";
 import GeneralIcon from "@components/icons/GeneralIcon";
 

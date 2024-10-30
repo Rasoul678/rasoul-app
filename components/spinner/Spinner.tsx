@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 
-import loader from "@assets/svg/loader.svg";
+import loader from "@assets/svg/loading.svg";
 
 type IProps = {
   size?: number;
