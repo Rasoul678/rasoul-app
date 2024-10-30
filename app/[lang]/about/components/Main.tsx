@@ -5,7 +5,7 @@ import React from "react";
 import ProfileImage from "@components/ProfileImage";
 import { UserContext } from "@components/user-provider";
 
-interface IProps {}
+type IProps = {};
 
 const ProfileMain: React.FC<IProps> = () => {
   const { user } = React.useContext(UserContext);
@@ -20,7 +20,7 @@ const ProfileMain: React.FC<IProps> = () => {
           />
         </div>
       </div>
-      <div className="text-center -mt-6">
+      <div className="text-center flex-1">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
           {user.name}
         </h3>

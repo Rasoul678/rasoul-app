@@ -21,6 +21,7 @@ export const myDefaultUser = {
     medium: "https://medium.com/@hesami-rasoul",
     youtube: "https://www.youtube.com/@rasoul-hesami-rostami",
   },
+  CV_url: "",
 
   //   instagram: "https://www.instagram.com/rasoulrostami/",
   //   facebook: "https://www.facebook.com/rasoulrostami",

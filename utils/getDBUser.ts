@@ -7,6 +7,7 @@ export const getDBUser = async () => {
   let user = myDefaultUser;
 
   const db_users = await notionService.getDBUserByRolle();
+  console.log("from Notion: ", { db_users });
 
   if (db_users) {
     const {
@@ -21,6 +22,7 @@ export const getDBUser = async () => {
       Telegram,
       Stackoverflow,
       YouTube,
+      CV,
     } = (db_users.results[0] as DBUser).properties;
 
     user.name = Person.people[0].name;
@@ -35,6 +37,7 @@ export const getDBUser = async () => {
     Telegram.url && (user.socialLinks.telegram = Telegram.url);
     Stackoverflow.url && (user.socialLinks.stackoverflow = Stackoverflow.url);
     YouTube.url && (user.socialLinks.youtube = YouTube.url);
+    CV.files[0].file?.url && (user.CV_url = CV.files[0].file?.url);
   }
 
   return user;

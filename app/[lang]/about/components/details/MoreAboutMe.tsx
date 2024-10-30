@@ -3,7 +3,7 @@ import React from "react";
 import DescriptionColumn from "./DescriptionColumn";
 import UserExcerptColumn from "./ExcerptColumn";
 
-interface IProps {}
+type IProps = {};
 
 const MoreAboutMe: React.FC<IProps> = (props) => {
   const ref = React.useRef<HTMLDivElement>(null);

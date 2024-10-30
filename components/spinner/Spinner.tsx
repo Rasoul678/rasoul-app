@@ -4,11 +4,11 @@ import Image from "next/image";
 
 import loader from "@assets/svg/loader.svg";
 
-interface IProps {
-  size?: number
-}
+type IProps = {
+  size?: number;
+};
 
-export const Spinner: React.FC<IProps> = ({size}) => {
+export const Spinner: React.FC<IProps> = ({ size }) => {
   return (
     <div
       aria-label="Loading..."
