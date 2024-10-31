@@ -34,6 +34,8 @@ const iconLists = [
   "target",
   "curriculum_resume",
   "worker",
+  "quote_end",
+  "quote_start",
 ] as const;
 
 export const otherIcons: OtherIconsType = iconLists.reduce(

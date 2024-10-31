@@ -5,16 +5,10 @@ import UserExcerptColumn from "./ExcerptColumn";
 
 type IProps = {};
 
-const MoreAboutMe: React.FC<IProps> = (props) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    ref?.current?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
+const MoreAboutMe: React.FC<IProps> = () => {
   return (
     <div
-      ref={ref}
+      id="about"
       className="container mx-auto my-5 p-3 bg-gray-800 rounded-xl"
     >
       <div className="sm:flex no-wrap md:-mx-2 ">

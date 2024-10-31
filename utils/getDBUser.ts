@@ -7,7 +7,6 @@ export const getDBUser = async () => {
   let user = myDefaultUser;
 
   const db_users = await notionService.getDBUserByRolle();
-  console.log("from Notion: ", { db_users });
 
   if (db_users) {
     const {
