@@ -22,6 +22,7 @@ export const myDefaultUser = {
     youtube: "https://www.youtube.com/@rasoul-hesami-rostami",
   },
   CV_url: "",
+  about: "This text is about me",
 
   //   instagram: "https://www.instagram.com/rasoulrostami/",
   //   facebook: "https://www.facebook.com/rasoulrostami",

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 
 import { iconsList } from "@components/icons";
 import ProfileImage from "@components/ProfileImage";
@@ -10,6 +10,11 @@ type IProps = {};
 
 const ProfileMain: React.FC<IProps> = () => {
   const { user } = React.useContext(UserContext);
+
+  const { about } = user;
+  const getUserAbout = useMemo(() => {
+    return about.length >= 400 ? about.substring(0, 400).concat(" ...") : about;
+  }, [about]);
 
   return (
     <>
@@ -21,27 +26,19 @@ const ProfileMain: React.FC<IProps> = () => {
           />
         </div>
       </div>
-      <div className="text-center flex-1 min-h-[22rem] sm:min-h-[12rem] -mt-[2rem]">
+      <div className="text-center flex-1 min-h-[22rem] max-h-[22rem] overflow-clip sm:min-h-[12rem] -mt-[2rem]">
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
           {user.name}
         </h3>
-        <p className="flex gap-2 text-md text-gray-300 leading-6 sm:mx-2 md:mx-10 text-justify font-my_edu">
-          <span className="self-start">
-            {iconsList.quote_start({ width: 200 })}
-          </span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non
-          deserunt Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non
-          deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non
-          deserunt Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non
-          deserunt.
-          <span className="self-end">
-            {iconsList.quote_end({ width: 200 })}
-          </span>
-        </p>
+        <div className="flex justify-center gap-2 text-md text-gray-300 leading-6 sm:mx-2 md:mx-10 text-justify font-my_edu">
+          <div className="self-start flex justify-center min-w-[3rem]">
+            {iconsList.quote_start({ width: 25 })}
+          </div>
+          <p className="sm:mx-[0.5rem]">{getUserAbout}</p>
+          <p className="self-end flex justify-center min-w-[3rem]">
+            {iconsList.quote_end({ width: 25 })}
+          </p>
+        </div>
       </div>
     </>
   );
