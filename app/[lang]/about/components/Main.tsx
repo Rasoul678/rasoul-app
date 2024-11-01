@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 
 import { iconsList } from "@components/icons";
 import ProfileImage from "@components/ProfileImage";
@@ -11,10 +11,10 @@ type IProps = {};
 const ProfileMain: React.FC<IProps> = () => {
   const { user } = React.useContext(UserContext);
 
-  const { about } = user;
-  const getUserAbout = useMemo(() => {
-    return about.length >= 400 ? about.substring(0, 400).concat(" ...") : about;
-  }, [about]);
+  const about =
+    user.about.length >= 400
+      ? user.about.substring(0, 400).concat(" ...")
+      : user.about;
 
   return (
     <>
@@ -34,7 +34,7 @@ const ProfileMain: React.FC<IProps> = () => {
           <div className="self-start flex justify-center min-w-[3rem]">
             {iconsList.quote_start({ width: 25 })}
           </div>
-          <p className="sm:mx-[0.5rem]">{getUserAbout}</p>
+          <p className="sm:mx-[0.5rem]">{about}</p>
           <p className="self-end flex justify-center min-w-[3rem]">
             {iconsList.quote_end({ width: 25 })}
           </p>
