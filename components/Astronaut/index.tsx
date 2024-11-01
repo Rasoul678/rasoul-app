@@ -37,6 +37,7 @@ const Astronaut: React.FC<IProps> = (props) => {
         width={500}
         height={500}
         src={AstronautPNG}
+        priority={true}
       />
       <div className="relative flex flex-col gap-3 rounded-[2rem]">
         <div data-vi="vit-astr-head" className="heading">

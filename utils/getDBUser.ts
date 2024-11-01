@@ -22,7 +22,7 @@ export const getDBUser = async () => {
       Stackoverflow,
       YouTube,
       CV,
-      Text,
+      About,
     } = (db_users.results[0] as DBUser).properties;
 
     user.name = Person.people[0].name;
@@ -38,7 +38,8 @@ export const getDBUser = async () => {
     Stackoverflow.url && (user.socialLinks.stackoverflow = Stackoverflow.url);
     YouTube.url && (user.socialLinks.youtube = YouTube.url);
     CV.files[0].file?.url && (user.CV_url = CV.files[0].file?.url);
-    Text.rich_text[0].plain_text && (user.about = Text.rich_text[0].plain_text);
+    About.rich_text[0].text.content &&
+      (user.about = About.rich_text[0].text.content);
   }
 
   return user;

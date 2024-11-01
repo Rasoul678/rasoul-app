@@ -270,7 +270,7 @@ export type DBUserPropertiesType = {
   EMail: EMailType;
   Birthday: DateType;
   Education: MultiSelectType;
-  Text: TextType;
+  About: TextType;
   Rolle: SelectType;
   Telefon: TelefonType;
   ID: EmptyObject;
