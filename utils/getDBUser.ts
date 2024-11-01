@@ -25,11 +25,13 @@ export const getDBUser = async () => {
       About,
     } = (db_users.results[0] as DBUser).properties;
 
-    user.name = Person.people[0].name;
+    Person.people.length != 0 && (user.name = Person.people[0].name);
     user.email = EMail.email;
-    user.picture_url = ProfileImage.files[0].file?.url || "";
+    ProfileImage.files.length != 0 &&
+      (user.picture_url = ProfileImage.files[0].file?.url || "");
     user.phone = Telefon.phone_number;
-    user.location = Location.rich_text[0].plain_text;
+    Location.rich_text.length != 0 &&
+      (user.location = Location.rich_text[0].text.content);
     //! social links
     Github.url && (user.socialLinks.github = Github.url);
     LinkedIn.url && (user.socialLinks.linkedin = LinkedIn.url);
@@ -37,9 +39,9 @@ export const getDBUser = async () => {
     Telegram.url && (user.socialLinks.telegram = Telegram.url);
     Stackoverflow.url && (user.socialLinks.stackoverflow = Stackoverflow.url);
     YouTube.url && (user.socialLinks.youtube = YouTube.url);
-    CV.files[0].file?.url && (user.CV_url = CV.files[0].file?.url);
-    // About.rich_text[0].text.content &&
-    //   (user.about = About.rich_text[0].text.content);
+    CV.files.length != 0 && (user.CV_url = CV.files[0].file?.url || "");
+    About.rich_text.length != 0 &&
+      (user.about = About.rich_text[0].text.content);
   }
 
   return user;

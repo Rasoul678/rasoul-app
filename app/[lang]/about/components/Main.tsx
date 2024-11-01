@@ -36,7 +36,7 @@ const ProfileMain: React.FC<IProps> = () => {
           <div className="self-start flex justify-center min-w-[3rem]">
             {iconsList.quote_start({ width: 25 })}
           </div>
-          <p className="sm:mx-[0.5rem]">{"about"}</p>
+          <p className="sm:mx-[0.5rem]">{about}</p>
           <p className="self-end flex justify-center min-w-[3rem]">
             {iconsList.quote_end({ width: 25 })}
           </p>
