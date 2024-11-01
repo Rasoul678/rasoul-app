@@ -38,8 +38,8 @@ export const getDBUser = async () => {
     Stackoverflow.url && (user.socialLinks.stackoverflow = Stackoverflow.url);
     YouTube.url && (user.socialLinks.youtube = YouTube.url);
     CV.files[0].file?.url && (user.CV_url = CV.files[0].file?.url);
-    About.rich_text[0].text.content &&
-      (user.about = About.rich_text[0].text.content);
+    // About.rich_text[0].text.content &&
+    //   (user.about = About.rich_text[0].text.content);
   }
 
   return user;
