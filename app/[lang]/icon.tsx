@@ -15,7 +15,6 @@ export default function Icon() {
       <div
         style={{
           fontSize: 26,
-          // background: "black",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -25,8 +24,7 @@ export default function Icon() {
           borderRadius: "30%",
         }}
       >
-        {/* 🌱 */}
-        🐻
+        🌱
       </div>
     ),
     // ImageResponse options

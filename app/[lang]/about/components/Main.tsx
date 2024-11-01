@@ -11,12 +11,10 @@ type IProps = {};
 const ProfileMain: React.FC<IProps> = () => {
   const { user } = React.useContext(UserContext);
 
-  const about =
+  const about_me =
     user.about.length >= 400
       ? user.about.substring(0, 400).concat(" ...")
       : user.about;
-
-  console.log(about);
 
   return (
     <>
@@ -36,7 +34,7 @@ const ProfileMain: React.FC<IProps> = () => {
           <div className="self-start flex justify-center min-w-[3rem]">
             {iconsList.quote_start({ width: 25 })}
           </div>
-          <p className="sm:mx-[0.5rem]">{about}</p>
+          <p className="sm:mx-[0.5rem]">{about_me}</p>
           <p className="self-end flex justify-center min-w-[3rem]">
             {iconsList.quote_end({ width: 25 })}
           </p>

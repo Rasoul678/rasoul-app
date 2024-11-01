@@ -27,6 +27,7 @@ const ProfileImage: React.FC<IProps> = ({
         height={150}
         className="rounded-full"
         onErrSrc={ProfilePic}
+        priority={true}
       />
       <ImageWithFallback
         src={ProfileFrame}
