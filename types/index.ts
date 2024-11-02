@@ -276,10 +276,7 @@ export type DBUserPropertiesType = {
   Telefon: TelefonType;
   ID: EmptyObject;
   Hobbys: MultiSelectType;
-  Bachelor: UrlType;
-  Master: UrlType;
   Person: PersonType;
-  Rasoulmedia: RasoulmediaType;
   Name: NameType;
   Location: TextType;
 };
@@ -330,17 +327,6 @@ type MultiSelectType = {
   id: string;
   type: string;
   multi_select: Select[];
-};
-
-type RasoulmediaType = {
-  id: string;
-  type: string;
-  relation: Relation[];
-  has_more: boolean;
-};
-
-type Relation = {
-  id: string;
 };
 
 type PersonType = {
