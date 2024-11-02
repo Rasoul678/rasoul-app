@@ -41,7 +41,7 @@ const DescriptionColumn: React.FC<IProps> = () => {
         <>
           <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
             <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-              Masters Degree in SBU
+              Masters Degree at SBU
             </p>
             <p className="text-gray-300 text-xs leading-8 hidden sm:block">
               March 2020 - Now
@@ -49,7 +49,7 @@ const DescriptionColumn: React.FC<IProps> = () => {
           </li>
           <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
             <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-              Bachelors Degree in MUT
+              Bachelors Degree at MUT
             </p>
             <p className="text-gray-300 text-xs leading-8 hidden sm:block">
               March 2020 - Now
