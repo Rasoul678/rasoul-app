@@ -59,14 +59,24 @@ const DescriptionColumn: React.FC<IProps> = () => {
       </Section>
       <Section icon={worker()} title="EXPERIENCE">
         <>
-          <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
-            <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-              Owner at Her Company Inc.
-            </p>
-            <p className="text-gray-300 text-xs leading-8 hidden sm:block">
-              March 2020 - Now
-            </p>
-          </li>
+          {user.experiences.map((exp) => {
+            const { id, name } = exp;
+            const content = name.split("@");
+
+            return (
+              <li
+                className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]"
+                key={id}
+              >
+                <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
+                  {content[0] || "company name"}
+                </p>
+                <p className="text-gray-300 text-xs leading-8 hidden sm:block">
+                  {content[1] || "before"}- {content[2] || "now"}
+                </p>
+              </li>
+            );
+          })}
         </>
       </Section>
     </div>

@@ -23,6 +23,9 @@ export const myDefaultUser = {
   },
   CV_url: "",
   about: "This text is about me",
+  experiences: [
+    { id: "1", name: "No Experience yet@before@now", color: "gray" },
+  ],
 
   //   instagram: "https://www.instagram.com/rasoulrostami/",
   //   facebook: "https://www.facebook.com/rasoulrostami",

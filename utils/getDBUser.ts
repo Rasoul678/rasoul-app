@@ -23,6 +23,7 @@ export const getDBUser = async () => {
       YouTube,
       CV,
       About,
+      Experiences,
     } = (db_users.results[0] as DBUser).properties;
 
     Person.people.length != 0 && (user.name = Person.people[0].name);
@@ -42,6 +43,8 @@ export const getDBUser = async () => {
     CV.files.length != 0 && (user.CV_url = CV.files[0].file?.url || "");
     About.rich_text.length != 0 &&
       (user.about = About.rich_text[0].text.content);
+    Experiences.multi_select.length != 0 &&
+      (user.experiences = Experiences.multi_select);
   }
 
   return user;
