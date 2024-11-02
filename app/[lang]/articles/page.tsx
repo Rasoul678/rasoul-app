@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   title: "articles",
 };
 
-interface IProps {}
+type IProps = {};
 
-const AllArticles: React.FC<IProps> = async (props) => {
+const AllArticles: React.FC<IProps> = () => {
   return (
     <div>
       <h1 className="font-my_exo2 text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase text-cyan-400">
-        All Articles
+        My Articles
       </h1>
       <div className="fade-out-anim w-full overflow-hidden grid gap-[0.6rem] sm:gap-4 xl:gap-8 max-[470px]:grid-cols-1 min-[470px]:grid-cols-2 sm:grid-cols-3 min-[800px]:grid-cols-4 min-[1075px]:grid-cols-5 min-[1150px]:grid-cols-5 p-4">
         {articleComponents.map(({ Component, name }) => (

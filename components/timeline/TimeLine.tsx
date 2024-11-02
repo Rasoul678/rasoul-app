@@ -3,6 +3,7 @@
 import React from "react";
 
 import { TAGS } from "@components/infinite-loop-slider/constants";
+import { UserContext } from "@components/user-provider";
 import { RepoType } from "@types";
 
 import { TimeSection } from "./components";
@@ -15,35 +16,44 @@ type IProps = {
 };
 
 const TimeLine: React.FC<IProps> = ({ repos }) => {
+  const { user } = React.useContext(UserContext);
+
   return (
     <div>
-      <TimeSection
-        animate
-        animationDir="left"
-        title="Tools"
-        wrapperId="tools"
-        tagList={TAGS}
-      >
-        {() => <TechListIcons />}
-      </TimeSection>
-      <TimeSection
-        animate
-        animationDir="right"
-        title="Github Repositories"
-        tagList={repos.map((r: any) => r.name)}
-        color="ffe082"
-        wrapperId="github"
-      >
-        {() => <Repos repos={repos} />}
-      </TimeSection>
-      <TimeSection
-        title="Academic Educations"
-        tagList={["Master & Bachelor"]}
-        color="f48fb1"
-        wrapperId="education"
-      >
-        {() => <Education />}
-      </TimeSection>
+      {user.authorization.show_skills && (
+        <TimeSection
+          animate
+          animationDir="left"
+          title="Tools"
+          wrapperId="tools"
+          tagList={TAGS}
+        >
+          {() => <TechListIcons />}
+        </TimeSection>
+      )}
+
+      {user.authorization.show_repos && (
+        <TimeSection
+          animate
+          animationDir="right"
+          title="Github Repositories"
+          tagList={repos.map((r: any) => r.name)}
+          color="ffe082"
+          wrapperId="github"
+        >
+          {() => <Repos repos={repos} />}
+        </TimeSection>
+      )}
+      {user.authorization.show_education && (
+        <TimeSection
+          title="Academic Educations"
+          tagList={["Master & Bachelor"]}
+          color="f48fb1"
+          wrapperId="education"
+        >
+          {() => <Education />}
+        </TimeSection>
+      )}
     </div>
   );
 };

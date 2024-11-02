@@ -8,6 +8,8 @@ import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
 import { UserContext } from "@components/user-provider";
 
+const { mail, phone, google_maps_old, user_male, for_you } = iconsList;
+
 type IProps = {};
 
 export const Footer: React.FC<IProps> = () => {
@@ -22,21 +24,30 @@ export const Footer: React.FC<IProps> = () => {
         <div className="footerInfoWarapper">
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
-              {iconsList["user_male"]()}
+              {user_male()}
               <span>{user?.name}</span>
             </div>
-            <div className="footerInfoItem">
-              {iconsList.mail()}
-              <a href={`mailto:${user?.email}`}>{user?.email}</a>
-            </div>
-            <div className="footerInfoItem">
-              {iconsList.phone()}
-              <a href={`tel:${user?.phone}`}>{user?.phone}</a>
-            </div>
-            <div className="footerInfoItem">
-              {iconsList["google_maps_old"]()}
-              <span>{user?.location}</span>
-            </div>
+
+            {user.authorization.show_email && (
+              <div className="footerInfoItem">
+                {mail()}
+                <a href={`mailto:${user?.email}`}>{user?.email}</a>
+              </div>
+            )}
+
+            {user.authorization.show_telefon && (
+              <div className="footerInfoItem">
+                {phone()}
+                <a href={`tel:${user?.phone}`}>{user?.phone}</a>
+              </div>
+            )}
+
+            {user.authorization.show_location && (
+              <div className="footerInfoItem">
+                {google_maps_old()}
+                <span>{user?.location}</span>
+              </div>
+            )}
           </div>
         </div>
         <Astronaut
@@ -52,7 +63,7 @@ export const Footer: React.FC<IProps> = () => {
         <CustomLink href="about">About</CustomLink>
       </div>
       <div className="footerMadeWithLove">
-        Mit {iconsList["for_you"]({ width: 30, className: "mr-1" })} gemacht
+        Mit {for_you({ width: 30, className: "mr-1" })} gemacht
       </div>
     </div>
   );

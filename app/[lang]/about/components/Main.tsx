@@ -30,15 +30,17 @@ const ProfileMain: React.FC<IProps> = () => {
         <h3 className="text-2xl md:text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
           {user.name}
         </h3>
-        <div className="flex justify-center gap-2 text-md text-gray-300 leading-6 sm:mx-2 md:mx-10 text-justify font-my_edu">
-          <div className="self-start flex justify-center min-w-[3rem]">
-            {iconsList.quote_start({ width: 25 })}
+        {user.authorization.show_about_me && (
+          <div className="flex justify-center gap-2 text-md text-gray-300 leading-6 sm:mx-2 md:mx-10 text-justify font-my_edu">
+            <div className="self-start flex justify-center min-w-[3rem]">
+              {iconsList.quote_start({ width: 25 })}
+            </div>
+            <p className="sm:mx-[0.5rem]">{about_me}</p>
+            <p className="self-end flex justify-center min-w-[3rem]">
+              {iconsList.quote_end({ width: 25 })}
+            </p>
           </div>
-          <p className="sm:mx-[0.5rem]">{about_me}</p>
-          <p className="self-end flex justify-center min-w-[3rem]">
-            {iconsList.quote_end({ width: 25 })}
-          </p>
-        </div>
+        )}
       </div>
     </>
   );

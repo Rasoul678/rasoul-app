@@ -279,6 +279,26 @@ export type DBUserPropertiesType = {
   Person: PersonType;
   Name: NameType;
   Location: TextType;
+  ShowAboutMe: CheckboxType;
+  ShowArticles: CheckboxType;
+  ShowLiveCode: CheckboxType;
+  ShowHobbys: CheckboxType;
+  ShowEducation: CheckboxType;
+  ShowExperiences: CheckboxType;
+  ShowSkills: CheckboxType;
+  ShowRepos: CheckboxType;
+  ShowResume: CheckboxType;
+  ShowTelefon: CheckboxType;
+  ShowEMail: CheckboxType;
+  ShowLinkedIn: CheckboxType;
+  ShowStackoverflow: CheckboxType;
+  ShowYouTube: CheckboxType;
+  ShowTelegram: CheckboxType;
+  ShowMedium: CheckboxType;
+  ShowGithub: CheckboxType;
+  ShowX: CheckboxType;
+  ShowBirthday: CheckboxType;
+  ShowLocation: CheckboxType;
 };
 
 type DateType = {
@@ -388,6 +408,12 @@ type Annotations = {
 type Text = {
   content: string;
   link: string | null;
+};
+
+type CheckboxType = {
+  id: string;
+  type: string;
+  checkbox: boolean;
 };
 
 export type DBUser = NotionDBResultsType<DBUserPropertiesType>;

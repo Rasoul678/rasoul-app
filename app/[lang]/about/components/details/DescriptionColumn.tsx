@@ -20,65 +20,78 @@ const DescriptionColumn: React.FC<IProps> = () => {
             <p className="text-left text-cyan-500 font-my_exo2">{user.name}</p>
           </li>
 
-          <li className="grid grid-cols-[1fr_2.8fr]">
-            <p className="px-2 font-semibold text-left">Email:</p>
-            <p className="text-left">
-              <a
-                className="text-cyan-500 font-my_exo2"
-                href={`mailto:${user.email}`}
-              >
-                {user.email}
-              </a>
-            </p>
-          </li>
-          <li className="grid grid-cols-[1fr_2.8fr]">
-            <p className="px-2 font-semibold text-left">Birthday:</p>
-            <p className="text-left text-cyan-500 font-my_exo2">April.7.1988</p>
-          </li>
-        </>
-      </Section>
-      <Section icon={curriculum_resume()} title="EDUCATION">
-        <>
-          <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
-            <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-              Masters Degree at SBU
-            </p>
-            <p className="text-gray-300 text-xs leading-8 hidden sm:block">
-              March 2020 - Now
-            </p>
-          </li>
-          <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
-            <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-              Bachelors Degree at MUT
-            </p>
-            <p className="text-gray-300 text-xs leading-8 hidden sm:block">
-              March 2020 - Now
-            </p>
-          </li>
-        </>
-      </Section>
-      <Section icon={worker()} title="EXPERIENCE">
-        <>
-          {user.experiences.map((exp) => {
-            const { id, name } = exp;
-            const content = name.split("@");
+          {user.authorization.show_email && (
+            <li className="grid grid-cols-[1fr_2.8fr]">
+              <p className="px-2 font-semibold text-left">Email:</p>
+              <p className="text-left">
+                <a
+                  className="text-cyan-500 font-my_exo2"
+                  href={`mailto:${user.email}`}
+                >
+                  {user.email}
+                </a>
+              </p>
+            </li>
+          )}
 
-            return (
-              <li
-                className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]"
-                key={id}
-              >
-                <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
-                  {content[0] || "company name"}
-                </p>
-                <p className="text-gray-300 text-xs leading-8 hidden sm:block">
-                  {content[1] || "before"}- {content[2] || "now"}
-                </p>
-              </li>
-            );
-          })}
+          {user.authorization.show_birthday && (
+            <li className="grid grid-cols-[1fr_2.8fr]">
+              <p className="px-2 font-semibold text-left">Birthday:</p>
+              <p className="text-left text-cyan-500 font-my_exo2">
+                April.7.1988
+              </p>
+            </li>
+          )}
         </>
       </Section>
+
+      {user.authorization.show_education && (
+        <Section icon={curriculum_resume()} title="EDUCATION">
+          <>
+            <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
+              <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
+                Masters Degree at SBU
+              </p>
+              <p className="text-gray-300 text-xs leading-8 hidden sm:block">
+                March 2020 - Now
+              </p>
+            </li>
+            <li className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]">
+              <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
+                Bachelors Degree at MUT
+              </p>
+              <p className="text-gray-300 text-xs leading-8 hidden sm:block">
+                March 2020 - Now
+              </p>
+            </li>
+          </>
+        </Section>
+      )}
+
+      {user.authorization.show_experiences && (
+        <Section icon={worker()} title="EXPERIENCE">
+          <>
+            {user.experiences.map((exp) => {
+              const { id, name } = exp;
+              const content = name.split("@");
+
+              return (
+                <li
+                  className="grid grid-cols-[1fr] sm:grid-cols-[1fr_.5fr]"
+                  key={id}
+                >
+                  <p className="px-2 text-cyan-500 text-lg text-left font-my_exo2">
+                    {content[0] || "company name"}
+                  </p>
+                  <p className="text-gray-300 text-xs leading-8 hidden sm:block">
+                    {content[1] || "before"}- {content[2] || "now"}
+                  </p>
+                </li>
+              );
+            })}
+          </>
+        </Section>
+      )}
     </div>
   );
 };
