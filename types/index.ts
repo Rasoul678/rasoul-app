@@ -271,6 +271,7 @@ export type DBUserPropertiesType = {
   Birthday: DateType;
   Education: MultiSelectType;
   Experiences: MultiSelectType;
+  ArticlesList: MultiSelectType;
   About: TextType;
   Rolle: SelectType;
   Telefon: TelefonType;

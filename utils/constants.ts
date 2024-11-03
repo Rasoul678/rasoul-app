@@ -1,11 +1,3 @@
-export const articlesList = [
-  "React",
-  "Nextjs",
-  "Javascript",
-  "Typescript",
-  "Rust",
-];
-
 export const myDefaultUser = {
   name: "Rasoul Hesami Rostami",
   email: "h.rostami.r@gmail.com",
@@ -25,6 +17,13 @@ export const myDefaultUser = {
   about: "This text is about me",
   experiences: [
     { id: "1", name: "No Experience yet@before@now", color: "gray" },
+  ],
+  articles_list: [
+    { id: "1", name: "React", color: "blue" },
+    { id: "2", name: "Nextjs", color: "gray" },
+    { id: "3", name: "Javascript", color: "gold" },
+    { id: "4", name: "Typescript", color: "cyan" },
+    { id: "5", name: "Rust", color: "rose" },
   ],
   authorization: {
     show_about_me: true,

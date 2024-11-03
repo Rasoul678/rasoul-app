@@ -33,6 +33,8 @@ export const getDBUser = async () => {
       (user.about = props.About.rich_text[0].text.content);
     props.Experiences.multi_select.length != 0 &&
       (user.experiences = props.Experiences.multi_select);
+    props.ArticlesList.multi_select.length != 0 &&
+      (user.articles_list = props.ArticlesList.multi_select);
     //! Authorizations
     props.ShowAboutMe &&
       (user.authorization.show_about_me = props.ShowAboutMe.checkbox);
@@ -58,10 +60,10 @@ export const getDBUser = async () => {
       (user.authorization.show_skills = props.ShowSkills.checkbox);
     props.ShowTelefon &&
       (user.authorization.show_telefon = props.ShowTelefon.checkbox);
-    props.ShowLinkedIn &&
-      (user.authorization.show_linkedin = props.ShowLinkedIn.checkbox);
     props.ShowLocation &&
       (user.authorization.show_location = props.ShowLocation.checkbox);
+    props.ShowLinkedIn &&
+      (user.authorization.show_linkedin = props.ShowLinkedIn.checkbox);
   }
 
   return user;

@@ -1,15 +1,11 @@
 import React from "react";
 
-import { PersonUserObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
 import { Triangle } from "./components";
 import MenuContents from "./components/MenuContents";
 
-interface IProps {
-  user?: PersonUserObjectResponse;
-}
+interface IProps {}
 
-const MenuDropDown: React.FC<IProps> = ({ user }) => {
+const MenuDropDown: React.FC<IProps> = () => {
   return (
     <div className="menu-wrapper">
       <Triangle />

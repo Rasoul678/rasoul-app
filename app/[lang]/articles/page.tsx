@@ -2,11 +2,17 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import { articlesList } from "@utils/constants";
+import { getDBUser } from "@utils";
 
-const EmpyComponent = () => <></>;
+export const metadata: Metadata = {
+  title: "articles",
+};
 
-const articleComponents = articlesList.map((name) => {
+type IProps = {};
+
+const loadComponent = ({ name }: { name: string }) => {
+  const EmpyComponent = () => <></>;
+
   const Component = React.lazy(() =>
     import(`@components/Cards/Stacks/${name}Card`).catch((err) => {
       console.error("Component Failed Loading:", err);
@@ -17,22 +23,20 @@ const articleComponents = articlesList.map((name) => {
     })
   );
   return { Component, name };
-});
-
-export const metadata: Metadata = {
-  title: "articles",
 };
 
-type IProps = {};
+const MyArticles: React.FC<IProps> = async () => {
+  const user = await getDBUser();
 
-const AllArticles: React.FC<IProps> = () => {
+  const article_components = user.articles_list.map(loadComponent);
+
   return (
     <div>
       <h1 className="font-my_exo2 text-4xl text-center my-[1.5rem] sm:my-[2.5rem] uppercase text-cyan-400">
         My Articles
       </h1>
       <div className="fade-out-anim w-full overflow-hidden grid gap-[0.6rem] sm:gap-4 xl:gap-8 max-[470px]:grid-cols-1 min-[470px]:grid-cols-2 sm:grid-cols-3 min-[800px]:grid-cols-4 min-[1075px]:grid-cols-5 min-[1150px]:grid-cols-5 p-4">
-        {articleComponents.map(({ Component, name }) => (
+        {article_components.map(({ Component, name }) => (
           <Component key={name} />
         ))}
       </div>
@@ -40,4 +44,4 @@ const AllArticles: React.FC<IProps> = () => {
   );
 };
 
-export default AllArticles;
+export default MyArticles;

@@ -24,10 +24,10 @@ import { getDictionary } from "./dictionaries";
 
 export const metadata = getMyMetadata();
 
-interface IProps {
+type IProps = {
   children: React.ReactNode;
   params: { lang: Locale };
-}
+};
 
 const RootLayout: React.FC<IProps> = async (props) => {
   const {

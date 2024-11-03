@@ -3,6 +3,8 @@ import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
+import { getDBUser } from "@utils";
+
 import { i18n } from "./i18n-config";
 
 function getLocale(request: NextRequest): string | undefined {
@@ -26,6 +28,18 @@ function getLocale(request: NextRequest): string | undefined {
 const PUBLIC_FILE = /\.(.*)$/;
 export const middleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
+  const user = await getDBUser();
+
+  const matches = pathname.match(/\w+/gi);
+  const home_url = new URL("/", request.url);
+
+  if (matches?.includes("articles") && !user.authorization.show_articles) {
+    return NextResponse.redirect(home_url);
+  }
+
+  if (matches?.includes("live") && !user.authorization.show_live_code) {
+    return NextResponse.redirect(home_url);
+  }
 
   //! / `/_next/` and `/api/` are ignored by the matcher, but we need to ignore files in `public` manually.
   //! If you have one
