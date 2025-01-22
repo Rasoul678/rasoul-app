@@ -117,7 +117,7 @@ export const editorDefault = `// Use "show()" to display something! 🤩 \nshow(
 
 export const showFunc = `
     import _React from 'react';
-    import _ReactDOM from 'react-dom';
+    import _ReactDOM from 'react-dom/client';
 
     var show = (value) => {
     const rootElement = document.querySelector('#root');
