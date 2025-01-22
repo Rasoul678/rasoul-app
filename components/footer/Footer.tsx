@@ -6,6 +6,7 @@ import Astronaut from "@components/Astronaut";
 import CustomLink from "@components/CustomLink";
 import { iconsList } from "@components/icons";
 import { IntlContext } from "@components/intl-provider";
+import ShinyText from "@components/ShinyText/ShinyText";
 import { UserContext } from "@components/user-provider";
 
 const { mail, phone, google_maps_old, user_male, for_you } = iconsList;
@@ -25,27 +26,53 @@ export const Footer: React.FC<IProps> = () => {
           <div className="flex flex-col gap-3 flex-grow justify-end">
             <div className="footerInfoItem">
               {user_male()}
-              <span>{user?.name}</span>
+              <ShinyText
+                text={user?.name}
+                disabled={false}
+                speed={3}
+                className="footerInfoItem"
+              />
             </div>
 
             {user.authorization.show_email && (
               <div className="footerInfoItem">
                 {mail()}
-                <a href={`mailto:${user?.email}`}>{user?.email}</a>
+                <a href={`mailto:${user?.email}`}>
+                  <ShinyText
+                    text={user?.email}
+                    disabled={false}
+                    speed={3}
+                    className="footerInfoItem"
+                  />
+                </a>
               </div>
             )}
 
             {user.authorization.show_telefon && (
               <div className="footerInfoItem">
                 {phone()}
-                <a href={`tel:${user?.phone}`}>{user?.phone}</a>
+                <a href={`tel:${user?.phone}`}>
+                  <ShinyText
+                    text={user?.phone}
+                    disabled={false}
+                    speed={3}
+                    className="footerInfoItem"
+                  />
+                </a>
               </div>
             )}
 
             {user.authorization.show_location && (
               <div className="footerInfoItem">
                 {google_maps_old()}
-                <span>{user?.location}</span>
+                <span>
+                  <ShinyText
+                    text={user?.location}
+                    disabled={false}
+                    speed={3}
+                    className="footerInfoItem"
+                  />
+                </span>
               </div>
             )}
           </div>

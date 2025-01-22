@@ -6,9 +6,9 @@ import Astronaut from "@components/Astronaut";
 import CustomLink from "@components/CustomLink";
 import { IntlContext } from "@components/intl-provider";
 import ProfileImage from "@components/ProfileImage";
+import TrueFocus from "@components/TrueFocus/TrueFocus";
 
 import { UserContext } from "@components/user-provider";
-import WordLoader from "@components/WordLoader";
 
 import Shortcuts from "./Shortcuts";
 
@@ -39,10 +39,17 @@ const HomeHero: React.FC = () => {
           >
             <ProfileImage src={user.picture_url} wrapperClassName="w-[7rem]" />
           </CustomLink>
-
-          <span className="me">{user.name}</span>
+          <TrueFocus
+            sentence={user.name}
+            manualMode={false}
+            blurAmount={5}
+            borderColor="#00D8FF"
+            animationDuration={0.5}
+            pauseBetweenAnimations={1}
+          />
+          {/* <span className="me">{user.name}</span> */}
         </div>
-        <WordLoader />
+        {/* <WordLoader /> */}
         <div className="md:hidden">
           <Astronaut className="w-[8rem]" />
         </div>

@@ -3,11 +3,11 @@
 }
 
 .heroInfos {
-  @apply flex flex-col justify-center gap-[0.7rem] md:gap-[2.5rem] h-full md:min-h-[calc(100dvh-3.3rem)] w-full items-center;
+  @apply flex flex-col justify-around gap-[2.7rem] md:gap-[2.5rem] h-full md:min-h-[calc(100dvh-3.3rem)] w-full items-center;
 }
 
 .heroImage {
-  @apply w-full flex flex-col justify-center items-center md:block  md:text-5xl;
+  @apply w-full flex flex-col gap-4 md:gap-12 justify-center items-center md:flex  md:text-5xl;
 }
 
 .heroImage .me {
